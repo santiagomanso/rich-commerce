@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Rich Commerce app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple E-Commerce application with a special Twist: you have to choose a billionaire and
+you will have his networth to spend at your will
 
 ## Available Scripts
 
