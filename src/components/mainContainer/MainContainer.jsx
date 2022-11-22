@@ -1,6 +1,6 @@
 const MainContainer = ({ children }) => {
   return (
-    <div className='mx-auto bg-white  lg:max-w-[1536px]  xl:py-5'>
+    <div className='h-screen mx-auto bg-white  lg:max-w-[1536px] px-2 py-5'>
       {children}
     </div>
   )

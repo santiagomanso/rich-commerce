@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from './components/footer/Footer'
 import MainContainer from './components/mainContainer/MainContainer'
 import Navbar from './components/navbar/Navbar'
 import CartScreen from './screens/CartScreen/CartScreen'
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/login' element={<LoginScreen />} />
           <Route exact path='/cart' element={<CartScreen />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </MainContainer>
   )
