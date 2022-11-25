@@ -19,7 +19,9 @@ const Navbar = () => {
       </button>
       <aside
         id='aside'
-        className={` ${openNav ? 'translate-x-0' : '-translate-x-full'}   `}
+        className={` fixed ${
+          openNav ? 'translate-x-0' : '-translate-x-full'
+        }   `}
       >
         <button
           className='btnNavClose'
@@ -67,7 +69,7 @@ const Navbar = () => {
               : 'border-b-4 border-transparent'
           } flex items-center gap-2`}
         >
-          <i class={` fa-solid fa-house text-xl text-violet-600`}></i>
+          <i className={` fa-solid fa-house text-xl text-violet-600`}></i>
           <span className='text-xl'>Home</span>
         </Link>
 
@@ -106,7 +108,7 @@ const Navbar = () => {
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <span className='text-lg'>Billionaires</span>
+            <span className='text-lg'>characters</span>
           </Link>
           <Link
             to='/Login'
@@ -128,7 +130,7 @@ const Navbar = () => {
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <i class='fa-solid fa-cart-shopping text-xl text-violet-600'></i>
+            <i className='fa-solid fa-cart-shopping text-xl text-violet-600'></i>
             <span className='text-lg'>Cart</span>
           </Link>
         </div>

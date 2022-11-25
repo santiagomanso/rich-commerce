@@ -12,6 +12,7 @@ import 'swiper/css/navigation'
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper'
+
 const Carousel = () => {
   return (
     <div className='mt-5 relative'>
@@ -19,7 +20,7 @@ const Carousel = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 10000,
+          delay: 6500,
           disableOnInteraction: false,
         }}
         pagination={{
