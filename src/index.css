@@ -7,3 +7,18 @@
   margin: 0;
   padding: 0;
 }
+
+main {
+  @apply my-5;
+}
+
+section {
+  @apply my-5;
+}
+
+/* Exact resolution */
+@media (-webkit-device-pixel-ratio: 1.5) {
+  .main-container {
+    padding: 1rem 6rem;
+  }
+}

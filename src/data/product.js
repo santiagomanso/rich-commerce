@@ -89,7 +89,7 @@ export const product_list = [
     adult: true,
     new: false,
     row: 'row-span-2',
-    col: '',
+    col: 'col-span-2',
   },
   {
     id: 10,

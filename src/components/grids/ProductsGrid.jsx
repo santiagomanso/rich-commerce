@@ -4,21 +4,21 @@
 
 import Product from '../Product/Product'
 
-const CategoriesGrid = ({ products }) => {
+const ProductsGrid = ({ products }) => {
   return (
-    <>
-      <h2 className='mt-14 text-xl font-semibold text-gray-600'>
+    <section>
+      <h2 className='mb-2 text-xl font-semibold text-gray-600'>
         Our Categories of luxury assets
       </h2>
-      <div className='mt-5 w-full grid grid-cols-3 gap-x-20 gap-y-10'>
+      <div className='w-full grid grid-cols-3 gap-x-20 gap-y-10 select-none'>
         {products.length > 0
           ? products.map((product) => (
               <Product product={product} key={product.id} />
             ))
           : ''}
       </div>
-    </>
+    </section>
   )
 }
 
-export default CategoriesGrid
+export default ProductsGrid

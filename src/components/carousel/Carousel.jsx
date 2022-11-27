@@ -12,10 +12,17 @@ import 'swiper/css/navigation'
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper'
+import { useNavigate } from 'react-router-dom'
 
 const Carousel = () => {
+  const navigate = useNavigate()
+
+  const handleNavigate = (url) => {
+    navigate(url)
+  }
+
   return (
-    <div className='mt-5 relative'>
+    <div className='relative'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -39,7 +46,10 @@ const Carousel = () => {
                 most expensive items that you can think of.
               </p>
               <div className='w-1/3  flex justify-start space-x-10'>
-                <button className='w-[250px] py-2 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md text-xl text-white'>
+                <button
+                  onClick={() => handleNavigate('/characters')}
+                  className='w-[250px] py-2 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md text-xl text-white'
+                >
                   Choose player
                 </button>
                 <button className='w-[250px] py-3 bg-gradient-to-br from-slate-500 to-neutral-800 rounded-md text-xl text-white'>

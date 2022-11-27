@@ -1,15 +1,19 @@
 import Carousel from '../../components/carousel/Carousel'
-import CategoriesGrid from '../../components/ProductsGrid/CategoriesGrid'
+import ProductsGrid from '../../components/grids/ProductsGrid'
 import useProducts from '../../hooks/useProducts'
 
 const HomeScreen = () => {
   const { loading, error, products, setProducts } = useProducts()
 
   return (
-    <>
-      <Carousel />
-      <CategoriesGrid products={products} />
-    </>
+    <main>
+      <section>
+        <Carousel />
+      </section>
+      <section>
+        <ProductsGrid products={products} />
+      </section>
+    </main>
   )
 }
 

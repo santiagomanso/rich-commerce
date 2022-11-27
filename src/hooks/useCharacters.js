@@ -1,14 +1,30 @@
-// 23.11.2022  this will be implemented after the design is operational.
-
-import { useState } from 'react'
-import { characters_data } from '../data/characters'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const useCharacters = () => {
-  const [chatacters, setChatacters] = useState(characters_data)
-  const [loading, setLoading] = useState(false)
+  const [characters, setCharacters] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  return { loading, error, chatacters, setChatacters }
+  const fetchData = async () => {
+    setLoading(true)
+    const { data } = await axios.get(
+      'https://forbes400.herokuapp.com/api/forbes400?limit=15'
+    )
+    setCharacters(data)
+    setLoading(false)
+    return data
+  }
+
+  useEffect(() => {
+    try {
+      fetchData()
+    } catch (error) {
+      setError(error)
+    }
+  }, [])
+
+  return { characters, loading, error, setCharacters }
 }
 
 export default useCharacters
