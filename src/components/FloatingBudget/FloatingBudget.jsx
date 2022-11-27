@@ -23,7 +23,7 @@ const FloatingBudget = () => {
       <div
         className='bg-green-300 text-green-800 rounded-r-full
       absolute top-[50%] translate-y-[60%] left-0 -translate-x-[5.8rem]
-      px-5 py-5 flex gap-3 font-medium items-center hover:translate-x-0 duration-500 border-2 border-green-600 cursor-pointer'
+      px-5 py-5 flex gap-3 font-medium items-center hover:translate-x-0 duration-500 border-2 border-green-600 cursor-pointer z-50'
       >
         <p className='text-3xl'>191 B</p>
         <i className='fa-solid fa-sack-dollar text-5xl text-green-800'></i>
