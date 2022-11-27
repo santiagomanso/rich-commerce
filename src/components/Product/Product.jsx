@@ -6,8 +6,8 @@ const Product = ({ product }) => {
       className={`group bg-gradient-to-b rounded-t-md transition-all ease-in-out from-slate-300 to-stone-500 border-2 border-gray-300/80  ${product.row} ${product.col} flex flex-col justify-start rounded-b-[3.4rem] overflow-hidden shadow-md min-h-[40vh]`}
       key={product.id}
     >
-      <div className='rounded-t group overflow-hidden h-full relative'>
-        <div className='h-full rounded-md p-5 relative'>
+      <div className='rounded-t h-full relative'>
+        <div className='h-full rounded-md  relative overflow-hidden p-5'>
           <Reviews />
           <img
             className='group-hover:scale-125 duration-[2s] bg-black/60 object-cover w-full h-full 

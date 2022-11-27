@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
-import elonProfile from '../../assets/elonProfile.png'
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false) //navbar logic
@@ -73,30 +72,7 @@ const Navbar = () => {
           <span className='text-xl'>Home</span>
         </Link>
 
-        <div className='flex items-center space-x-5'>
-          <Link
-            to='/profile'
-            onClick={() => handleActive('profile')}
-            className={`border-b-4 border-transparent flex items-center gap-2`}
-          >
-            <span className='text-lg'>Player: Elon Musk </span>
-            {/* <div className='rounded-full h-10 p-[0.10rem] bg-slate-200 outline-2 outline outline-slate-400'>
-              <img src={elonProfile} alt='' className='w-full h-full' />
-            </div> */}
-          </Link>
-          <Link
-            to='/profile'
-            onClick={() => handleActive('profile')}
-            className={`border-b-4 border-transparent flex items-center gap-2`}
-          >
-            <span className='text-lg'>
-              Budget:
-              <span className='text-green-500 font-semibold px-3 py-1 bg-green-100 rounded-lg'>
-                189.4$ million
-              </span>
-            </span>
-          </Link>
-        </div>
+        <div className='flex items-center space-x-5'></div>
 
         <div className='flex space-x-14 items-center'>
           <Link
