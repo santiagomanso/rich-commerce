@@ -171,7 +171,7 @@ export const products = [
     left_col: 'location: California, USA',
     mid_col: 5,
     right_col: 500000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The One mansion is considered not only to be the most expensive house in California but also the most expensive house in the US. But it is also The One riddled with debt and legal issues. But, despite its flaws, this is a beautiful property with gorgeous views in a breathtaking setting.The One is home to nine bedrooms and multiple kitchens, as well as all of the other essentials like a nightclub, a bowling alley with four lanes, a salon, a home gym, a 50-seat theatre, and a running track. It has not just a swimming pool, but also six other water features, like a jacuzzi and a moat that surrounds the luxury house. ',
   },
   {
     product_id: 17,
@@ -184,7 +184,7 @@ export const products = [
   },
   {
     product_id: 18,
-    category_id: 5, //Concerts - Talks
+    category_id: 44, //Concerts - Talks
     name: 'Villa Leopolda, France',
     img: 'https://e3.365dm.com/21/10/1600x900/skynews-rolling-stones-concert_5545152.jpg?20211013124305',
     left_col: 'Shipped to your Living room',
@@ -194,7 +194,7 @@ export const products = [
   },
   {
     product_id: 19,
-    category_id: 5, //Concerts - Talks
+    category_id: 44, //Concerts - Talks
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -204,7 +204,7 @@ export const products = [
   },
   {
     product_id: 20,
-    category_id: 5, //Concerts - Talks
+    category_id: 44, //Concerts - Talks
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -214,7 +214,7 @@ export const products = [
   },
   {
     product_id: 21,
-    category_id: 5, //Concerts - Talks
+    category_id: 44, //Concerts - Talks
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -244,7 +244,7 @@ export const products = [
   },
   {
     product_id: 24,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -254,7 +254,7 @@ export const products = [
   },
   {
     product_id: 25,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -264,7 +264,7 @@ export const products = [
   },
   {
     product_id: 26,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -274,7 +274,7 @@ export const products = [
   },
   {
     product_id: 27,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -284,7 +284,7 @@ export const products = [
   },
   {
     product_id: 28,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -294,7 +294,7 @@ export const products = [
   },
   {
     product_id: 29,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',
@@ -304,7 +304,7 @@ export const products = [
   },
   {
     product_id: 30,
-    category_id: 4, //Mansions
+    category_id: 44, //Mansions
     name: 'Villa Leopolda, France',
     img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
     left_col: 'location: ',

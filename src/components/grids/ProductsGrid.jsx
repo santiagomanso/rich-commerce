@@ -1,22 +1,24 @@
-const ProductsGrid = () => {
+const ProductsGrid = ({ item }) => {
   return (
-    <div className='grid grid-cols-2 gap-8'>
-      <div className='bg-gradient-to-t from-slate-200 to-slate-500 h-[75vh] rounded-lg  flex flex-col justify-between px-5 py-8 relative'>
-        <div className='h-3/4 w-full'>
-          <img
-            className='h-full w-full border-2 border-gray-100 rounded-lg'
-            src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/d609be3b-97e9-4aa0-a393-87018020eacb-f10-1589992779.jpg'
-            alt='img'
-          />
+    <div className='hover:-translate-y-2  duration-500 flex flex-col justify-between rounded-lg shadow-md  group rounded-t-md transition-all ease-in-out border-2 border-gray-300/80  rounded-b-[3.4rem] relative h-[80vh]'>
+      <div className='h-[50vh] w-full overflow-hidden'>
+        <img
+          className='h-full w-full object-fill border-2 border-gray-100 rounded-lg'
+          src={`${item.img}`}
+          alt={`${item.name}`}
+        />
+      </div>
+      <div className='h-[33vh]  bg-gradient-to-br from-slate-400/70 via-white to-white p-5'>
+        <div className='grid grid-cols-3 '>
+          <p className='text-gray-700 text-xl font-semibold'>{item.left_col}</p>
+          <p className='text-center text-gray-700 text-xl font-semibold'>
+            {item.mid_col}
+          </p>
+          <span className='text-xl text-green-700 bg-green-100 px-2 py-1 rounded-md'>
+            {item.right_col} Million
+          </span>
         </div>
-        <div className='grid grid-cols-3'>
-          <p className=''>location:</p>
-          <p className='text-center'>Rating</p>
-          <p className='text-end text-green-700 text-xl'>Price: $5094059</p>
-        </div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum at totam
-        porro, voluptatum aspernatur quis maiores, sit, vel doloribus blanditiis
-        sed incidunt odio ad nobis perferendis obcaecati enim dolorum ducimus.
+        <p className='text-gray-600 font-medium max-h-[20%]'>{item.desc}</p>
       </div>
     </div>
   )
