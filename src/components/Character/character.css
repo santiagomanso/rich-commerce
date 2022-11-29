@@ -1,0 +1,9 @@
+.btnPlay {
+  @apply absolute z-40 px-5 py-4 rounded-2xl
+    bg-black/50 hover:bg-slate-700
+    top-[50%] -translate-y-[50%]
+    left-[50%] -translate-x-[50%]
+    flex items-center gap-2
+    text-white font-medium tracking-wider
+    border-2 border-white/80;
+}

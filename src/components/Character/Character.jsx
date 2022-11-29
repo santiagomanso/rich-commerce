@@ -1,21 +1,48 @@
+import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Context } from '../../context/Context'
+import './character.css'
+
 const Character = ({ character }) => {
-  //hard-code NEW characters?
+  // Create our number formatter.
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
 
-  const moneyDigits = (budget) => {
-    let money = character.estWorthPrev.toString().split('.').sort().pop()
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  })
 
-    console.log('money sliced: ', money.slice(0, 3))
-    return money.slice(0, 4)
+  const [player, setPlayer] = useContext(Context)
+
+  const navigate = useNavigate()
+  const [btnPlay, setBtnPlay] = useState(false)
+
+  const handleSelect = (bool) => {
+    setBtnPlay(bool)
   }
 
-  console.log(moneyDigits())
+  const handleClick = () => {
+    setPlayer(character)
+    navigate('/')
+  }
 
   return (
     <div
-      className={`hover:-translate-y-2 hover:scale-105 duration-500 flex flex-col justify-start rounded-lg shadow-md cursor-pointer`}
+      className={`hover:-translate-y-2  duration-500 flex flex-col justify-start rounded-lg shadow-md  group rounded-t-md transition-all ease-in-out border-2 border-gray-300/80  rounded-b-[3.4rem] overflow-hidden `}
+      onMouseEnter={() => handleSelect(true)}
+      onMouseLeave={() => handleSelect(false)}
       key={character.rank}
     >
       <div className='rounded-t-lg group overflow-hidden relative'>
+        {btnPlay && (
+          <button onClick={() => handleClick()} className='btnPlay'>
+            <i className='fa-solid fa-play text-xl'></i>
+            <span className='text-2xl'>Play</span>
+          </button>
+        )}
         <img
           className='group-hover:scale-[1.07] duration-[1s] bg-black/60 object-fill w-full h-full'
           alt='imagen'
@@ -29,17 +56,20 @@ const Character = ({ character }) => {
           #{character.rank}
         </p>
       </div>
-      <div className='bg-white/20  flex flex-col justify-evenly px-2 py-3'>
+      <div
+        className='flex flex-1 flex-col gap-y-3 justify-start p-5 h-1/3
+      bg-gradient-to-br from-slate-400/70 via-white to-white'
+      >
         <div className='flex justify-between items-center '>
           <h2 className='text-gray-700 text-xl font-semibold'>
             {character.personName}
           </h2>
 
           <span className='text-xl text-green-700 bg-green-100 px-2 py-1 rounded-md'>
-            $ {moneyDigits()} Billions
+            {formatter.format(character.estWorthPrev)} Million
           </span>
         </div>
-        <p className='text-gray-500 font-medium'>{character.bios[0]}</p>
+        <p className='text-gray-600 font-medium'>{character.bios[0]}</p>
       </div>
     </div>
   )

@@ -62,25 +62,23 @@ const Navbar = () => {
         <Link
           to='/'
           onClick={() => handleActive('home')}
-          className={`hover:border-violet-600 ${
+          className={`hover:border-slate-600 ${
             active === 'home'
-              ? 'border-b-4 border-violet-600'
+              ? 'border-b-4 border-slate-600'
               : 'border-b-4 border-transparent'
           } flex items-center gap-2`}
         >
-          <i className={` fa-solid fa-house text-xl text-violet-600`}></i>
+          <i className={` fa-solid fa-house text-xl text-slate-600`}></i>
           <span className='text-xl'>Home</span>
         </Link>
-
-        <div className='flex items-center space-x-5'></div>
 
         <div className='flex space-x-14 items-center'>
           <Link
             to='/characters'
             onClick={() => handleActive('characters')}
-            className={`hover:border-violet-600 ${
+            className={`hover:border-slate-600 ${
               active === 'characters'
-                ? 'border-b-4 border-violet-600'
+                ? 'border-b-4 border-slate-600'
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
@@ -89,9 +87,9 @@ const Navbar = () => {
           <Link
             to='/Login'
             onClick={() => handleActive('login')}
-            className={`hover:border-violet-600 ${
+            className={`hover:border-slate-600 ${
               active === 'login'
-                ? 'border-b-4 border-violet-600'
+                ? 'border-b-4 border-slate-600'
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
@@ -100,14 +98,26 @@ const Navbar = () => {
           <Link
             to='/Cart'
             onClick={() => handleActive('cart')}
-            className={`hover:border-violet-600 ${
+            className={`hover:border-slate-600 ${
               active === 'cart'
-                ? 'border-b-4 border-violet-600'
+                ? 'border-b-4 border-slate-600'
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <i className='fa-solid fa-cart-shopping text-xl text-violet-600'></i>
-            <span className='text-lg'>Cart</span>
+            <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
+            <span className='text-lg'> Cart </span>
+          </Link>
+          <Link
+            to='/profile'
+            onClick={() => handleActive('profile')}
+            className={`hover:border-slate-600 ${
+              active === 'profile'
+                ? 'border-b-4 border-slate-600'
+                : 'border-b-4 border-transparent'
+            } flex items-center gap-2`}
+          >
+            <i className='fa-solid fa-circle-user text-xl text-slate-600'></i>
+            <span className='text-lg'>Profile</span>
           </Link>
         </div>
       </div>

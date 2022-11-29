@@ -123,7 +123,7 @@ const Carousel = () => {
                 Add to cart
               </button>
               <button className='w-[250px] py-3 bg-gradient-to-br from-slate-500 to-neutral-800 rounded-md text-xl text-white'>
-                Explore more paintings
+                More paintings
               </button>
             </div>
             <img

@@ -4,8 +4,8 @@ const Reviews = () => {
       <i className='text-amber-500 fa-solid fa-star'></i>
       <i className='text-amber-500 fa-solid fa-star'></i>
       <i className='text-amber-500 fa-solid fa-star'></i>
-      <i class='fa-regular fa-star text-amber-500'></i>
-      <i class='fa-regular fa-star text-amber-500'></i>
+      <i className='fa-regular fa-star text-amber-500'></i>
+      <i className='fa-regular fa-star text-amber-500'></i>
     </div>
   )
 }
