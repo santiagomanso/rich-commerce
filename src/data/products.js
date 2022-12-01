@@ -394,7 +394,7 @@ export const products = [
   },
   {
     product_id: 33,
-    category_id: 12, //Military jets
+    category_id: 12, //
     name: 'F-35 Lightning II',
     img: 'https://s.financesonline.com/uploads/2014/03/lightning.jpg',
     left_col: 'F-35 Lightning II',
@@ -404,12 +404,22 @@ export const products = [
   },
   {
     product_id: 33,
-    category_id: 13, //Military jets
-    name: 'F-35 Lightning II',
-    img: 'https://s.financesonline.com/uploads/2014/03/lightning.jpg',
-    left_col: 'F-35 Lightning II',
+    category_id: 13, //Cruise Ships
+    name: 'Oasis Luxury Class',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Oasis_of_the_Seas.jpg/1280px-Oasis_of_the_Seas.jpg',
+    left_col: 'Oasis Luxury Class',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'The F-35 Lightning II program cost a total of $345 billion which makes it one of the most expensive production schemes in aeronautics history. This fighter jet boasts stealth features and is equipped with top rate weaponry and speed that make it a top gun in aerial dogfights. Another notable point is the aircraft is one of the first jet fighters to be capable of vertical takeoff maneuvers.',
+    desc: 'Allure of the Seas is one of the two most expensive cruise ships in operation around the world. The second ship in the Royal Caribbean International’s Oasis-class cruise ships, Allure of the Seas was the world’s largest passenger ship when it launched in November 2009.Reportedly, around $1.4bn was incurred in the construction of this world-class cruise ship at the STX Europe Turku shipyard in Finland.This 1,187 feet long vessel measures 215 feet in width with a gross registered tonnage of 225,282t. With 18 total decks, the vessel can accommodate a total of 6,780 guests and 2,200 crew members.',
+  },
+  {
+    product_id: 33,
+    category_id: 13, //Cruise Ships
+    name: 'MSC World Europa',
+    img: 'https://www.kreuzfahrt-aktuelles.de/bilder/2022/04/MSC-World-Europa-will-spend-the-summer-season-in-the-Mediterranean-Credit-MSC-Cruises-scaled.jpg',
+    left_col: 'MSC World Europa',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'Allure of the Seas is one of the two most expensive cruise ships in operation around the world. The second ship in the Royal Caribbean International’s Oasis-class cruise ships, Allure of the Seas was the world’s largest passenger ship when it launched in November 2009.Reportedly, around $1.4bn was incurred in the construction of this world-class cruise ship at the STX Europe Turku shipyard in Finland.This 1,187 feet long vessel measures 215 feet in width with a gross registered tonnage of 225,282t. With 18 total decks, the vessel can accommodate a total of 6,780 guests and 2,200 crew members.',
   },
 ]

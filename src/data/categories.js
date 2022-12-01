@@ -119,16 +119,6 @@ export const categories_list = [
     adult: false,
     new: false,
     row: 'row-span-2',
-    col: 'col-span-2',
-  },
-  {
-    category_id: 12,
-    img: 'https://assets.gocity.com/files/groot_london/files/styles/attraction_banner_dskt/public/shutterstock_662910385.jpg',
-    name: 'Real State',
-    desc: 'The best and biggest money can buy',
-    adult: false,
-    new: false,
-    row: 'row-span-2',
-    col: 'col-span-1',
+    col: 'col-span-3',
   },
 ]
