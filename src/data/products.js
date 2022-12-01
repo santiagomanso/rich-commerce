@@ -184,132 +184,232 @@ export const products = [
   },
   {
     product_id: 18,
-    category_id: 44, //Concerts - Talks
-    name: 'Villa Leopolda, France',
+    category_id: 6, //Concerts - Talks
+    name: 'The Rolling Stones',
     img: 'https://e3.365dm.com/21/10/1600x900/skynews-rolling-stones-concert_5545152.jpg?20211013124305',
     left_col: 'Shipped to your Living room',
     mid_col: 5,
-    right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    right_col: 8100000,
+    desc: 'The Rolling Stones are an English rock band formed in London in 1962. Active for six decades, they are one of the most popular and enduring bands of the rock era. In the early 1960s, the Rolling Stones pioneered the gritty, rhythmically driven sound that came to define hard rock. Their first stable line-up consisted of vocalist Mick Jagger, multi-instrumentalist Brian Jones, guitarist Keith Richards, bassist Bill Wyman, and drummer Charlie Watts. During their formative years, Jones was the primary leader: he assembled the band, named it, and drove their sound and image. After Andrew Loog Oldham became the groups manager in 1963, he encouraged them to write their own songs.',
   },
   {
     product_id: 19,
-    category_id: 44, //Concerts - Talks
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 6, //Concerts - Talks
+    name: 'Rihanna',
+    img: 'https://estaticos-cdn.elperiodico.com/clip/64f62794-845e-4612-9535-dbdb03094efd_alta-libre-aspect-ratio_default_0.jpg',
+    left_col: 'She sings in your Island',
     mid_col: 5,
-    right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    right_col: 8000000,
+    desc: 'Robyn Rihanna Fenty. Born February 20, 1988) is a Barbadian singer, actress, and businesswoman. Born in Saint Michael and raised in Bridgetown, Barbados, Rihanna auditioned for American record producer Evan Rogers who invited her to the United States to record demo tapes. After signing with Def Jam in 2005, she soon gained recognition with the release of her first two studio albums, Music of the Sun (2005) and A Girl Like Me (2006), both of which were influenced by Caribbean music and peaked within the top ten of the US Billboard 200 chart.',
   },
   {
     product_id: 20,
-    category_id: 44, //Concerts - Talks
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 6, //Concerts - Talks
+    name: 'Madonna',
+    img: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/03/18/09/madonna.jpg',
+    left_col: 'The True Queen of POP: ',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'Madonna Louise. Born August 16, 1958) is an American singer, songwriter, and actress. Referred to as the "Queen of Pop", Madonna is noted for her continual reinvention and versatility in music production, songwriting, and visual presentation. She has pushed the boundaries of artistic expression in mainstream music, while maintaining control over every aspect of her career.[2] Her works, which incorporate social, political, sexual, and religious themes, have generated both controversy and critical acclaim. A prominent cultural figure crossing the 20th and 21st centuries, Madonna remains one of the most "well-documented figures of the modern age",[3] with a broad amount of scholarly reviews and literature works on her, as well as an academic mini subdiscipline devoted to her named Madonna studies.',
   },
   {
     product_id: 21,
-    category_id: 44, //Concerts - Talks
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 7, //Yatchs
+    name: 'History Supreme',
+    img: 'https://cdn.wealthygorilla.com/wp-content/uploads/2019/06/Most-Expensive-Yachts-History-Supreme.webp',
+    left_col: 'History Supreme',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'Topping the list of the most expensive superyachts in the world at an eye-watering $4.8 billion is History Supreme.This magnificent accomplishment is built from 10,000 kilograms of solid gold and platinum and is 100-foot long.It was designed by Stuart Huges, a world-renowned luxury designer, for Malaysia richest man, Robert Knok. The History Supreme took roughly three years to build and features an array of luxury items.The master bedroom includes a genuine Tyrannosaurus Rex bone statue and a wall made entirely of meteorite rocks! If that wasnt enough, the master suite also has a 24-carat gold Aquavista Panoramic Wall Aquarium.',
   },
   {
     product_id: 22,
-    category_id: 5, //Concerts - Talks
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 7, //Yatchs
+    name: 'Eclipse',
+    img: 'https://cdn.boatinternational.com/convert/files/2021/05/cb78e590-b322-11eb-b59b-bfd1177c77f4-eclipse-exterior-do-not-use-outside-feature.jpg/r%5Bwidth%5D=1920/cb78e590-b322-11eb-b59b-bfd1177c77f4-eclipse-exterior-do-not-use-outside-feature.webp',
+    left_col: 'Eclipse',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The second most expensive yacht in the world, Eclipse, is owned by Roman Abramovich.The Russian billionaire has spared no expense when it comes to his superyacht.He’s installed a private defence system, including missile detection sensors, intruder alarms and armour plating and bulletproof windows in his master bedroom.On top of that, Eclipse has two helipads, two swimming pools, 24 guest bedrooms, a disco hall and a mini-submarine.It’s unclear how much Eclipse actually cost, but it is believed to be in the region of $1.5 billion!',
   },
   {
     product_id: 23,
-    category_id: 5, //Concerts - Talks
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 7, //Yatchs
+    name: 'Streets of Monaco',
+    img: 'https://cdn.wealthygorilla.com/wp-content/uploads/2019/06/Most-Expensive-Yachts-Streets-of-Monaco.webp',
+    left_col: 'Streets of Monaco',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The first billion-dollar yacht on our list is the “Streets of Monaco”. By far one of the most impressive and expensive yachts in the world, once finished, the Streets of Monaco is going to be a 509-foot mega yacht, designed to feature miniature versions of some of Monaco’s and Monte Carlos most renowned landmarks. The finished superyacht will include a go-kart circuit, three swimming pools, a mini-submarine a helipad, seven guest suites, a mini waterfall and a restaurant that with a fabulous underwater view.',
   },
   {
     product_id: 24,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 7, //Yatchs
+    name: 'Azzam',
+    img: 'https://cdn.wealthygorilla.com/wp-content/uploads/2019/06/Most-Expensive-Yachts-Azzam.webp',
+    left_col: 'Azzam',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'This 590-foot megayacht is the world’s largest yacht to date. Its owned by Sheikh Khalifa bin Zayed al-Nayan, President of the United Arab Emirates and Emir of Abu Dhabi.Lürssen Yachts are the ones behind this mega build. Azzam has its very own missile defence system, a bullet-proof master suite and can reach speeds of more than 30 knots, or 35mph, making it one of the fastest yachts on the planet!',
   },
   {
     product_id: 25,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 8, //Space Rockets
+    name: 'NASA Space Shuttle Program',
+    img: 'https://www.mansworldindia.com/wp-content/uploads/2022/08/Shuttle-1.jpg',
+    left_col: 'NASA Space Shuttle Program',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'By far the most expensive space program ever created, the Space Shuttle cost around $1.6 Billion per launch and has done so 135 times between 1977 and 2011. While it doesn’t have the reach of other rocket programs, the shuttle’s reusability was a game-changing feature that helped NASA conduct key research and most importantly, build the International Space Station.',
   },
   {
     product_id: 26,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 8, //Space Rockets
+    name: 'International Space Station ISS',
+    img: 'https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2021/11/cosmic_pearl/23822293-1-eng-GB/Cosmic_pearl_pillars.jpg',
+    left_col: 'International Space Station ISS',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The International Space Station (ISS) is the largest modular space station currently in low Earth orbit. It is a multinational collaborative project involving five participating space agencies: NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada).[8][9] The ownership and use of the space station is established by intergovernmental treaties and agreements.[10] The station serves as a microgravity and space environment research laboratory in which scientific research is conducted in astrobiology, astronomy, meteorology, physics, and other fields.[11][12][13] The ISS is suited for testing the spacecraft systems and equipment required for possible future long-duration missions to the Moon and Mars.[14]',
   },
   {
     product_id: 27,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 8, //Space Rockets
+    name: 'The Apollo Program',
+    img: 'https://christopherrcooper.com/assets/apollo-program-cost-go-to-moon.jpg  ',
+    left_col: 'The Apollo Program',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The Apollo program, also known as Project Apollo, was the third United States human spaceflight program carried out by the National Aeronautics and Space Administration (NASA), which succeeded in preparing and landing the first humans on the Moon from 1968 to 1972. It was first conceived in 1960 during President Dwight D. Eisenhowers administration as a three-person spacecraft to follow the one-person Project Mercury, which put the first Americans in space. Apollo was later dedicated to President John F. Kennedys national goal for the 1960s of "landing a man on the Moon and returning him safely to the Earth" in an address to Congress on May 25, 1961. It was the third US human spaceflight program to fly, preceded by the two-person Project Gemini conceived in 1961 to extend spaceflight capability in support of Apollo.',
   },
   {
     product_id: 28,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 8, //Space Rockets
+    name: 'James Webb Space Telescope',
+    img: 'https://th-thumbnailer.cdn-si-edu.com/Uvw06twFEmypZMDESaUbV8R42B0=/1000x750/filters:no_upscale():focal(800x602:801x603)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/df/40/df40af0d-d6b1-41fe-86af-ab83e29db841/51412207042_751ae819e7_k_webb.jpg',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The James Webb Space Telescope (JWST) is a space telescope which conducts infrared astronomy. As the largest optical telescope in space, its high resolution and sensitivity allow it to view objects too old, distant, or faint for the Hubble Space Telescope.[8] This will enable investigations across many fields of astronomy and cosmology, such as observation of the first stars, the formation of the first galaxies, and detailed atmospheric characterization of potentially habitable exoplanets.[9][10]',
   },
   {
     product_id: 29,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 9, //Military jets
+    name: 'B-2 Spirit',
+    img: 'https://s.financesonline.com/uploads/2014/03/b21.jpg',
+    left_col: 'B-2 Spirit',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'The B-2 Spirit stealth plane heads our list of top 10 most expensive military planes manufactured in America. The fighter jet resembles an alien spaceship in design and it can evade radar, visual, electromagnetic, and infrared signals to enter deep into enemy region without getting detected and drop bombs accurately on given targets. It was originally built to carry nuclear bombs, but was later improved to carry other types of missiles too.',
   },
   {
     product_id: 30,
-    category_id: 44, //Mansions
-    name: 'Villa Leopolda, France',
-    img: 'https://cdn.luxe.digital/media/20220301160836/most-expensive-houses-in-the-world-villa-leopolda-france-luxe-digital-780x520.jpg.webp',
-    left_col: 'location: ',
+    category_id: 9, //Military jets
+    name: 'F-22 Raptor',
+    img: 'https://s.financesonline.com/uploads/2014/03/raptor.jpg',
+    left_col: 'F-22 Raptor',
     mid_col: 5,
     right_col: 6700000000,
-    desc: 'Villa Leopolda sits between two of the most prestigious parts of the world: Monaco and Nice. Sumptuous and stylish, it is a luxury property with a regal past and previously belonged to King Leopold II of Belgium. Since then, it is passed through the hands of many owners and has also been used as a film set, for Alfred Hitchcocks “La Main Au Collet“. When Edward Safra, its previous owner, passed away, he left the villa to his wife. Its huge swimming pool and excessive gardens reportedly require the daily work of more than 50 gardeners. Across the entire property, there is 80,000-square feet of space. ',
+    desc: 'Considered one of the world’s best fighter planes, the Raptor was built to combat Russia’s sophisticated SU Flanker and MIG Fulcrum aircraft. Its production was initiated in the 1980s to meet the Russian threat during the cold war. When the danger passed, production was halted and a total 187 Raptors have been provided to the US military. The Raptor is a stealth, all-weather, twin-engine, single-seat, fifth-generation aircraft designed for the US Air Force.',
+  },
+  {
+    product_id: 31,
+    category_id: 9, //Military jets
+    name: 'C17A Globemaster III',
+    img: 'https://s.financesonline.com/uploads/2014/03/globemaster.jpg',
+    left_col: 'C17A Globemaster III',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The Globemaster III is one of the best military transport planes in the world as it can deliver soldiers, military equipment, and vehicles across the globe. The aircraft is capable of carrying and dropping 102 fully equipped combat fighters inside enemy lines and can also drop vehicles such as Humvees and tanks. Thus, this plane gives the US military a big advantage in conflicts that involve ground operations.',
+  },
+  {
+    product_id: 32,
+    category_id: 9, //Military jets
+    name: 'VH-71 Kestrel',
+    img: 'https://s.financesonline.com/uploads/2014/03/kestrel.jpg',
+    left_col: 'VH-71 Kestrel',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The Kestrel had been designed to replace the US president’s helicopter fleet. But President Barack Obama thought otherwise and stopped its production and ordered that the funds be used to maintain his old chopper fleet. He made this order as the Kestrel production cost had reached astronomical heights and gone beyond the White House’s budget.',
+  },
+  {
+    product_id: 33,
+    category_id: 9, //Military jets
+    name: 'F-35 Lightning II',
+    img: 'https://s.financesonline.com/uploads/2014/03/lightning.jpg',
+    left_col: 'F-35 Lightning II',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The F-35 Lightning II program cost a total of $345 billion which makes it one of the most expensive production schemes in aeronautics history. This fighter jet boasts stealth features and is equipped with top rate weaponry and speed that make it a top gun in aerial dogfights. Another notable point is the aircraft is one of the first jet fighters to be capable of vertical takeoff maneuvers.',
+  },
+  {
+    //aca
+    product_id: 34,
+    category_id: 10, //Clubs
+    name: 'Real Madrid',
+    img: 'https://assets.laliga.com/assets/201507/855x481_29093014madrid_web.jpg',
+    left_col: 'Real Madrid',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The F-35 Lightning II program cost a total of $345 billion which makes it one of the most expensive production schemes in aeronautics history. This fighter jet boasts stealth features and is equipped with top rate weaponry and speed that make it a top gun in aerial dogfights. Another notable point is the aircraft is one of the first jet fighters to be capable of vertical takeoff maneuvers.',
+  },
+  {
+    product_id: 35,
+    category_id: 10, //Clubs
+    name: 'FC Barcelona',
+    img: 'https://www.fcbarcelona.com/fcbarcelona/photo/2020/02/24/3f1215ed-07e8-47ef-b2c7-8a519f65b9cd/mini_UP3_20200105_FCB_VIS_View_1a_Empty.jpg',
+    left_col: 'FC Barcelona',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'Futbol Club Barcelona (Catalan pronunciation: [fubˈbɔl ˈklub bəɾsəˈlonə] (listen)), commonly referred to as Barcelona and colloquially known as Barça ([ˈbaɾsə]), is a professional football club based in Barcelona, Catalonia, Spain, that competes in La Liga, the top flight of Spanish football. Founded in 1899 by a group of Swiss, Catalan, German, and English footballers led by Joan Gamper, the club has become a symbol of Catalan culture and Catalanism, hence the motto "Més que un club" ("More than a club"). Unlike many other football clubs, the supporters own and operate Barcelona. It is the fourth-most valuable sports team in the world, worth $4.76 billion, and the worlds fourth richest football club in terms of revenue, with an annual turnover of €582.1 million.[2][3] The official Barcelona anthem is the "Cant del Barça", written by Jaume Picas and Josep Maria Espinàs.[4] Barcelona traditionally play in dark shades of blue and garnet stripes, hence nicknamed Blaugrana.',
+  },
+  {
+    product_id: 36,
+    category_id: 10, //Clubs
+    name: 'Chicago Bulls',
+    img: 'https://miro.medium.com/max/1100/1*q-BNXp2W8F5jt3lh9i84LA.webp',
+    left_col: 'Chicago Bulls',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The Chicago Bulls are an American professional basketball team based in Chicago. The Bulls compete in the National Basketball Association (NBA) as a member of the leagues Eastern Conference Central Division.[9] The team was founded on January 16, 1966, and played its first game during the 1966–67 NBA season.[1] The Bulls play their home games at the United Center, an arena on Chicagos West Side.The Bulls saw their greatest success during the 1990s when they played a major part in popularizing the NBA worldwide. They are known for having one of the NBAs greatest dynasties, winning six NBA championships between 1991 and 1998 with two three-peats. All six of their championship teams were led by Hall of Famers Michael Jordan, Scottie Pippen, and coach Phil Jackson. The Bulls are the only NBA franchise to win multiple championships while never losing an NBA Finals series in their history.[10]',
+  },
+  {
+    product_id: 33,
+    category_id: 11, //ICBMS
+    name: 'RS-28 Sarmat',
+    img: 'https://news.usni.org/wp-content/uploads/2017/09/russianmissile.jpg',
+    left_col: 'RS-28 Sarmat',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The RS-28 Sarmat (Russian: РС-28 Сармат, named after the Sarmatians; NATO reporting name: SS-X-29[7] or SS-X-30[8]), known as "Satan II", is a Russian liquid-fueled, MIRV-equipped super-heavy intercontinental ballistic missile (ICBM) produced by the Makeyev Rocket Design Bureau since 2009. It is intended to replace the R-36M ICBM (SS-18 Satan) in Russias arsenal.The Sarmat is one of the six new Russian strategic weapons unveiled by Russian president Vladimir Putin on 1 March 2018 The RS-28 Sarmat made its first test flight on 20 April 2022,[ and the Russian government expects the missile is entering service in 2022. On August 16, 2022, a state contract was signed for the manufacture and supply of the Sarmat strategic missile system.',
+  },
+  {
+    product_id: 33,
+    category_id: 11, //Military jets
+    name: 'Missile launch facility',
+    img: 'https://www.historyhit.com/app/uploads/fly-images/5150404/Titan-Missile-Museum-788x537.jpg',
+    left_col: 'Missile launch facility',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'A missile launch facility, also known as an underground missile silo, launch facility (LF), or nuclear silo, is a vertical cylindrical structure constructed underground, for the storage and launching of intercontinental ballistic missiles (ICBMs), intermediate-range ballistic missiles (IRBMs), medium-range ballistic missiles (MRBMs). Similar facilities can be used for anti-ballistic missiles (ABMs).The structures typically have the missile some distance below ground, protected by a large "blast door" on top. They are usually connected, physically and/or electronically, to a missile launch control center.With the introduction of the Soviet UR-100 and the U.S. Titan II missile series, underground silos changed in the 1960s. Both missile series introduced the use of hypergolic propellant, which could be stored in the missiles, allowing for rapid launches. Both countries liquid-fueled missile systems were moved into underground silos. The introduction of solid fuel systems, in the later 1960s, made the silo moving and launching even easier.[1]',
+  },
+  {
+    product_id: 33,
+    category_id: 12, //Military jets
+    name: 'F-35 Lightning II',
+    img: 'https://s.financesonline.com/uploads/2014/03/lightning.jpg',
+    left_col: 'F-35 Lightning II',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The F-35 Lightning II program cost a total of $345 billion which makes it one of the most expensive production schemes in aeronautics history. This fighter jet boasts stealth features and is equipped with top rate weaponry and speed that make it a top gun in aerial dogfights. Another notable point is the aircraft is one of the first jet fighters to be capable of vertical takeoff maneuvers.',
+  },
+  {
+    product_id: 33,
+    category_id: 13, //Military jets
+    name: 'F-35 Lightning II',
+    img: 'https://s.financesonline.com/uploads/2014/03/lightning.jpg',
+    left_col: 'F-35 Lightning II',
+    mid_col: 5,
+    right_col: 6700000000,
+    desc: 'The F-35 Lightning II program cost a total of $345 billion which makes it one of the most expensive production schemes in aeronautics history. This fighter jet boasts stealth features and is equipped with top rate weaponry and speed that make it a top gun in aerial dogfights. Another notable point is the aircraft is one of the first jet fighters to be capable of vertical takeoff maneuvers.',
   },
 ]
