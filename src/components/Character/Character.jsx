@@ -31,7 +31,7 @@ const Character = ({ character }) => {
 
   return (
     <div
-      className={`hover:-translate-y-2  duration-500 flex flex-col justify-start rounded-lg shadow-md  group rounded-t-md transition-all ease-in-out border-2 border-gray-300/80  rounded-b-[3.4rem] overflow-hidden `}
+      className={`hover:-translate-y-2  duration-500 flex flex-col justify-start rounded-md shadow-md  group  transition-all ease-in-out border-2 border-gray-300/80  overflow-hidden `}
       onMouseEnter={() => handleSelect(true)}
       onMouseLeave={() => handleSelect(false)}
       key={character.rank}
@@ -40,7 +40,7 @@ const Character = ({ character }) => {
         {btnPlay && (
           <button onClick={() => handleClick()} className='btnPlay'>
             <i className='fa-solid fa-play text-xl'></i>
-            <span className='text-2xl'>Play</span>
+            <span>Play</span>
           </button>
         )}
         <img
@@ -50,7 +50,7 @@ const Character = ({ character }) => {
         />
         <p
           className={`blur-0 text-center rotate-[30deg] absolute top-2 -right-7 text-amber-500 bg-yellow-200
-          px-16 py-[0.10rem] text-xl font-semibold shadow-lg
+          px-16 py-[0.10rem]  font-semibold shadow-lg
         `}
         >
           #{character.rank}
@@ -61,11 +61,11 @@ const Character = ({ character }) => {
       bg-gradient-to-br from-slate-400/70 via-white to-white'
       >
         <div className='flex justify-between items-center '>
-          <h2 className='text-gray-700 text-xl font-semibold'>
+          <h2 className='text-gray-700 font-semibold'>
             {character.personName}
           </h2>
 
-          <span className='text-xl text-green-700 bg-green-100 px-2 py-1 rounded-md'>
+          <span className=' text-green-700 bg-green-100 px-2 py-1 rounded-md'>
             {formatter.format(character.estWorthPrev)} Million
           </span>
         </div>

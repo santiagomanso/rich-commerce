@@ -6,7 +6,7 @@ const CharactersScreen = () => {
   const { characters, loading, error, setCharacters } = useCharacters()
   return (
     <main>
-      <h1 className='mt-14 text-xl font-semibold text-gray-600'>
+      <h1 className='mt-14 font-semibold text-gray-600'>
         Select your billionaire
       </h1>
       {loading ? <SkeletonGrid /> : <CharactersGrid characters={characters} />}

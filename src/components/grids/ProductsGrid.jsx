@@ -10,11 +10,11 @@ const ProductsGrid = ({ item }) => {
       </div>
       <div className='h-[33vh] bg-gradient-to-br from-slate-400/70 via-white to-white px-5 py-8'>
         <div className='grid grid-cols-3 '>
-          <p className='text-gray-700 text-xl font-semibold'>{item.left_col}</p>
-          <p className='text-center text-gray-700 text-xl font-semibold'>
+          <p className='text-gray-700  font-semibold'>{item.left_col}</p>
+          <p className='text-center text-gray-700  font-semibold'>
             {item.mid_col}
           </p>
-          <span className='text-xl text-green-700 bg-green-100 px-2 py-1 rounded-md'>
+          <span className=' text-green-700 bg-green-100 px-2 py-1 rounded-md'>
             {item.right_col} Million
           </span>
         </div>

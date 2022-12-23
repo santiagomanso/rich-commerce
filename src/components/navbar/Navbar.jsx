@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav>
       {/* Mobile Navigation */}
       <button className='btnNavOpen' onClick={() => setOpenNav(true)}>
-        <i className='text-2xl sm:text-4xl fa-solid fa-bars'></i>
+        <i className='fa-solid fa-bars'></i>
       </button>
       <aside
         id='aside'
@@ -27,7 +27,7 @@ const Navbar = () => {
           id='navClose'
           onClick={() => setOpenNav(false)}
         >
-          <i className='text-2xl text-white sm:text-4xl fa-solid fa-bars'></i>
+          <i className='text-white sm:text-4xl fa-solid fa-bars'></i>
         </button>
         <ul className='flex flex-col gap-24 text-center font-black'>
           <Link
@@ -38,7 +38,7 @@ const Navbar = () => {
             }}
             className={`${
               active === 'home' ? 'border-b-[6px] border-indigo-400' : ''
-            } text-3xl`}
+            } `}
           >
             Home
           </Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
             }}
             className={`${
               active === 'profile' ? 'border-b-[6px] border-indigo-400' : ''
-            } text-3xl`}
+            } `}
           >
             Profile
           </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
           } flex items-center gap-2`}
         >
           <i className={` fa-solid fa-house text-xl text-slate-600`}></i>
-          <span className='text-xl'>Home</span>
+          <span>Home</span>
         </Link>
 
         <div className='flex space-x-14 items-center'>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <span className='text-lg'>characters</span>
+            <span>characters</span>
           </Link>
           <Link
             to='/Login'
@@ -93,7 +93,7 @@ const Navbar = () => {
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <span className='text-lg'>Log in</span>
+            <span>Log in</span>
           </Link>
           <Link
             to='/Cart'
@@ -105,7 +105,7 @@ const Navbar = () => {
             } flex items-center gap-2`}
           >
             <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
-            <span className='text-lg'> Cart </span>
+            <span> Cart </span>
           </Link>
           <Link
             to='/profile'
@@ -117,7 +117,7 @@ const Navbar = () => {
             } flex items-center gap-2`}
           >
             <i className='fa-solid fa-circle-user text-xl text-slate-600'></i>
-            <span className='text-lg'>Profile</span>
+            <span>Profile</span>
           </Link>
         </div>
       </div>

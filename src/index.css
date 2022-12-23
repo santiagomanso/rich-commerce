@@ -8,12 +8,35 @@
   padding: 0;
 }
 
-main {
-  @apply my-5;
+@layer base {
+  p {
+    @apply text-sm md:text-lg;
+  }
+
+  main {
+    @apply my-5;
+  }
+
+  h2 {
+    @apply text-xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply lg:text-xl;
+  }
+
+  section {
+    @apply my-5;
+  }
+
+  button {
+    @apply px-3 py-2 md:py-3;
+  }
 }
 
-section {
-  @apply my-5;
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
 }
 
 /* Exact resolution */

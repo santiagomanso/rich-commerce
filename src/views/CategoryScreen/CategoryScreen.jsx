@@ -21,9 +21,11 @@ const CategoryScreen = () => {
   const [filteredItems, setfilteredItems] = useState(filterItems)
   //map de prouct con filter
 
+  console.log(`category: ${products}`)
+
   return (
     <div>
-      <h1 className='mt-14 mb-2 text-xl font-semibold text-gray-600'>
+      <h1 className='mt-14 mb-2 font-semibold text-gray-600'>
         Private Islands
       </h1>
       {/* from a category, a collection of products get rendered */}
@@ -32,7 +34,7 @@ const CategoryScreen = () => {
       ) : (
         <div className='grid grid-cols-2 gap-8'>
           {filterItems.map((item) => (
-            <ProductsGrid item={item} />
+            <ProductsGrid item={item} key={item.product_id} />
           ))}
         </div>
       )}

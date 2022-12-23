@@ -9,7 +9,7 @@ const useCharacters = () => {
   const fetchData = async () => {
     setLoading(true)
     const { data } = await axios.get(
-      'https://forbes400.herokuapp.com/api/forbes400?limit=15'
+      'https://forbes400.onrender.com/api/forbes400?limit=15'
     )
     setCharacters(data)
     setLoading(false)

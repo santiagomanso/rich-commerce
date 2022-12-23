@@ -25,13 +25,11 @@ const LoginScreen = () => {
   }
 
   return (
-    <section className='h-full flex items-center justify-center'>
+    <section className='h-full flex items-start justify-center '>
       <div className='bg-gradient-to-br from-indigo-100 via-slate-200/50 to-slate-400/80 md:to-sky-900/40 flex rounded-2xl  md:p-5 shadow-lg items-stretch  md:h-auto w-full'>
         {/* form container */}
         <div className='w-full md:w-[45%] px-5 md:px-10 flex flex-col justify-center -translate-y-20 md:-translate-y-0'>
-          <h2 className='font-bold text-2xl text-indigo-900/80 select-none'>
-            Login
-          </h2>
+          <h2 className='font-bold text-indigo-900/80 select-none'>Login</h2>
 
           <form className='flex flex-col gap-2 mt-4'>
             <label className='flex flex-col'>
@@ -104,7 +102,7 @@ const LoginScreen = () => {
           </form>
           <div className='mt-8 grid grid-cols-3 items-center'>
             <hr className='border-gray-400' />
-            <p className='text-center text-sm text-gray-500'>OR</p>
+            <p className='text-center text-gray-500'>OR</p>
             <hr className='border-gray-400' />
           </div>
 
