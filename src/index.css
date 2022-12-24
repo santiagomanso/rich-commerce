@@ -17,8 +17,12 @@
     @apply my-5;
   }
 
+  h1 {
+    @apply text-xl md:text-3xl;
+  }
+
   h2 {
-    @apply text-xl lg:text-4xl;
+    @apply text-xl md:text-2xl lg:text-3xl;
   }
 
   h3 {

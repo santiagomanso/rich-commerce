@@ -25,8 +25,8 @@ const LoginScreen = () => {
   }
 
   return (
-    <section className='h-full flex items-start justify-center '>
-      <div className='bg-gradient-to-br from-indigo-100 via-slate-200/50 to-slate-400/80 md:to-sky-900/40 flex rounded-2xl  md:p-5 shadow-lg items-stretch  md:h-auto w-full'>
+    <section className='h-4/5 flex items-start lg:items-center justify-center'>
+      <div className='bg-gradient-to-br from-indigo-200 via-slate-200/50 to-slate-400/80 md:to-sky-900/40 flex rounded-2xl  md:p-5 shadow-lg items-stretch  md:h-auto w-full'>
         {/* form container */}
         <div className='w-full md:w-[45%] px-5 md:px-10 flex flex-col justify-center -translate-y-20 md:-translate-y-0'>
           <h2 className='font-bold text-indigo-900/80 select-none'>Login</h2>

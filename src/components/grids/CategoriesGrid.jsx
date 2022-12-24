@@ -7,8 +7,8 @@ const CategoriesGrid = ({ categories }) => {
         Our Categories of luxury assets
       </h1>
       <div
-        className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 select-none
-      md:gap-10 gap-y-10
+        className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 select-none
+      sm:gap-5 md:gap-10 gap-y-10
       '
       >
         {categories
