@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import loginPNG from '../../assets/login.jpg'
+import { UserAuth } from '../../context/AuthContext'
 
 const LoginScreen = () => {
   //states to control form
@@ -9,19 +10,35 @@ const LoginScreen = () => {
   const [error, setError] = useState(null)
 
   //extract signIn from context
+  const { signIn, user } = UserAuth()
 
   const navigate = useNavigate()
 
   useEffect(() => {
     //redirects when successfull login to home page
-  }, [])
+    if (user) {
+      navigate('/')
+    }
+  }, [user, navigate, error])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    try {
+      await signIn(email, password)
+      navigate('/')
+    } catch (e) {
+      setError(e.message)
+      console.log(e.message)
+    }
   }
 
+  //handle guest mandar como argumento signIn(guest@guest.com, superguest)
   const handleGuest = (e) => {
     e.preventDefault()
+    signIn(
+      process.env.REACT_APP_GUEST_USERNAME,
+      process.env.REACT_APP_GUEST_PASSWORD
+    )
   }
 
   return (
