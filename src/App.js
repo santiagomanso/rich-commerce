@@ -8,32 +8,35 @@ import LoginScreen from './views/LoginScreen/LoginScreen'
 import ProfileScreen from './views/ProfileScreen/ProfileScreen'
 import CharactersScreen from './views/CharacterScreen/CharactersScreen'
 import FloatingBudget from './components/FloatingBudget/FloatingBudget'
-import { ContextProvider } from './context/Context'
+import { PlayerProvider } from './context/PlayerContext'
 import CategoryScreen from './views/CategoryScreen/CategoryScreen'
+import { AuthContextProvider } from './context/AuthContext'
 
 function App() {
   return (
-    <ContextProvider>
-      <MainContainer>
-        <BrowserRouter>
-          <Navbar />
-          <FloatingBudget />
-          <Routes>
-            <Route exact path='/' element={<HomeScreen />} />
-            <Route exact path='/characters' element={<CharactersScreen />} />
-            <Route exact path='/profile' element={<ProfileScreen />} />
-            <Route exact path='/login' element={<LoginScreen />} />
-            <Route exact path='/cart' element={<CartScreen />} />
-            <Route
-              exact
-              path='/category/:categoryId'
-              element={<CategoryScreen />}
-            />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </MainContainer>
-    </ContextProvider>
+    <AuthContextProvider>
+      <PlayerProvider>
+        <MainContainer>
+          <BrowserRouter>
+            <Navbar />
+            <FloatingBudget />
+            <Routes>
+              <Route exact path='/' element={<HomeScreen />} />
+              <Route exact path='/characters' element={<CharactersScreen />} />
+              <Route exact path='/profile' element={<ProfileScreen />} />
+              <Route exact path='/login' element={<LoginScreen />} />
+              <Route exact path='/cart' element={<CartScreen />} />
+              <Route
+                exact
+                path='/category/:categoryId'
+                element={<CategoryScreen />}
+              />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </MainContainer>
+      </PlayerProvider>
+    </AuthContextProvider>
   )
 }
 
