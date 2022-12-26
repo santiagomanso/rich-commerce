@@ -1,9 +1,9 @@
 const ProductsGrid = ({ item }) => {
   return (
-    <div className='hover:-translate-y-1  duration-500 flex flex-col justify-between rounded-lg shadow-md  group rounded-t-md transition-all ease-in-out border-2 border-gray-300/80  rounded-b-[3.4rem] relative h-[80vh]'>
+    <div className='hover:-translate-y-1  duration-500 flex flex-col justify-between shadow-md rounded group  transition-all ease-in-out border-2 border-gray-300/80  rounded-b-[3.4rem] relative h-[80vh]'>
       <div className='h-[50vh] w-full overflow-hidden'>
         <img
-          className='h-full w-full object-cover border-2 border-gray-100 rounded-lg'
+          className='h-full w-full object-cover border-2 border-gray-100'
           src={`${item.img}`}
           alt={`${item.name}`}
         />

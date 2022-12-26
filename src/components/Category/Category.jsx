@@ -5,7 +5,7 @@ const Category = ({ category }) => {
   return (
     <Link
       to={`/category/${category.category_id}`}
-      className={`group bg-gradient-to-b rounded-t-md transition-all ease-in-out border-2 border-gray-300/80  ${category.row} ${category.col} flex flex-col flex-1  overflow-hidden shadow-md`}
+      className={`group bg-gradient-to-b rounded-md transition-all ease-in-out border-2 border-gray-300/80  ${category.row} ${category.col} flex flex-col flex-1  overflow-hidden shadow-md`}
       key={category.category_id}
     >
       <div className='h-full relative'>
