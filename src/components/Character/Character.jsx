@@ -1,9 +1,22 @@
+import { useEffect } from 'react'
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Context } from '../../context/Context'
+import { PlayerContext } from '../../context/PlayerContext'
 import './character.css'
+import { UserAuth } from '../../context/AuthContext'
 
 const Character = ({ character }) => {
+  const { user } = UserAuth()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login')
+    }
+    return () => {}
+  }, [user, navigate])
+
   // Create our number formatter.
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -15,9 +28,8 @@ const Character = ({ character }) => {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   })
 
-  const [player, setPlayer] = useContext(Context)
+  const [player, setPlayer] = useContext(PlayerContext)
 
-  const navigate = useNavigate()
   const [btnPlay, setBtnPlay] = useState(false)
 
   const handleSelect = (bool) => {
