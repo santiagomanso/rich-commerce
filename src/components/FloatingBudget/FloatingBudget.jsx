@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Context } from '../../context/Context'
+import { PlayerContext } from '../../context/PlayerContext'
 
 const FloatingBudget = () => {
   // Create our number formatter.
@@ -13,7 +13,7 @@ const FloatingBudget = () => {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   })
 
-  const [player, setPlayer] = useContext(Context)
+  const [player, setPlayer] = useContext(PlayerContext)
   return (
     <>
       {player && (
