@@ -1,13 +1,28 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../../context/AuthContext'
+import Dropdown from '../dropdown/Dropdown'
 import './navbar.css'
 
 const Navbar = () => {
+  const { user, logout } = UserAuth()
+
+  const navigate = useNavigate()
+
   const [openNav, setOpenNav] = useState(false) //navbar logic
   const [active, setActive] = useState('home') //underline active navigation
 
   const handleActive = (link) => {
     setActive(link)
+  }
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+      navigate('/login')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -73,6 +88,7 @@ const Navbar = () => {
         </Link>
 
         <div className='flex space-x-14 items-center'>
+          {user ? <button onClick={handleLogout}>logout</button> : ''}
           <Link
             to='/characters'
             onClick={() => handleActive('characters')}
@@ -107,18 +123,7 @@ const Navbar = () => {
             <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
             <span> Cart </span>
           </Link>
-          <Link
-            to='/profile'
-            onClick={() => handleActive('profile')}
-            className={`hover:border-slate-600 ${
-              active === 'profile'
-                ? 'border-b-4 border-slate-600'
-                : 'border-b-4 border-transparent'
-            } flex items-center gap-2`}
-          >
-            <i className='fa-solid fa-circle-user text-xl text-slate-600'></i>
-            <span>Profile</span>
-          </Link>
+          {user ? <Dropdown /> : ''}
         </div>
       </div>
     </nav>
