@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
@@ -11,6 +12,13 @@ const Navbar = () => {
 
   const [openNav, setOpenNav] = useState(false) //navbar logic
   const [active, setActive] = useState('home') //underline active navigation
+  const [email, setEmail] = useState('') //to send to child dropDown
+
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email)
+    }
+  }, [user])
 
   const handleActive = (link) => {
     setActive(link)
@@ -19,7 +27,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await logout()
-      navigate('/login')
+      navigate('/')
     } catch (error) {
       console.log(error)
     }
@@ -42,7 +50,7 @@ const Navbar = () => {
           id='navClose'
           onClick={() => setOpenNav(false)}
         >
-          <i className='text-white sm:text-4xl fa-solid fa-bars'></i>
+          <i className='text-white  fa-solid fa-bars'></i>
         </button>
         <ul className='flex flex-col gap-24 text-center font-black'>
           <Link
@@ -123,7 +131,7 @@ const Navbar = () => {
             <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
             <span> Cart </span>
           </Link>
-          {user ? <Dropdown /> : ''}
+          {user ? <Dropdown name={email} logout={handleLogout} /> : ''}
         </div>
       </div>
     </nav>
