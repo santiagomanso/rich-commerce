@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Reviews from '../Reviews/Reviews'
+import Rating from '../Rating/Rating'
 
 const Category = ({ category }) => {
   return (
@@ -10,7 +10,7 @@ const Category = ({ category }) => {
     >
       <div className='h-full relative'>
         <div className='h-full w-full relative overflow-hidden'>
-          <Reviews />
+          <Rating />
           <img
             className='group-hover:scale-125 duration-[2s] bg-black/60
             object-cover w-full h-full'
