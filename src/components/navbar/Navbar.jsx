@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import { useContext } from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
+import { PlayerContext } from '../../context/PlayerContext'
 import Dropdown from '../dropdown/Dropdown'
 import './navbar.css'
 
@@ -14,9 +16,13 @@ const Navbar = () => {
   const [active, setActive] = useState('home') //underline active navigation
   const [email, setEmail] = useState('') //to send to child dropDown
 
+  const { player, setPlayer } = useContext(PlayerContext)
+
   useEffect(() => {
     if (user) {
       setEmail(user.email)
+    } else {
+      setPlayer('')
     }
   }, [user])
 
@@ -36,6 +42,10 @@ const Navbar = () => {
   return (
     <nav>
       {/* Mobile Navigation */}
+      <Link to='/' className='flex items-center gap-1 pl-1'>
+        <i className='fa-solid fa-house text-slate-600 text-2xl'></i>
+        <span className='text-black text-xl'>Home</span>
+      </Link>
       <button className='btnNavOpen' onClick={() => setOpenNav(true)}>
         <i className='fa-solid fa-bars'></i>
       </button>
