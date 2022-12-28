@@ -15,7 +15,7 @@ const Character = ({ character }) => {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   })
 
-  const [player, setPlayer] = useContext(PlayerContext)
+  const { player, setPlayer } = useContext(PlayerContext)
 
   const navigate = useNavigate()
   const [btnPlay, setBtnPlay] = useState(false)
@@ -49,7 +49,7 @@ const Character = ({ character }) => {
           src={character.squareImage}
         />
         <p
-          className={`blur-0 text-center rotate-[30deg] absolute top-2 -right-7 text-amber-500 bg-yellow-200
+          className={`blur-0 text-center rotate-[30deg] absolute top-2 -right-7 text-amber-600 bg-yellow-200
           px-16 py-[0.10rem]  font-semibold shadow-lg
         `}
         >
@@ -61,9 +61,9 @@ const Character = ({ character }) => {
       bg-gradient-to-br from-slate-400/70 via-white to-white'
       >
         <div className='flex justify-between items-center '>
-          <h2 className='text-gray-700 font-semibold'>
+          <h3 className='text-gray-700 font-semibold'>
             {character.personName}
-          </h2>
+          </h3>
 
           <span className=' text-green-700 bg-green-100 px-2 py-1 rounded-md'>
             {formatter.format(character.estWorthPrev)} Million
