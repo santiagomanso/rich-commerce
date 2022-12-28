@@ -13,7 +13,7 @@ const FloatingBudget = () => {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   })
 
-  const [player, setPlayer] = useContext(PlayerContext)
+  const { player, setPlayer } = useContext(PlayerContext)
   return (
     <>
       {player && (
