@@ -1,0 +1,19 @@
+.dropdownWrapper {
+  @apply relative  hover:border-slate-600 cursor-pointer flex items-center gap-2;
+}
+
+.dropdownWrapper > i {
+  @apply text-xl text-slate-600 duration-500;
+}
+
+.dropdownWrapper ul {
+  @apply flex-col gap-3 absolute top-10 right-0 shadow-lg z-10 w-56 bg-slate-100 p-2 rounded-md flex duration-150;
+}
+
+.dropdownWrapper ul li {
+  @apply flex items-center gap-2 hover:bg-slate-300 p-4 rounded-md;
+}
+
+.dropdownWrapper ul li i {
+  @apply text-slate-600 group-hover:text-red-600 rotate-180 group-hover:rotate-0 scale-0 group-hover:scale-150 duration-500;
+}

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import Rating from '../Rating/Rating'
+import './category.css'
 
 const Category = ({ category }) => {
   return (
     <Link
       to={`/category/${category.category_id}`}
-      className={`group bg-gradient-to-b rounded-md transition-all ease-in-out border-2 border-gray-300/80  ${category.row} ${category.col} flex flex-col flex-1  overflow-hidden shadow-md`}
+      className={`categoryCard group ${category.row} ${category.col} `}
       key={category.category_id}
     >
       <div className='h-full relative'>
@@ -21,10 +22,10 @@ const Category = ({ category }) => {
         {category.adult || category.new ? (
           <div
             className={`text-center rotate-[30deg] absolute top-2 -right-7 
-      ${category.adult ? 'text-red-500 bg-red-200' : ''}
-      ${
-        category.new ? 'text-amber-500 bg-yellow-200' : ''
-      } px-14 py-[0.10rem] text-lg font-semibold shadow-lg`}
+          ${category.adult ? 'text-red-500 bg-red-200' : ''}
+          ${
+            category.new ? 'text-amber-500 bg-yellow-200' : ''
+          } px-14 py-[0.10rem] text-lg font-semibold shadow-lg`}
           >
             {category.adult ? '+16' : ''}
             {category.new ? 'NEW' : ''}
@@ -33,10 +34,7 @@ const Category = ({ category }) => {
           ''
         )}
       </div>
-      <div
-        className='duration-700 bg-gradient-to-t
-        from-gray-300 via-white to-white flex flex-col items-center px-5 py-4'
-      >
+      <div className='categoryDesc'>
         <h3 className='text-gray-700  font-semibold'>{category.name}</h3>
         <p className='text-gray-500 font-medium'>{category.desc}</p>
       </div>

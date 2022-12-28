@@ -42,9 +42,9 @@ const Navbar = () => {
   return (
     <nav>
       {/* Mobile Navigation */}
-      <Link to='/' className='flex items-center gap-1 pl-1'>
-        <i className='fa-solid fa-house text-slate-600 text-2xl'></i>
-        <span className='text-black text-xl'>Home</span>
+      <Link to='/' className='homeDiv'>
+        <i className='fa-solid fa-house'></i>
+        <span>Home</span>
       </Link>
       <button className='btnNavOpen' onClick={() => setOpenNav(true)}>
         <i className='fa-solid fa-bars'></i>
@@ -62,7 +62,7 @@ const Navbar = () => {
         >
           <i className='text-white  fa-solid fa-bars'></i>
         </button>
-        <ul className='flex flex-col gap-24 text-center font-black'>
+        <ul>
           <Link
             to='/'
             onClick={() => {
@@ -91,7 +91,7 @@ const Navbar = () => {
       </aside>
 
       {/* Pc Navigation */}
-      <div className='navPc hidden lg:flex justify-between items-center'>
+      <div className='navPc'>
         <Link
           to='/'
           onClick={() => handleActive('home')}

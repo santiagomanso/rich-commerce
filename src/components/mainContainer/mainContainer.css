@@ -1,0 +1,7 @@
+.outterDiv {
+  @apply bg-gradient-to-b from-white via-white to-slate-400 h-screen overflow-auto;
+}
+
+.innerDiv {
+  @apply h-screen mx-auto   lg:max-w-[1536px] lg:px-2 py-5 font-primary;
+}

@@ -31,7 +31,7 @@ const Character = ({ character }) => {
 
   return (
     <div
-      className={`hover:-translate-y-2  duration-500 flex flex-col justify-start rounded-md shadow-md  group  transition-all ease-in-out border-2 border-gray-300/80  overflow-hidden `}
+      className={`characterCard group`}
       onMouseEnter={() => handleSelect(true)}
       onMouseLeave={() => handleSelect(false)}
       key={character.rank}
@@ -43,33 +43,16 @@ const Character = ({ character }) => {
             <span>Play</span>
           </button>
         )}
-        <img
-          className='group-hover:scale-[1.07] duration-[1s] bg-black/60 object-fill w-full h-full'
-          alt='imagen'
-          src={character.squareImage}
-        />
-        <p
-          className={`blur-0 text-center rotate-[30deg] absolute top-2 -right-7 text-amber-600 bg-yellow-200
-          px-16 py-[0.10rem]  font-semibold shadow-lg
-        `}
-        >
-          #{character.rank}
-        </p>
+        <img className='' alt='imagen' src={character.squareImage} />
+        <p className={`characterRank`}>#{character.rank}</p>
       </div>
-      <div
-        className='flex flex-1 flex-col gap-y-3 justify-start p-5 h-1/3
-      bg-gradient-to-br from-slate-400/70 via-white to-white'
-      >
-        <div className='flex justify-between items-center '>
-          <h3 className='text-gray-700 font-semibold'>
-            {character.personName}
-          </h3>
+      <div className='characterDescWrapper'>
+        <div>
+          <h3>{character.personName}</h3>
 
-          <span className=' text-green-700 bg-green-100 px-2 py-1 rounded-md'>
-            {formatter.format(character.estWorthPrev)} Million
-          </span>
+          <span>{formatter.format(character.estWorthPrev)} Million</span>
         </div>
-        <p className='text-gray-600 font-medium'>{character.bios[0]}</p>
+        <p>{character.bios[0]}</p>
       </div>
     </div>
   )
