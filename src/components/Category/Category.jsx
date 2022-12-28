@@ -12,7 +12,7 @@ const Category = ({ category }) => {
         <div className='h-full w-full relative overflow-hidden'>
           <Rating />
           <img
-            className='group-hover:scale-125 duration-[2s] bg-black/60
+            className='group-hover:scale-110 duration-[2s] bg-black/60
             object-cover w-full h-full'
             alt='imagen'
             src={category.img}
