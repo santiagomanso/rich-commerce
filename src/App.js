@@ -12,6 +12,7 @@ import { PlayerProvider } from './context/PlayerContext'
 import CategoryScreen from './Pages/CategoryScreen/CategoryScreen'
 import { AuthContextProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import HowToPlayScreen from './Pages/HowToPlayScreen/HowToPlayScreen'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               />
               <Route exact path='/profile' element={<ProfileScreen />} />
               <Route exact path='/login' element={<LoginScreen />} />
+              <Route exact path='/howtoplay' element={<HowToPlayScreen />} />
               <Route
                 exact
                 path='/cart'
