@@ -106,7 +106,9 @@ const Navbar = () => {
         </Link>
 
         <div className='flex space-x-14 items-center'>
-          {user ? <button onClick={handleLogout}>logout</button> : ''}
+          <Link to='/howtoplay'>
+            <span>How to play</span>
+          </Link>
           <Link
             to='/characters'
             onClick={() => handleActive('characters')}
