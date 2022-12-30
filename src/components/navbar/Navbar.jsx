@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import Dropdown from '../dropdown/Dropdown'
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './navbar.css'
 
 const Navbar = () => {
@@ -106,7 +107,16 @@ const Navbar = () => {
         </Link>
 
         <div className='flex space-x-14 items-center'>
-          <Link to='/howtoplay'>
+          <ThemeSwitcher />
+          <Link
+            to='/howtoplay'
+            onClick={() => handleActive('howtoplay')}
+            className={`hover:border-slate-600 ${
+              active === 'howtoplay'
+                ? 'border-b-4 border-slate-600'
+                : 'border-b-4 border-transparent'
+            } flex items-center gap-2`}
+          >
             <span>How to play</span>
           </Link>
           <Link
