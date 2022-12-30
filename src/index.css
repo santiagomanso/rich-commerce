@@ -9,8 +9,12 @@
 }
 
 @layer base {
+  span {
+    @apply text-gray-800 dark:text-gray-100;
+  }
+
   p {
-    @apply text-sm md:text-lg;
+    @apply text-sm md:text-lg text-gray-800 dark:text-gray-100;
   }
 
   main {
@@ -18,15 +22,15 @@
   }
 
   h1 {
-    @apply text-xl md:text-3xl;
+    @apply text-xl md:text-3xl text-gray-800 dark:text-gray-100;
   }
 
   h2 {
-    @apply text-xl md:text-2xl lg:text-3xl;
+    @apply text-xl md:text-2xl lg:text-3xl text-gray-800 dark:text-gray-100;
   }
 
   h3 {
-    @apply lg:text-xl;
+    @apply lg:text-xl text-gray-800 dark:text-gray-100;
   }
 
   section {
