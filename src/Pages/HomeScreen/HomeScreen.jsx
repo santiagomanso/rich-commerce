@@ -7,10 +7,10 @@ const HomeScreen = () => {
 
   return (
     <main>
-      <section>
+      <section className='animate__animated animate__fadeIn'>
         <Carousel />
       </section>
-      <section>
+      <section className='animate__animated animate__fadeIn'>
         <CategoriesGrid categories={categories} />
       </section>
     </main>

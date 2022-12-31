@@ -2,7 +2,7 @@ import React from 'react'
 
 const HowToPlayScreen = () => {
   return (
-    <div className='lg:mt-10'>
+    <div className='lg:mt-10 animate__animated animate__fadeIn'>
       <span className='text-sky-700 font-semibold'>Getting started</span>
       <h1 className='font-semibold text-slate-900'>
         How To Play Billionaire eCommerce!
