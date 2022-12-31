@@ -1,5 +1,5 @@
 .outterDiv {
-  @apply h-screen overflow-auto;
+  @apply bg-gradient-to-bl h-screen overflow-auto;
 }
 
 .innerDiv {
