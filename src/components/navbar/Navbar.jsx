@@ -92,7 +92,7 @@ const Navbar = () => {
       </aside>
 
       {/* Pc Navigation */}
-      <div className='navPc'>
+      <div className='navPc animate__animated animate__flipInX'>
         <Link
           to='/'
           onClick={() => handleActive('home')}
