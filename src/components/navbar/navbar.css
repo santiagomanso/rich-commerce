@@ -35,3 +35,8 @@ aside {
 .navPc {
   @apply hidden lg:flex justify-between items-center;
 }
+
+.navPc i:not(.fa-sun, .fa-moon) {
+  /* css selector not to change theme icons */
+  @apply dark:text-gray-200;
+}
