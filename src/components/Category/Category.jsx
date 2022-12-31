@@ -6,7 +6,8 @@ const Category = ({ category }) => {
   return (
     <Link
       to={`/category/${category.category_id}`}
-      className={`categoryCard group ${category.row} ${category.col} `}
+      className={`categoryCard group ${category.row} ${category.col} 
+      bg-white dark:bg-slate-800/60`}
       key={category.category_id}
     >
       <div className='h-full relative'>
