@@ -39,9 +39,9 @@ const Carousel = () => {
       >
         <SwiperSlide
           className='select-none rounded flex bg-gradient-to-tl
-         from-slate-500 dark:from-slate-700
-         via-gray-400   dark:via-stone-800
-         to-gray-300    dark:to-zinc-900
+         from-slate-500 dark:from-indigo-700/20
+         via-gray-400   dark:via-violet-900/10
+         to-gray-300    dark:to-violet-900/20
          '
         >
           <div className='relative w-full flex flex-col items-start justify-center gap-5'>
