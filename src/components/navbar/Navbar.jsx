@@ -28,7 +28,7 @@ const Navbar = () => {
   }, [user])
 
   const handleActive = (link) => {
-    setActive(link)
+    setActive('')
   }
 
   const handleLogout = async () => {
@@ -92,7 +92,7 @@ const Navbar = () => {
       </aside>
 
       {/* Pc Navigation */}
-      <div className='navPc animate__animated animate__flipInX'>
+      <div className='navPc z-40'>
         <Link
           to='/'
           onClick={() => handleActive('home')}
@@ -128,7 +128,7 @@ const Navbar = () => {
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <span>characters</span>
+            <span>Characters</span>
           </Link>
           <Link
             to='/Login'
