@@ -22,6 +22,7 @@ function App() {
           <BrowserRouter>
             <Navbar />
             <FloatingBudget />
+
             <Routes>
               <Route exact path='/' element={<HomeScreen />} />
               <Route
