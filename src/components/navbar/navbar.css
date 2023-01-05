@@ -33,7 +33,7 @@ aside {
 
 /* Pc Navbar */
 .navPc {
-  @apply hidden lg:flex justify-between items-center;
+  @apply hidden lg:flex justify-between items-center z-30;
 }
 
 .navPc i:not(.fa-sun, .fa-moon) {
