@@ -8,60 +8,60 @@ module.exports = {
         primary: 'Poppins',
       },
       animation: {
-        blobLeft: 'blobLeft 4s infinite',
-        blobRight: 'blobRight 7s infinite',
+        blobLeft: 'blobLeft 14s infinite',
+        blobRight: 'blobRight 27s infinite',
         blobBottom: 'blobBottom 10s infinite',
       },
       keyframes: {
         blobLeft: {
           '0%': {
-            transform: 'translate(0%, 0%) scale(1)',
+            transform: 'translate(0%, 0%) ',
           },
           '33%': {
-            transform: 'translate(10%, -20%) scale(1.2)',
+            transform: 'translate(10%, -10%)',
           },
           '66%': {
-            transform: 'translate(-20%, 20%) scale(0.8)',
+            transform: 'translate(-10%, 10%)',
           },
           '90%': {
-            transform: 'translate(50%, 3%) scale(0.4)',
+            transform: 'translate(30%, 3%)',
           },
           '100%': {
-            transform: 'translate(0%, 0%) scale(1)',
+            transform: 'translate(0%, 0%)',
           },
         },
         blobRight: {
           '0%': {
-            transform: 'translate(0%, 0%) scale(1)',
+            transform: 'translate(0%, 0%) ',
           },
           '33%': {
-            transform: 'translate(-90%, 70%) scale(1.2)',
+            transform: 'translate(-90%, 70%)',
           },
           '66%': {
-            transform: 'translate(-100%, -55%) scale(0.8)',
+            transform: 'translate(-100%, -55%) ',
           },
           '90%': {
-            transform: 'translate(-50%, -3%) scale(0.4)',
+            transform: 'translate(-50%, -3%) ',
           },
           '100%': {
-            transform: 'translate(0%, 0%) scale(1)',
+            transform: 'translate(0%, 0%) ',
           },
         },
         blobBottom: {
           '0%': {
-            transform: 'translate(0%, 0%) scale(0.5)',
+            transform: 'translate(0%, 0%)',
           },
           '33%': {
-            transform: 'translate(25%, -70%) scale(1.2)',
+            transform: 'translate(25%, -70%) ',
           },
           '66%': {
-            transform: 'translate(-25%, -80%) scale(0.8)',
+            transform: 'translate(-25%, -80%) ',
           },
           '90%': {
-            transform: 'translate(25%, -70%) scale(0.4)',
+            transform: 'translate(25%, -70%) ',
           },
           '100%': {
-            transform: 'translate(0%, 0%) scale(1)',
+            transform: 'translate(0%, 0%) ',
           },
         },
       },
