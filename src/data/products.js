@@ -106,7 +106,7 @@ export const products = [
     category_id: 3, //Superb Cars
     name: 'Bugatti La Voiture Noire',
     img: 'https://cdn.motor1.com/images/mgl/oz2j0/s1/bugatti-la-voiture-noire.webp',
-    left_col: 'model: Bugatti La Voiture Noire',
+    left_col: 'Bugatti La Voiture Noire',
     mid_col: 5,
     right_col: 13500000,
     desc: 'With a price tag of $13.4 million, the one-off Bugatti La Voiture Noire is officially the most expensive new Bugatti ever made. And understandably so. A modern interpretation of Jean Bugatti personal Type 57 SC Atlantic, the La Voiture Noire uses the same quad-turbocharged 8.0-liter W16 engine as the Chiron, producing 1,479 horsepower. It has six - thats right, six exhaust tips, radical new wheels, an aggressive, bespoke fascia, and a gigantic light-up badge in the rear that spells out the name of the brand. Of course, this one-of-one Bugatti already has a home.',
@@ -117,7 +117,7 @@ export const products = [
     category_id: 3, //Superb Cars
     name: 'Rolls-Royce Sweptail',
     img: 'https://cdn.motor1.com/images/mgl/mMMA4P/s1/rolls-royce-sweptail.webp',
-    left_col: 'model: Rolls-Royce Sweptail',
+    left_col: 'Rolls-Royce Sweptail',
     mid_col: 5,
     right_col: 12800000,
     desc: 'Rolls-Royce, expectedly, takes two of the top three spots on this list, with the stunning Sweptail one-off from 2017 coming in at number three. With a monumental price tag of $13.0 million, it was, at the time of its debut, the most expensive new car ever. It is been outpriced since then, but the 453-horsepower luxury car is still a jaw-dropper.',
@@ -127,7 +127,7 @@ export const products = [
     category_id: 3, //Superb Cars
     name: 'Bugatti Centodieci',
     img: 'https://cdn.motor1.com/images/mgl/q9EVR/s1/most-expensive-cars.webp',
-    left_col: 'model: Bugatti Centodieci',
+    left_col: 'Bugatti Centodieci',
     mid_col: 5,
     right_col: 12800000,
     desc: 'Bugatti debuted the Centodieci at last years Pebble Beach car week, showing off yet another ultra-rare, super-expensive model to the world. Limited to just 10  dieci  units, the car is a modern throwback to the Bugatti EB110. At the same time, its meant to celebrate Bugattis momentous 110-year anniversary. Its unique styling cues wont make everyone fall in love, but at least you wont have to worry about seeing another one on the road. Carrying a price just shy of $9 million, the Centodiece is one of the most exclusive cars ever made.',
