@@ -35,13 +35,13 @@ const Carousel = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className='mySwiper h-[45vh] md:h-[30vh] lg:h-[50vh]  z-0'
+        className='mySwiper h-[45vh] md:h-[30vh] lg:h-[35vh]  z-0'
       >
         <SwiperSlide
           className='select-none rounded flex bg-gradient-to-tl
-         from-slate-500 dark:from-indigo-700/20
-         via-gray-400   dark:via-violet-900/10
-         to-gray-300    dark:to-violet-900/20
+         from-slate-500/60 dark:from-indigo-900/60
+         via-gray-400/95   dark:via-gray-900/95 
+         to-gray-300/90    dark:to-slate-800/90 
          '
         >
           <div className='relative w-full flex flex-col items-start justify-center gap-5'>
