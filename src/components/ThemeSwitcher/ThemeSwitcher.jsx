@@ -1,11 +1,14 @@
 import { useState } from 'react'
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = ({ setOpenNav }) => {
   const [active, setActive] = useState('sun')
   return (
     <div className='flex items-center text-2xl border-b-2 border-transparent gap-x-5 rounded-md'>
       <i
         onClick={() => {
+          if (setOpenNav) {
+            setOpenNav(false)
+          }
           setActive('sun')
           document.documentElement.classList.remove('dark')
         }}
@@ -15,6 +18,9 @@ const ThemeSwitcher = () => {
       ></i>
       <i
         onClick={() => {
+          if (setOpenNav) {
+            setOpenNav(false)
+          }
           setActive('moon')
           document.documentElement.classList.add('dark')
         }}
