@@ -23,7 +23,7 @@
 
 .characterDescWrapper {
   @apply flex flex-1 flex-col gap-y-3 justify-start p-5 h-1/3
-  bg-gradient-to-br from-slate-400/70 via-white to-white;
+  bg-gradient-to-br from-slate-400/60 via-white/60 to-white/60 dark:from-black/90 dark:to-slate-800 z-10;
 }
 
 .characterDescWrapper div {
@@ -31,9 +31,9 @@
 }
 
 .characterDescWrapper div h3 {
-  @apply text-gray-700 font-semibold;
+  @apply font-semibold;
 }
 
 .characterDescWrapper div span {
-  @apply text-green-700 bg-green-100 px-2 py-1 rounded-md;
+  @apply text-green-700 bg-green-200 dark:text-green-900 dark:bg-green-200 px-2 py-1 rounded-md;
 }
