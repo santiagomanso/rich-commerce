@@ -1,5 +1,5 @@
 .categoryCard {
-  @apply rounded-md transition-all ease-in-out border-2 border-gray-300/80 flex flex-col flex-1 overflow-hidden shadow-md;
+  @apply rounded-md transition-all ease-in-out border-2 border-gray-300/80 flex flex-col flex-shrink overflow-hidden shadow-md;
 }
 
 .categoryDesc {
