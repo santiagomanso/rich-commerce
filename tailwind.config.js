@@ -8,9 +8,9 @@ module.exports = {
         primary: 'Poppins',
       },
       animation: {
-        blobLeft: 'blobLeft 14s infinite',
-        blobRight: 'blobRight 27s infinite',
-        blobBottom: 'blobBottom 10s infinite',
+        blobLeft: 'blobLeft 16s infinite',
+        blobRight: 'blobRight 12s infinite',
+        blobBottom: 'blobBottom 24s infinite',
       },
       keyframes: {
         blobLeft: {
@@ -18,13 +18,13 @@ module.exports = {
             transform: 'translate(0%, 0%) ',
           },
           '33%': {
-            transform: 'translate(10%, -10%)',
+            transform: 'translate(20%, -10%)',
           },
           '66%': {
-            transform: 'translate(-10%, 10%)',
+            transform: 'translate(10%, 10%)',
           },
           '90%': {
-            transform: 'translate(30%, 3%)',
+            transform: 'translate(5%, 3%)',
           },
           '100%': {
             transform: 'translate(0%, 0%)',
@@ -35,13 +35,13 @@ module.exports = {
             transform: 'translate(0%, 0%) ',
           },
           '33%': {
-            transform: 'translate(-90%, 70%)',
+            transform: 'translate(-25%, 10%)',
           },
           '66%': {
-            transform: 'translate(-100%, -55%) ',
+            transform: 'translate(-20%, 15%) ',
           },
           '90%': {
-            transform: 'translate(-50%, -3%) ',
+            transform: 'translate(-5%, 13%) ',
           },
           '100%': {
             transform: 'translate(0%, 0%) ',
@@ -52,13 +52,13 @@ module.exports = {
             transform: 'translate(0%, 0%)',
           },
           '33%': {
-            transform: 'translate(25%, -70%) ',
+            transform: 'translate(25%, -10%) ',
           },
           '66%': {
-            transform: 'translate(-25%, -80%) ',
+            transform: 'translate(-25%, -20%) ',
           },
           '90%': {
-            transform: 'translate(25%, -70%) ',
+            transform: 'translate(25%, -10%) ',
           },
           '100%': {
             transform: 'translate(0%, 0%) ',
