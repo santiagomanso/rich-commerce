@@ -32,6 +32,7 @@ const Navbar = () => {
   }
 
   const handleLogout = async () => {
+    setOpenNav(false)
     try {
       await logout()
       navigate('/')
@@ -56,6 +57,10 @@ const Navbar = () => {
           openNav ? 'translate-x-0' : '-translate-x-full'
         }   `}
       >
+        <div className='absolute top-5 left-4 text-white flex justify-start gap-x-16 w-full'>
+          {user ? <span className='text-white'>{email}</span> : ''}
+          <ThemeSwitcher setOpenNav={setOpenNav} />
+        </div>
         <button
           className='btnNavClose'
           id='navClose'
@@ -88,6 +93,52 @@ const Navbar = () => {
           >
             Profile
           </Link>
+          <Link
+            to='/characters'
+            onClick={() => {
+              setActive('characters')
+              setOpenNav(false)
+            }}
+            className={`${
+              active === 'characters' ? 'border-b-[6px] border-indigo-400' : ''
+            } `}
+          >
+            Characters
+          </Link>
+          <Link
+            to='/login'
+            onClick={() => {
+              setActive('login')
+              setOpenNav(false)
+            }}
+            className={`${
+              active === 'login' ? 'border-b-[6px] border-indigo-400' : ''
+            } `}
+          >
+            Login
+          </Link>
+          <Link
+            to='/cart'
+            onClick={() => {
+              setActive('cart')
+              setOpenNav(false)
+            }}
+            className={`${
+              active === 'cart' ? 'border-b-[6px] border-indigo-400' : ''
+            } `}
+          >
+            Cart
+          </Link>
+          {user ? (
+            <span
+              className='text-red-600 bg-red-200 py-2 rounded-md'
+              onClick={handleLogout}
+            >
+              Logout
+            </span>
+          ) : (
+            ''
+          )}
         </ul>
       </aside>
 
