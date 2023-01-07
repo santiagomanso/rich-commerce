@@ -1,6 +1,3 @@
-import bugatti from '../../assets/bugatti.png'
-import salvator from '../../assets/salvator.png'
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
