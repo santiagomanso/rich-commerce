@@ -9,7 +9,7 @@
 }
 
 @layer base {
-  span:not(button span) {
+  span:not(button span, aside span) {
     @apply text-gray-800 dark:text-gray-300;
   }
 
