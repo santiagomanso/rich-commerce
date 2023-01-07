@@ -28,7 +28,7 @@ nav aside ul {
 }
 
 aside {
-  @apply duration-300 flex lg:hidden bg-gradient-to-br from-black/95 to-slate-900/90 via-black/95 w-full h-full absolute top-0 left-0 z-20 text-white justify-center pt-20 select-none;
+  @apply duration-300 flex lg:hidden bg-gradient-to-br from-black/95 to-slate-900/90 via-black/95 w-full h-full absolute top-0 left-0 z-50 text-white justify-center pt-20 select-none;
 }
 
 /* Pc Navbar */

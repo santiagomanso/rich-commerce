@@ -65,7 +65,7 @@ const FloatingBudget = () => {
                 activeBudget ? 'translate-x-0' : '-translate-x-[11.2rem]'
               }
               bg-green-300  rounded-r-full absolute top-[50%]  left-0 w-[250px] translate-y-[60%]
-                px-2 py-6 flex gap-3 font-medium items-center  duration-500 border-2 border-green-600 cursor-pointer z-50`}
+                px-2 py-6 flex gap-3 font-medium items-center  duration-500 border-2 border-green-600 cursor-pointer z-40`}
             >
               <p className='text-green-800 dark:text-green-900 w-[150px]'>
                 {formatter.format(player.estWorthPrev)}M
@@ -76,7 +76,7 @@ const FloatingBudget = () => {
 
           {/* phone - tablets */}
           <div
-            className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-50 bg-gray-600/95 py-4  w-full sm:w-2/3 flex justify-evenly items-center
+            className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 flex justify-evenly items-center
           '
           >
             <div className='flex flex-col items-center'>
