@@ -5,7 +5,7 @@ const SkeletonGrid = () => {
   const skeletonData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
   return (
-    <div className='grid grid-cols-3 gap-10'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
       {skeletonData.map((item, i) => (
         <div
           key={i}
