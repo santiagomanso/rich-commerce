@@ -9,20 +9,19 @@ import ProfileScreen from './Pages/ProfileScreen/ProfileScreen'
 import CharactersScreen from './Pages/CharacterScreen/CharactersScreen'
 import FloatingBudget from './components/FloatingBudget/FloatingBudget'
 import { PlayerProvider } from './context/PlayerContext'
-import CategoryScreen from './Pages/CategoryScreen/CategoryScreen'
 import { AuthContextProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import HowToPlayScreen from './Pages/HowToPlayScreen/HowToPlayScreen'
+import ProductsScreen from './Pages/ProductsScreen/ProductsScreen'
 
 function App() {
   return (
     <AuthContextProvider>
       <PlayerProvider>
-        <MainContainer>
-          <BrowserRouter>
+        <BrowserRouter>
+          <MainContainer>
             <Navbar />
             <FloatingBudget />
-
             <Routes>
               <Route exact path='/' element={<HomeScreen />} />
               <Route
@@ -51,14 +50,14 @@ function App() {
                 path='/category/:categoryId'
                 element={
                   <ProtectedRoute>
-                    <CategoryScreen />
+                    <ProductsScreen />
                   </ProtectedRoute>
                 }
               />
             </Routes>
             <Footer />
-          </BrowserRouter>
-        </MainContainer>
+          </MainContainer>
+        </BrowserRouter>
       </PlayerProvider>
     </AuthContextProvider>
   )
