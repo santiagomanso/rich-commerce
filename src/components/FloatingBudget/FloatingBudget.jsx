@@ -87,13 +87,13 @@ const FloatingBudget = () => {
                   alt={player.uri}
                 />
               </div>
-              <span className=' max-w-[150px] max-h-[23px] text-ellipsis overflow-hidden'>
+              <span className='text-gray-300 max-w-[150px] max-h-[23px] text-ellipsis overflow-hidden font-medium'>
                 {player.uri}
               </span>
             </div>
             <div className='flex flex-col items-center gap-x-2'>
-              <i className='fa-solid fa-sack-dollar text-4xl text-gray-400'></i>
-              <p className='text-gray-300 dark:text-gray-300'>
+              <i className='fa-solid fa-sack-dollar text-4xl text-gray-300'></i>
+              <p className='text-gray-300 dark:text-gray-300 font-medium tracking-wide'>
                 {formatter.format(player.estWorthPrev)}M
               </p>
             </div>
