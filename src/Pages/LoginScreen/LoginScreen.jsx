@@ -43,7 +43,14 @@ const LoginScreen = () => {
 
   return (
     <section className='h-4/5 flex items-start lg:items-center justify-center animate__animated animate__fadeIn'>
-      <div className='bg-gradient-to-br from-indigo-200 via-slate-200/50 to-slate-400/80 md:to-sky-900/40 flex rounded-2xl  md:p-5 shadow-lg items-stretch  md:h-auto w-full'>
+      <div
+        className='bg-gradient-to-br
+       from-indigo-200   dark:from-black/50
+       via-slate-200/50  dark:via-slate-800/80
+       to-slate-400/80   dark:to-black/50
+       md:to-sky-900/40 
+       flex rounded-2xl  md:p-5 shadow-lg items-stretch  md:h-auto w-full'
+      >
         {/* form container */}
         <div className='w-full md:w-[45%] px-5 md:px-10 flex flex-col justify-center -translate-y-20 md:-translate-y-0'>
           <h2 className='font-bold text-indigo-900/80 select-none'>Login</h2>
@@ -93,7 +100,7 @@ const LoginScreen = () => {
             <div className='flex items-stretch justify-between mt-4'>
               <button
                 onClick={handleGuest}
-                className='w-[45%] shadow-md bg-gradient-to-br from-indigo-500/90 to-purple-500/80 text-white rounded-lg py-2 flex justify-center items-center gap-1 border font-semibold hover:scale-105 duration-300'
+                className='w-[45%] shadow-md bg-gradient-to-br from-indigo-500/90 to-purple-500/80 text-gray-200 rounded-lg py-2 flex justify-center items-center gap-1 border font-semibold hover:scale-105 duration-300'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -106,12 +113,12 @@ const LoginScreen = () => {
                   <path d='M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
                   <path d='M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z' />
                 </svg>
-                <span className=' lg:hidden'>Guest Account</span>
+                <span className='text-gray-100 lg:hidden'>Guest Account</span>
                 <span className='hidden lg:block'>Use guest account</span>
               </button>
               <button
                 onClick={handleSubmit}
-                className='w-[45%] shadow-md bg-gradient-to-br from-gray-300/90 to-slate-600/70 text-white tracking-wider py-2 rounded-md font-bold hover:scale-105 duration-300'
+                className='w-[45%] shadow-md bg-gradient-to-br from-gray-300/90 to-slate-600/70 text-gray-200 tracking-wider py-2 rounded-md font-bold hover:scale-105 duration-300'
               >
                 Login
               </button>
@@ -148,14 +155,16 @@ const LoginScreen = () => {
             </svg>
             Login with Google
           </button>
-          <div className='flex justify-between items-center mt-4 font-semibold text-gray-500'>
-            <p className='md:hidden'>No account?</p>
-            <p className='hidden md:block'>You don't have an account?</p>
+          <div className='flex justify-between items-center mt-4 font-semibold '>
+            <p className='text-gray-600 md:hidden'>No account?</p>
+            <p className='text-gray-600 hidden md:block'>
+              You don't have an account?
+            </p>
             <Link
               to='/register'
               className='select-none cursor-pointer hover:scale-110 duration-500'
             >
-              Register
+              <span className='text-gray-600'>Register</span>
             </Link>
           </div>
         </div>
