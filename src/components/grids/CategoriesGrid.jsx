@@ -8,7 +8,7 @@ const CategoriesGrid = ({ categories }) => {
       </h1>
       <div
         className='grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 select-none
-      sm:gap-5 md:gap-10 lg:gap-y-10
+                   gap-7 md:gap-10 lg:gap-y-10
       '
       >
         {categories
