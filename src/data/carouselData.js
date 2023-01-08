@@ -54,6 +54,6 @@ export const carouselData = [
     buttonRight: 'Add to cart',
     img2: 'https://images.fineartamerica.com/images/artworkimages/medium/3/a-us-air-force-f-22-raptor-fifth-generation-stealth-air-superiority-fighter-tom-hill-transparent.png',
     imgOptions2:
-      'absolute -bottom-20 md:-bottom-10 md:translate-y-[10%] right-5 lg:right-20  opacity-50 lg:opacity-80',
+      'absolute -bottom-20 lg:bottom-2 lg:right-20 md:-bottom-10 md:translate-y-[10%] right-5   opacity-50 lg:opacity-100',
   },
 ]
