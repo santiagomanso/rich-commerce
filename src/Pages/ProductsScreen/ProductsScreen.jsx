@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import ProductsGrid from '../../components/grids/ProductsGrid'
 import SkeletonGrid from '../../components/grids/SkeletonGrid'
+import Product from '../../components/Product/Product'
 import { products } from '../../data/products'
 
 //tener otro state, pasar el filter a una fn useEffect
@@ -34,7 +34,7 @@ const ProductsScreen = () => {
       ) : (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {filterItems.map((item) => (
-            <ProductsGrid item={item} key={item.product_id} />
+            <Product item={item} key={item.product_id} />
           ))}
         </div>
       )}
