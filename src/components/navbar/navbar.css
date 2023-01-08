@@ -16,7 +16,7 @@ nav {
 }
 
 nav aside ul {
-  @apply flex flex-col gap-24 text-center font-black;
+  @apply flex flex-col gap-y-24 text-center font-black;
 }
 
 .btnNavOpen {
