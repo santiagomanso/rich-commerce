@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
-import { useContext } from 'react'
-import { useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
 import { PlayerContext } from '../../context/PlayerContext'
@@ -17,7 +15,7 @@ const Navbar = () => {
   const [active, setActive] = useState('home') //underline active navigation
   const [email, setEmail] = useState('') //to send to child dropDown
 
-  const { player, setPlayer } = useContext(PlayerContext)
+  const { setPlayer } = useContext(PlayerContext)
 
   useEffect(() => {
     if (user) {
@@ -25,7 +23,7 @@ const Navbar = () => {
     } else {
       setPlayer('')
     }
-  }, [user])
+  }, [setPlayer, user])
 
   const handleActive = (link) => {
     setActive('')
@@ -82,16 +80,16 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to='/profile'
+            to='/categories'
             onClick={() => {
-              setActive('profile')
+              setActive('categories')
               setOpenNav(false)
             }}
             className={`${
-              active === 'profile' ? 'border-b-[6px] border-indigo-400' : ''
+              active === 'categories' ? 'border-b-[6px] border-indigo-400' : ''
             } `}
           >
-            Profile
+            Categories
           </Link>
           <Link
             to='/characters'
@@ -106,17 +104,33 @@ const Navbar = () => {
             Characters
           </Link>
           <Link
-            to='/login'
+            to='/profile'
             onClick={() => {
-              setActive('login')
+              setActive('profile')
               setOpenNav(false)
             }}
             className={`${
-              active === 'login' ? 'border-b-[6px] border-indigo-400' : ''
+              active === 'profile' ? 'border-b-[6px] border-indigo-400' : ''
             } `}
           >
-            Login
+            Profile
           </Link>
+          {user ? (
+            ''
+          ) : (
+            <Link
+              to='/login'
+              onClick={() => {
+                setActive('login')
+                setOpenNav(false)
+              }}
+              className={`${
+                active === 'login' ? 'border-b-[6px] border-indigo-400' : ''
+              } `}
+            >
+              Login
+            </Link>
+          )}
           <Link
             to='/cart'
             onClick={() => {
