@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
-
+import { useContext } from 'react'
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -8,13 +8,35 @@ import 'swiper/css/navigation'
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper'
 import { useNavigate } from 'react-router-dom'
-import { carouselData } from '../../data/carouselData'
+import { carouselData, Elon } from '../../data/carouselData'
+
+import { UserAuth } from '../../context/AuthContext'
+import { PlayerContext } from '../../context/PlayerContext'
 
 const Carousel = () => {
+  const { user } = UserAuth()
+  const { setPlayer } = useContext(PlayerContext)
   const navigate = useNavigate()
 
-  const handleNavigate = (url) => {
-    navigate(url)
+  const handleClick = (actionLeft, actionRight) => {
+    switch (actionLeft.type || actionRight.type) {
+      case 'redirect': {
+        navigate(actionLeft.path)
+        break
+      }
+
+      case 'character': {
+        if (!user) {
+          navigate('/login')
+        } else {
+          setPlayer(Elon)
+        }
+        break
+      }
+
+      default:
+        break
+    }
   }
 
   return (
@@ -22,10 +44,10 @@ const Carousel = () => {
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 6500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 6500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
@@ -41,11 +63,14 @@ const Carousel = () => {
                   <h2 className='font-bold'>{data.title}</h2>
                   <p className='w-2/3'>{data.subtitle}</p>
                   <div className='w-5/6 md:w-full lg:mt-5 lg:w-1/3 gap-x-2 md:gap-x-10 flex justify-start'>
-                    <button className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-slate-500 to-neutral-800 rounded-md  text-white'>
+                    <button
+                      onClick={() => handleClick(data.actionLeft)}
+                      className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-slate-500 to-neutral-800 rounded-md  text-white'
+                    >
                       {data.buttonLeft}
                     </button>
                     <button
-                      onClick={() => handleNavigate('/characters')}
+                      onClick={() => handleClick(data.actionRight)}
                       className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md  text-white'
                     >
                       {data.buttonRight}
