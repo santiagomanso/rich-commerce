@@ -21,8 +21,6 @@ const ProductsScreen = () => {
   const [filteredItems, setfilteredItems] = useState(filterItems)
   //map de prouct con filter
 
-  console.log(`category: ${products}`)
-
   return (
     <div>
       <h1 className='mt-14 mb-2 font-semibold text-gray-600'>
