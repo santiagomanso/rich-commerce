@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import loginPNG from '../../assets/login.jpg'
 import { UserAuth } from '../../context/AuthContext'
+import { useContext } from 'react'
+import { RedirectContext } from '../../context/RedirectContext'
+import { PlayerContext } from '../../context/PlayerContext'
 
 const LoginScreen = () => {
+  const { path, setPath } = useContext(RedirectContext)
+  const { attemptedPlayer, setPlayer } = useContext(PlayerContext)
+
   //states to control form
   const [email, setEmail] = useState('') //initialized to guest account
   const [password, setPassword] = useState('') //initialized to guest account
@@ -17,7 +23,15 @@ const LoginScreen = () => {
   useEffect(() => {
     //redirects when successfull login to home page
     if (user) {
-      navigate('/')
+      if (path) {
+        navigate(path) // reditection to attempted navigation after successful login
+      } else {
+        navigate('/') // redirection to home screen
+      }
+    }
+
+    if (attemptedPlayer && user) {
+      setPlayer(attemptedPlayer) //set attempted player after successful login
     }
   }, [user, navigate, error])
 
