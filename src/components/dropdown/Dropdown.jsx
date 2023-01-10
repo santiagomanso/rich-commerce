@@ -1,7 +1,14 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+import { PlayerContext } from '../../context/PlayerContext'
+import { RedirectContext } from '../../context/RedirectContext'
 import './dropdown.css'
 
 const Dropdown = ({ name, logout }) => {
+  const { setPath } = useContext(RedirectContext)
+  const { setPlayer } = useContext(PlayerContext)
+  const { setCart } = useContext(CartContext)
+
   const [active, setActive] = useState(false)
   const menuRef = useRef()
 
@@ -17,6 +24,13 @@ const Dropdown = ({ name, logout }) => {
       document.removeEventListener('mousedown', handler)
     }
   })
+
+  const handleLogout = () => {
+    setPath('')
+    setPlayer('')
+    setCart([])
+    logout()
+  }
 
   return (
     <div
@@ -44,7 +58,7 @@ const Dropdown = ({ name, logout }) => {
           <i className='fa-solid fa-heart text-slate-600 group-hover:text-red-600 rotate-180 group-hover:rotate-0 scale-0 group-hover:scale-150 duration-500'></i>
           <span>Favourites</span>
         </li>
-        <li className='group' onClick={logout}>
+        <li className='group' onClick={handleLogout}>
           <i className='fa-solid fa-power-off text-slate-600 group-hover:text-red-600 rotate-180 group-hover:rotate-0 scale-0 group-hover:scale-150 duration-500'></i>
           <span>Logout</span>
         </li>
