@@ -42,7 +42,7 @@ export const categories_list = [
     col: '',
   },
   {
-    category_id: 6,
+    category_id: 5,
     img: 'https://cdn.discordapp.com/attachments/989268365870776411/1060306737900568606/Abyss_8k_neon_lights_sharp_focus_rihanna_and_elon_musk_talking__eb3faff4-e4b1-4cec-8a6b-4fb104428e1d.png',
     name: 'Concerts - Talks',
     desc: 'For your new Private Island you just bought',
@@ -52,7 +52,7 @@ export const categories_list = [
     col: 'col-span-1',
   },
   {
-    category_id: 5,
+    category_id: 6,
     img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060313480210681886/kkero_hyper_realistic_neon_lights_sharp_focus_8k_full_colors_pr_2ed3de0f-addb-46be-bffd-661f8969a942.png',
     name: 'Private Islands',
     desc: 'Exclusive and casted away from everyone else',
@@ -112,7 +112,7 @@ export const categories_list = [
     col: 'col-span-1',
   },
   {
-    category_id: 13,
+    category_id: 12,
     img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060325092036448307/kkero_neon_lights_full_colors_8k_sharp_focus_hyper_realistic_bi_cedc5646-e9c6-43be-a7be-c70f2e32f972.png',
     name: 'Cruise Ships',
     desc: 'Party with all your friends',
