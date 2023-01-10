@@ -12,21 +12,27 @@ import { carouselData, Elon } from '../../data/carouselData'
 
 import { UserAuth } from '../../context/AuthContext'
 import { PlayerContext } from '../../context/PlayerContext'
+import { RedirectContext } from '../../context/RedirectContext'
 
 const Carousel = () => {
   const { user } = UserAuth()
-  const { setPlayer } = useContext(PlayerContext)
+  const { setPlayer, setAttemptedPlayer } = useContext(PlayerContext)
+  const { setPath } = useContext(RedirectContext)
   const navigate = useNavigate()
 
   const handleClick = (actionLeft, actionRight) => {
     switch (actionLeft.type || actionRight.type) {
       case 'redirect': {
+        if (!user) {
+          setPath(actionLeft.path) //if there is no user, set global path to later redirect after login
+        }
         navigate(actionLeft.path)
         break
       }
 
       case 'character': {
         if (!user) {
+          setAttemptedPlayer(Elon)
           navigate('/login')
         } else {
           setPlayer(Elon)
@@ -69,12 +75,16 @@ const Carousel = () => {
                     >
                       {data.buttonLeft}
                     </button>
-                    <button
-                      onClick={() => handleClick(data.actionRight)}
-                      className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md  text-white'
-                    >
-                      {data.buttonRight}
-                    </button>
+                    {data.buttonRight ? (
+                      <button
+                        onClick={() => handleClick(data.actionRight)}
+                        className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md  text-white'
+                      >
+                        {data.buttonRight}
+                      </button>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
                 <img
