@@ -1,10 +1,22 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { UserAuth } from '../../context/AuthContext'
+import { RedirectContext } from '../../context/RedirectContext'
 import Rating from '../Rating/Rating'
 import './category.css'
 
 const Category = ({ category }) => {
+  const { path, setPath } = useContext(RedirectContext)
+  const { user } = UserAuth()
   return (
     <Link
+      onClick={() => {
+        if (!user) {
+          setPath(`/category/${category.category_id}`) // no user = setPath for further redirect
+        } else {
+          setPath('') // user = no redirect
+        }
+      }}
       to={`/category/${category.category_id}`}
       className={`categoryCard group ${category.row} ${category.col} 
       bg-white dark:bg-slate-800/60`}
