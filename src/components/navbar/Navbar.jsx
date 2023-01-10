@@ -106,6 +106,11 @@ const Navbar = () => {
             to='/characters'
             onClick={() => {
               setActive('characters')
+              if (!user) {
+                setPath('/characters')
+              } else {
+                setPath('')
+              }
               setOpenNav(false)
             }}
             className={`${
