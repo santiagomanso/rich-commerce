@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 import { PlayerContext } from '../../context/PlayerContext'
+import Badge from '../Badge/Badge'
 
 const FloatingBudget = () => {
   const [activeName, setActiveName] = useState(false)
   const [activeBudget, setActiveBudget] = useState(false)
+
+  const navigate = useNavigate()
 
   // Create our number formatter.
   const formatter = new Intl.NumberFormat('en-US', {
@@ -17,6 +22,7 @@ const FloatingBudget = () => {
   })
 
   const { player, setPlayer } = useContext(PlayerContext)
+  const { cart, cartCount } = useContext(CartContext)
   return (
     <>
       {player && (
@@ -72,33 +78,65 @@ const FloatingBudget = () => {
               </p>
               <i className='absolute right-4 top-3 fa-solid fa-sack-dollar text-5xl text-green-800 self-end'></i>
             </div>
-          </div>
 
-          {/* phone - tablets */}
-          <div
-            className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 flex justify-evenly items-center
-          '
-          >
-            <div className='flex flex-col items-center'>
-              <div className='h-10 w-10'>
-                <img
-                  className='rounded-full h-full w-full'
-                  src={player.squareImage}
-                  alt={player.uri}
-                />
+            <div
+              onClick={() => navigate('/cart')}
+              className={`
+              bg-white dark:bg-gradient-to-br dark:from-indigo-800 dark:to-slate-800  rounded-r-full absolute top-[29%] -left-1 w-[80px] translate-y-[60%]
+                px-2 py-4 flex gap-3 font-medium items-center  duration-500 border-2 border-gray-500 cursor-pointer z-40`}
+            >
+              <i className='fa-solid fa-cart-shopping text-5xl text-gray-600 dark:text-gray-300'></i>
+              <div className='relative'>
+                {cart.length > 0 ? (
+                  <Badge position='absolute -top-10 -left-4' />
+                ) : (
+                  ''
+                )}
               </div>
-              <span className='text-gray-300 max-w-[150px] max-h-[23px] text-ellipsis overflow-hidden font-medium'>
-                {player.uri}
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-x-2'>
-              <i className='fa-solid fa-sack-dollar text-4xl text-gray-300'></i>
-              <p className='text-gray-300 dark:text-gray-300 font-medium tracking-wide'>
-                {formatter.format(player.estWorthPrev)}M
-              </p>
             </div>
           </div>
         </>
+      )}
+      {player || cart.length > 0 ? (
+        <div
+          className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 grid grid-cols-3 place-items-center px-5
+        '
+        >
+          <div className='flex flex-col items-center'>
+            {player && (
+              <>
+                <div className='h-10 w-10'>
+                  <img
+                    className='rounded-full h-full w-full'
+                    src={player.squareImage}
+                    alt={player.uri}
+                  />
+                </div>
+                <span className='text-gray-300 max-w-[150px] max-h-[23px] text-ellipsis overflow-hidden font-medium'>
+                  {player.uri}
+                </span>
+              </>
+            )}
+          </div>
+          <div className='flex flex-col items-center gap-x-2'>
+            {player && (
+              <>
+                <i className='fa-solid fa-sack-dollar text-4xl text-gray-300'></i>
+                <p className='text-gray-300 dark:text-gray-300 font-medium tracking-wide'>
+                  {formatter.format(player.estWorthPrev)}M
+                </p>
+              </>
+            )}
+          </div>
+          <Link to='/cart' className='flex flex-col items-center gap-x-2'>
+            <i className='fa-solid fa-cart-shopping text-4xl text-gray-300'></i>
+            <p className='text-gray-300 dark:text-gray-300 font-medium tracking-wide'>
+              {cartCount}
+            </p>
+          </Link>
+        </div>
+      ) : (
+        ''
       )}
     </>
   )
