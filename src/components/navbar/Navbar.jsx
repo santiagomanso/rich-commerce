@@ -1,7 +1,10 @@
 import { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
+import { CartContext } from '../../context/CartContext'
 import { PlayerContext } from '../../context/PlayerContext'
+import { RedirectContext } from '../../context/RedirectContext'
+import Badge from '../Badge/Badge'
 import Dropdown from '../dropdown/Dropdown'
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './navbar.css'
@@ -16,20 +19,23 @@ const Navbar = () => {
   const [email, setEmail] = useState('') //to send to child dropDown
 
   const { setPlayer } = useContext(PlayerContext)
+  const { cart, setCart } = useContext(CartContext)
+  const { setPath } = useContext(RedirectContext)
 
   useEffect(() => {
     if (user) {
       setEmail(user.email)
-    } else {
-      setPlayer('')
     }
-  }, [setPlayer, user])
+  }, [user])
 
   const handleActive = (link) => {
     setActive('')
   }
 
   const handleLogout = async () => {
+    setPath('')
+    setPlayer('')
+    setCart([])
     setOpenNav(false)
     try {
       await logout()
@@ -83,6 +89,11 @@ const Navbar = () => {
             to='/categories'
             onClick={() => {
               setActive('categories')
+              if (!user) {
+                setPath('/categories')
+              } else {
+                setPath('')
+              }
               setOpenNav(false)
             }}
             className={`${
@@ -135,9 +146,14 @@ const Navbar = () => {
             to='/cart'
             onClick={() => {
               setActive('cart')
+              if (!user) {
+                setPath('/cart')
+              } else {
+                setPath('')
+              }
               setOpenNav(false)
             }}
-            className={`${
+            className={` relative ${
               active === 'cart' ? 'border-b-[6px] border-indigo-400' : ''
             } `}
           >
@@ -185,8 +201,31 @@ const Navbar = () => {
             <span>How to play</span>
           </Link>
           <Link
+            to='/categories'
+            onClick={() => {
+              if (!user) {
+                setPath('/categories')
+              } else {
+                setPath('')
+              }
+              handleActive('categories')
+            }}
+            className={`hover:border-slate-600 ${
+              active === 'categories'
+                ? 'border-b-4 border-slate-600'
+                : 'border-b-4 border-transparent'
+            } flex items-center gap-2`}
+          >
+            <span>Categories</span>
+          </Link>
+          <Link
             to='/characters'
-            onClick={() => handleActive('characters')}
+            onClick={() => {
+              if (!user) {
+                setPath('/characters')
+              }
+              handleActive('characters')
+            }}
             className={`hover:border-slate-600 ${
               active === 'characters'
                 ? 'border-b-4 border-slate-600'
@@ -195,28 +234,42 @@ const Navbar = () => {
           >
             <span>Characters</span>
           </Link>
-          <Link
-            to='/Login'
-            onClick={() => handleActive('login')}
-            className={`hover:border-slate-600 ${
-              active === 'login'
-                ? 'border-b-4 border-slate-600'
-                : 'border-b-4 border-transparent'
-            } flex items-center gap-2`}
-          >
-            <span>Log in</span>
-          </Link>
+          {user ? (
+            ''
+          ) : (
+            <Link
+              to='/Login'
+              onClick={() => handleActive('login')}
+              className={`hover:border-slate-600 ${
+                active === 'login'
+                  ? 'border-b-4 border-slate-600'
+                  : 'border-b-4 border-transparent'
+              } flex items-center gap-2`}
+            >
+              <span>Log in</span>
+            </Link>
+          )}
           <Link
             to='/Cart'
-            onClick={() => handleActive('cart')}
-            className={`hover:border-slate-600 ${
+            onClick={() => {
+              handleActive('cart')
+              if (!user) {
+                setPath('/cart')
+              }
+            }}
+            className={`relative hover:border-slate-600 ${
               active === 'cart'
                 ? 'border-b-4 border-slate-600'
                 : 'border-b-4 border-transparent'
             } flex items-center gap-2`}
           >
-            <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
             <span> Cart </span>
+            <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
+            {cart.length > 0 ? (
+              <Badge position='absolute -top-3 -right-6' />
+            ) : (
+              ''
+            )}
           </Link>
           {user ? <Dropdown name={email} logout={handleLogout} /> : ''}
         </div>
