@@ -1,4 +1,16 @@
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+
 const Product = ({ item }) => {
+  const { cart, setCart } = useContext(CartContext)
+
+  const addToCart = () => {
+    if (item.stock > 0) {
+      item.stock = item.stock - 1
+      setCart([...cart, { item }])
+    }
+  }
+
   return (
     <div className=' flex flex-col justify-between shadow-md   border-2 border-gray-300/80  rounded-md relative h-[80vh]'>
       <div className='h-[50vh] w-full overflow-hidden'>
@@ -19,7 +31,7 @@ const Product = ({ item }) => {
             {item.left_col}
           </p>
           <p className='text-center text-gray-700  font-semibold'>
-            {item.mid_col}
+            Stock: {item.stock}
           </p>
         </div>
         <div className='h-4/6 overflow-auto lg:my-1'>
@@ -29,8 +41,16 @@ const Product = ({ item }) => {
           <span className='lg:text-lg text-green-700 dark:text-green-900 font-semibold px-2 py-1 rounded-md'>
             $ {item.right_col} Million
           </span>
-          <button className='w-full md:w-[200px] py-2 lg:py-3 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md  text-white'>
-            Add to cart
+          <button
+            onClick={addToCart}
+            className={`w-full md:w-[200px] py-2 lg:py-3  rounded-md  
+            ${
+              item.stock <= 0
+                ? 'bg-gradient-to-tr from-gray-300 to-stone-500 text-gray-900 font-medium'
+                : 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white'
+            }`}
+          >
+            {item.stock > 0 ? 'Add to cart' : 'Out of Stock'}
           </button>
         </div>
       </div>
