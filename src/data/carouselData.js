@@ -29,7 +29,6 @@ export const carouselData = [
     actionLeft: { type: 'redirect', path: '/category/3' },
     actionRight: { type: 'redirect', path: '/characters' },
     buttonLeft: 'More cars',
-    buttonRight: 'Add to cart',
     img2: bugatti,
     imgOptions2:
       'absolute bottom-5 right-0 lg:right-[5%] lg:scale-125 opacity-30 lg:opacity-80',
@@ -55,10 +54,9 @@ export const carouselData = [
       'select-none rounded flex bg-gradient-to-br dark:bg-gradient-to-tl from-slate-500/60 dark:from-indigo-900/60 via-gray-400/95 dark:via-gray-900/80 to-gray-300/90   dark:to-slate-800/90 ',
     title: 'F-22 Raptor',
     subtitle:
-      'Introducing a fifth-generation stealth aircraft used by the USAF.',
+      'Introducing a fifth-generation stealth aircraft used by the USAF. Price point would range between $206 and $216 million for only one jet.',
     actionLeft: { type: 'redirect', path: '/category/9' },
     buttonLeft: 'Military planes',
-    buttonRight: 'Add to cart',
     img2: 'https://images.fineartamerica.com/images/artworkimages/medium/3/a-us-air-force-f-22-raptor-fifth-generation-stealth-air-superiority-fighter-tom-hill-transparent.png',
     imgOptions2:
       'absolute -bottom-20 lg:bottom-2 lg:right-20 md:-bottom-10 md:translate-y-[10%] right-5   opacity-30 lg:opacity-100',
