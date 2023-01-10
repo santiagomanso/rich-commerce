@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import SkeletonGrid from '../../components/grids/SkeletonGrid'
 import Product from '../../components/Product/Product'
+import { categories_list } from '../../data/categories'
 import { products } from '../../data/products'
 
 //tener otro state, pasar el filter a una fn useEffect
@@ -9,6 +10,10 @@ import { products } from '../../data/products'
 const ProductsScreen = () => {
   //get id from params
   const { categoryId } = useParams()
+
+  const [categoryName, setCategoryName] = useState(
+    categories_list[categoryId - 1] // array are 0based but categories list are not 0 based, so -1 fix
+  )
 
   //state to store RAW collection of products
   const [items, setItems] = useState(products)
@@ -24,7 +29,7 @@ const ProductsScreen = () => {
   return (
     <div>
       <h1 className='mt-14 mb-2 font-semibold text-gray-600'>
-        Private Islands
+        {categoryName.name}
       </h1>
       {/* from a category, a collection of products get rendered */}
       {!filteredItems ? (
