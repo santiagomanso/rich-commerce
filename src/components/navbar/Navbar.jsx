@@ -228,6 +228,8 @@ const Navbar = () => {
             onClick={() => {
               if (!user) {
                 setPath('/characters')
+              } else {
+                setActive('')
               }
               handleActive('characters')
             }}
