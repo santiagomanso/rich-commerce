@@ -69,3 +69,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+input salario al logear
+https://datosmacro.expansion.com/mercado-laboral/salario-medio
+
+cuantos españoles para hacer 1 player DIRECTA
+salario medio anual por paises, cuantos años para llegar al costo carrito INDIRECTO
+MONEY FACTS
