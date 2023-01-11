@@ -27,7 +27,7 @@
   }
 
   h2 {
-    @apply text-xl md:text-2xl lg:text-3xl text-gray-800 dark:text-gray-300;
+    @apply text-xl md:text-2xl text-gray-800 dark:text-gray-300;
   }
 
   h3 {
