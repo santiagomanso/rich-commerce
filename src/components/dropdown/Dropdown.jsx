@@ -4,7 +4,7 @@ import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
 import './dropdown.css'
 
-const Dropdown = ({ name, logout }) => {
+const Dropdown = ({ name, logout, ulOptions }) => {
   const { setPath } = useContext(RedirectContext)
   const { setPlayer } = useContext(PlayerContext)
   const { setCart } = useContext(CartContext)
@@ -36,7 +36,7 @@ const Dropdown = ({ name, logout }) => {
     <div
       ref={menuRef}
       onClick={() => setActive(!active)}
-      className={`dropdownWrapper ${
+      className={`dropdownWrapper  ${
         active === 'profile'
           ? 'border-b-4 border-slate-600'
           : 'border-b-4 border-transparent'
@@ -49,7 +49,7 @@ const Dropdown = ({ name, logout }) => {
         }`}
       ></i>
 
-      <ul className={`${active ? 'scale-100' : 'scale-0'}`}>
+      <ul className={` ${ulOptions} ${active ? 'scale-100' : 'scale-0'}`}>
         <li className='group'>
           <i className='fa-solid fa-circle-user text-slate-600 group-hover:text-red-600 rotate-180 group-hover:rotate-0 scale-0 group-hover:scale-150 duration-500'></i>
           <span>My profile</span>
