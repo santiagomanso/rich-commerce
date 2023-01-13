@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import LanguageDropdown from './LanguageDropdown'
 
 const ThemeSwitcher = ({ setOpenNav }) => {
   const [active, setActive] = useState('sun')
   return (
     <div className='flex items-center text-2xl border-b-2 border-transparent gap-x-5 rounded-md'>
+      <LanguageDropdown />
       <i
         onClick={() => {
           if (setOpenNav) {
