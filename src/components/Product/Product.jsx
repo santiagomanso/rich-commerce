@@ -4,6 +4,10 @@ import { CartContext } from '../../context/CartContext'
 const Product = ({ item }) => {
   const { cart, setCart } = useContext(CartContext)
 
+  const priceLength = () => {
+    return (Math.log(item.price) * Math.LOG10E + 1) | 0
+  }
+
   const addToCart = () => {
     if (item.stock > 0) {
       item.stock = item.stock - 1
@@ -39,7 +43,12 @@ const Product = ({ item }) => {
         </div>
         <div className='lg:py-3 grid grid-cols-1 lg:grid-cols-2 items-center place-items-center'>
           <span className='lg:text-lg text-green-700 dark:text-green-900 font-semibold px-2 py-1 rounded-md'>
-            $ {item.right_col} Million
+            $ {item.price}{' '}
+            {priceLength() > 9
+              ? 'Billions'
+              : priceLength() > 6
+              ? 'Millions'
+              : 'Thousands'}
           </span>
           <button
             onClick={addToCart}
