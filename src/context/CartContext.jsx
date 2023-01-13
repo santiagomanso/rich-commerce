@@ -10,8 +10,12 @@ export const CartProvider = (props) => {
     setCartCount(cart.length)
   }, [cart])
 
+  const addToCart = (item) => {
+    setCart([...cart, { item }])
+  }
+
   return (
-    <CartContext.Provider value={{ cart, setCart, cartCount }}>
+    <CartContext.Provider value={{ cart, setCart, cartCount, addToCart }}>
       {props.children}
     </CartContext.Provider>
   )
