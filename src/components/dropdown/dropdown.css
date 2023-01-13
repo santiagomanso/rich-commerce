@@ -7,11 +7,11 @@
 }
 
 .dropdownWrapper ul {
-  @apply flex-col gap-3 absolute top-10 right-0 shadow-lg z-10 w-56 bg-slate-100 dark:bg-slate-800 p-2 rounded-md flex duration-150;
+  @apply flex-col gap-3 absolute top-10 right-0 shadow-lg z-10 bg-slate-100 dark:bg-slate-800 rounded-md flex duration-150;
 }
 
 .dropdownWrapper ul li {
-  @apply flex items-center gap-2 hover:bg-slate-300 dark:hover:bg-violet-800 p-4 rounded-md;
+  @apply flex items-center gap-2 hover:bg-slate-300 dark:hover:bg-violet-800 rounded-md;
 }
 
 .dropdownWrapper ul li i {
