@@ -61,7 +61,7 @@ const Navbar = () => {
           openNav ? 'translate-x-0' : '-translate-x-full'
         }   `}
       >
-        <div className='absolute top-5 left-4 text-white flex justify-start gap-x-16 w-full'>
+        <div className='absolute top-5 left-4 text-white flex justify-start gap-x-6 w-full'>
           {user ? <span className='text-white'>{email}</span> : ''}
           <ThemeSwitcher setOpenNav={setOpenNav} />
         </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
               active === 'categories' ? 'border-b-[6px] border-indigo-400' : ''
             } `}
           >
-            Categories
+            Shop now!
           </Link>
           <Link
             to='/characters'
@@ -117,7 +117,7 @@ const Navbar = () => {
               active === 'characters' ? 'border-b-[6px] border-indigo-400' : ''
             } `}
           >
-            Characters
+            Players
           </Link>
           <Link
             to='/profile'
@@ -182,10 +182,8 @@ const Navbar = () => {
         <Link
           to='/'
           onClick={() => handleActive('home')}
-          className={`hover:border-slate-600 ${
-            active === 'home'
-              ? 'border-b-4 border-slate-600'
-              : 'border-b-4 border-transparent'
+          className={`hover:-translate-y-1 duration-200 ${
+            active === 'home' ? '' : ''
           } flex items-center gap-2`}
         >
           <i className={` fa-solid fa-house text-xl text-slate-600`}></i>
@@ -197,10 +195,8 @@ const Navbar = () => {
           <Link
             to='/howtoplay'
             onClick={() => handleActive('howtoplay')}
-            className={`hover:border-slate-600 ${
-              active === 'howtoplay'
-                ? 'border-b-4 border-slate-600'
-                : 'border-b-4 border-transparent'
+            className={`hover:-translate-y-1 duration-200 ${
+              active === 'howtoplay' ? '' : ''
             } flex items-center gap-2`}
           >
             <span>How to play</span>
@@ -215,13 +211,13 @@ const Navbar = () => {
               }
               handleActive('categories')
             }}
-            className={`hover:border-slate-600 ${
-              active === 'categories'
-                ? 'border-b-4 border-slate-600'
-                : 'border-b-4 border-transparent'
+            className={`hover:-translate-y-1 duration-200 ${
+              active === 'categories' ? '' : ''
             } flex items-center gap-2`}
           >
-            <span>Categories</span>
+            <span className='shadow-md bg-gradient-to-br from-indigo-500/90 to-purple-500/80 text-gray-200 rounded-lg px-3 py-1'>
+              Shop now!
+            </span>
           </Link>
           <Link
             to='/characters'
@@ -233,13 +229,11 @@ const Navbar = () => {
               }
               handleActive('characters')
             }}
-            className={`hover:border-slate-600 ${
-              active === 'characters'
-                ? 'border-b-4 border-slate-600'
-                : 'border-b-4 border-transparent'
+            className={`hover:-translate-y-1 duration-200 ${
+              active === 'characters' ? '' : ''
             } flex items-center gap-2`}
           >
-            <span>Characters</span>
+            <span>Players</span>
           </Link>
           {user ? (
             ''
@@ -247,10 +241,8 @@ const Navbar = () => {
             <Link
               to='/Login'
               onClick={() => handleActive('login')}
-              className={`hover:border-slate-600 ${
-                active === 'login'
-                  ? 'border-b-4 border-slate-600'
-                  : 'border-b-4 border-transparent'
+              className={`hover:-translate-y-1 duration-200 ${
+                active === 'login' ? '' : ''
               } flex items-center gap-2`}
             >
               <span>Log in</span>
@@ -264,10 +256,8 @@ const Navbar = () => {
                 setPath('/cart')
               }
             }}
-            className={`relative hover:border-slate-600 ${
-              active === 'cart'
-                ? 'border-b-4 border-slate-600'
-                : 'border-b-4 border-transparent'
+            className={`relative hover:-translate-y-1 duration-200 ${
+              active === 'cart' ? '' : ''
             } flex items-center gap-2`}
           >
             <span> Cart </span>
@@ -278,7 +268,11 @@ const Navbar = () => {
               ''
             )}
           </Link>
-          {user ? <Dropdown name={email} logout={handleLogout} /> : ''}
+          {user ? (
+            <Dropdown name={email} logout={handleLogout} ulOptions='w-42 p-4' />
+          ) : (
+            ''
+          )}
         </div>
       </div>
     </nav>
