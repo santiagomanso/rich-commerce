@@ -1,18 +1,23 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 
 const Product = ({ item }) => {
   const { cart, setCart } = useContext(CartContext)
 
+  const [active, setActive] = useState(true)
+
+  const [stock, setStock] = useState(item.stock)
+
+  //fn that returns the length of an integer to later show Billions/millions/thousands
   const priceLength = () => {
     return (Math.log(item.price) * Math.LOG10E + 1) | 0
   }
 
   const addToCart = () => {
-    if (item.stock > 0) {
-      item.stock = item.stock - 1
-      setCart([...cart, { item }])
-    }
+    setActive(!active)
+    setStock(stock - 1)
+
+    if (active) setCart([...cart, { item }])
   }
 
   return (
@@ -30,20 +35,15 @@ const Product = ({ item }) => {
          via-white           dark:via-white/5
          to-white            dark:to-slate-800/70'
       >
-        <div className='grid grid-cols-3 items-center place-content-between '>
-          <p className='col-span-2 text-gray-700  font-semibold'>
-            {item.left_col}
-          </p>
-          <p className='text-center text-gray-700  font-semibold'>
-            Stock: {item.stock}
-          </p>
+        <div className='grid grid-cols-1 items-center place-content-between '>
+          <p className=' text-gray-700  font-semibold'>{item.left_col}</p>
         </div>
         <div className='h-4/6 overflow-auto lg:my-1'>
           <p className='text-gray-600 font-medium h-full'>{item.desc}</p>
         </div>
         <div className='lg:py-3 grid grid-cols-1 lg:grid-cols-2 items-center place-items-center'>
           <span className='lg:text-lg text-green-700 dark:text-green-900 font-semibold px-2 py-1 rounded-md'>
-            $ {item.price}{' '}
+            $ {item.price}
             {priceLength() > 9
               ? 'Billions'
               : priceLength() > 6
@@ -52,14 +52,32 @@ const Product = ({ item }) => {
           </span>
           <button
             onClick={addToCart}
-            className={`w-full md:w-[200px] py-2 lg:py-3  rounded-md  
-            ${
-              item.stock <= 0
-                ? 'bg-gradient-to-tr from-gray-300 to-stone-500 text-gray-900 font-medium'
-                : 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white'
-            }`}
+            className={`w-full md:w-[200px] py-2 lg:py-3  rounded-md  relative flex justify-center items-center
+             bg-gradient-to-br ${
+               active
+                 ? 'from-indigo-500 to-purple-500'
+                 : 'from-rose-700 to-red-500'
+             } text-white h-10 overflow-hidden`}
           >
-            {item.stock > 0 ? 'Add to cart' : 'Out of Stock'}
+            <span className={`${active ? '' : ' animate-txtAddToCart'}`}>
+              Add to cart
+            </span>
+            <span
+              className={`absolute ${
+                active ? 'hidden' : 'inline animate-txtAdded'
+              }`}
+            >
+              Remove from cart <i className='fa-solid fa-trash'></i>
+            </span>
+            <i
+              className={`fa-solid fa-box absolute left-[49%] -top-5 ${
+                active ? '' : 'animate-phoneBox lg:animate-laptopBox'
+              }`}
+            ></i>
+            <i
+              className={`fa-solid fa-cart-shopping text-xl absolute z-40 -left-7 lg:-left-[13%] bottom-1
+             ${active ? '' : 'animate-phoneCart lg:animate-laptopCart'}`}
+            ></i>
           </button>
         </div>
       </div>
