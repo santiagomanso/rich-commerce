@@ -51,7 +51,7 @@ const Carousel = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 6500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
