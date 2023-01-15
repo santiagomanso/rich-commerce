@@ -6,7 +6,7 @@ const Footer = () => {
           target='_blank'
           rel='noreferrer'
           href='https://santimanso.com/'
-          className='text-2xl text-gray-600 dark:text-gray-100 font-medium hover:-translate-y-1 duration-300 hover:rotate-[-1deg]'
+          className=' text-xl  lg:text-2xl  text-gray-600 dark:text-gray-100 font-medium hover:-translate-y-1 duration-300 hover:rotate-[-1deg]'
         >
           by Santiago Manso Castro
         </a>
