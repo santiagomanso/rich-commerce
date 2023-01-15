@@ -10,6 +10,10 @@ const LoginScreen = () => {
   const { path, setPath } = useContext(RedirectContext)
   const { attemptedPlayer, setPlayer } = useContext(PlayerContext)
 
+  const [animation, setAnimation] = useState(
+    'animate__animated animate__fadeIn'
+  )
+
   //states to control form
   const [email, setEmail] = useState('') //initialized to guest account
   const [password, setPassword] = useState('') //initialized to guest account
@@ -49,14 +53,19 @@ const LoginScreen = () => {
   //handle guest mandar como argumento signIn(guest@guest.com, superguest)
   const handleGuest = (e) => {
     e.preventDefault()
-    signIn(
-      process.env.REACT_APP_GUEST_USERNAME,
-      process.env.REACT_APP_GUEST_PASSWORD
-    )
+    setAnimation('animate__animated animate__bounceOut')
+    setTimeout(() => {
+      signIn(
+        process.env.REACT_APP_GUEST_USERNAME,
+        process.env.REACT_APP_GUEST_PASSWORD
+      )
+    }, 650)
   }
 
   return (
-    <section className='h-4/5 flex items-start lg:items-center justify-center animate__animated animate__fadeIn'>
+    <section
+      className={`${animation} h-4/5 flex items-start lg:items-center justify-center`}
+    >
       <div
         className='bg-gradient-to-br
        from-indigo-200   dark:from-black/50
