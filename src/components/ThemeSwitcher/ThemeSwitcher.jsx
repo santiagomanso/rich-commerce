@@ -5,7 +5,6 @@ const ThemeSwitcher = ({ setOpenNav }) => {
   const [active, setActive] = useState('sun')
   return (
     <div className='flex items-center text-2xl border-b-2 border-transparent gap-x-5 rounded-md'>
-      <LanguageDropdown />
       <i
         onClick={() => {
           if (setOpenNav) {
@@ -14,7 +13,7 @@ const ThemeSwitcher = ({ setOpenNav }) => {
           setActive('sun')
           document.documentElement.classList.remove('dark')
         }}
-        className={`fa-solid fa-sun cursor-pointer ${
+        className={`fa-solid fa-sun cursor-pointer hover:-translate-y-1 duration-200 ${
           active === 'sun' ? 'text-yellow-600' : 'text-gray-300/80'
         }`}
       ></i>
@@ -26,10 +25,11 @@ const ThemeSwitcher = ({ setOpenNav }) => {
           setActive('moon')
           document.documentElement.classList.add('dark')
         }}
-        className={`fa-solid fa-moon cursor-pointer ${
+        className={`fa-solid fa-moon cursor-pointer hover:-translate-y-1 duration-200 ${
           active === 'moon' ? 'text-violet-500' : 'text-gray-500'
         }`}
       ></i>
+      <LanguageDropdown />
     </div>
   )
 }
