@@ -31,20 +31,20 @@ const RedirectMsg = () => {
   return (
     <main className='h-4/5 flex justify-center items-center p-5 md:p-0'>
       <div
-        className={`bg-amber-200 p-5 lg:p-10 rounded flex justify-center items-center ${animation} outline-2 outline outline-amber-800 gap-2`}
+        className={`bg-amber-200 dark:bg-stone-800/60 p-5 lg:p-10 rounded flex justify-center items-center ${animation} outline-2 outline outline-amber-500 gap-2`}
       >
         <section className='flex flex-col gap-3'>
-          <article className='flex gap-2 items-baseline'>
-            <span className=' text-amber-800 dark:text-amber-900 text-2xl lg:text-5xl font-semibold'>
-              You must to be logged in
+          <article className='flex gap-2 items-end lg:items-baseline'>
+            <span className=' text-amber-800 dark:text-amber-500 text-2xl lg:text-5xl font-semibold'>
+              You must log in first
             </span>
-            <i className='fa-solid fa-lock text-5xl text-amber-800'></i>
+            <i className='fa-solid fa-lock text-3xl lg:text-5xl text-amber-800 dark:text-amber-500'></i>
           </article>
           <article className=' md:text-2xl flex gap-2 items-center justify-center'>
-            <span className='text-amber-800'>
+            <span className='text-amber-800 dark:text-amber-500'>
               Redirecting to login in {seconds} seconds
             </span>
-            <i className='fa-solid fa-circle-notch animate-spin text-amber-800 text-3xl'></i>
+            <i className='fa-solid fa-circle-notch animate-spin text-amber-800 dark:text-amber-500 text-3xl'></i>
           </article>
         </section>
       </div>
