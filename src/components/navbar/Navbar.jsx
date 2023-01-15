@@ -79,9 +79,7 @@ const Navbar = () => {
               setActive('home')
               setOpenNav(false)
             }}
-            className={`${
-              active === 'home' ? 'border-b-[6px] border-indigo-400' : ''
-            } `}
+            className={`${active === 'home' ? ' border-indigo-400' : ''} `}
           >
             Home
           </Link>
@@ -97,10 +95,12 @@ const Navbar = () => {
               setOpenNav(false)
             }}
             className={`${
-              active === 'categories' ? 'border-b-[6px] border-indigo-400' : ''
+              active === 'categories' ? ' border-indigo-400' : ''
             } `}
           >
-            Shop now!
+            <span className='bg-gradient-to-br from-indigo-500/90 to-purple-500/80 px-3 py-2 rounded-md'>
+              Shop now!
+            </span>
           </Link>
           <Link
             to='/characters'
@@ -114,7 +114,7 @@ const Navbar = () => {
               setOpenNav(false)
             }}
             className={`${
-              active === 'characters' ? 'border-b-[6px] border-indigo-400' : ''
+              active === 'characters' ? ' border-indigo-400' : ''
             } `}
           >
             Players
@@ -125,9 +125,7 @@ const Navbar = () => {
               setActive('profile')
               setOpenNav(false)
             }}
-            className={`${
-              active === 'profile' ? 'border-b-[6px] border-indigo-400' : ''
-            } `}
+            className={`${active === 'profile' ? ' border-indigo-400' : ''} `}
           >
             Profile
           </Link>
@@ -140,9 +138,7 @@ const Navbar = () => {
                 setActive('login')
                 setOpenNav(false)
               }}
-              className={`${
-                active === 'login' ? 'border-b-[6px] border-indigo-400' : ''
-              } `}
+              className={`${active === 'login' ? ' border-indigo-400' : ''} `}
             >
               Login
             </Link>
@@ -159,14 +155,14 @@ const Navbar = () => {
               setOpenNav(false)
             }}
             className={` relative ${
-              active === 'cart' ? 'border-b-[6px] border-indigo-400' : ''
+              active === 'cart' ? ' border-indigo-400' : ''
             } `}
           >
             Cart
           </Link>
           {user ? (
             <span
-              className='text-red-600 bg-red-200 py-2 rounded-md'
+              className='text-red-400 py-2 rounded-md'
               onClick={handleLogout}
             >
               Logout
