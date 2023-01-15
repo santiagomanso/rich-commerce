@@ -1,0 +1,55 @@
+import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+const RedirectMsg = () => {
+  const navigate = useNavigate()
+  const timerId = useRef
+
+  const [seconds, setSeconds] = useState(3)
+  const [animation, setAnimation] = useState(
+    'animate__animated animate__bounceIn'
+  )
+
+  useEffect(() => {
+    timerId.current = setInterval(() => {
+      setSeconds((prev) => prev - 1)
+    }, 1000)
+
+    if (seconds < 0) {
+      clearInterval(timerId.current)
+      setAnimation('animate__animated animate__hinge')
+      setTimeout(() => {
+        navigate('/login')
+      }, 2100)
+    }
+
+    return () => {
+      clearInterval(timerId.current)
+    }
+  }, [seconds])
+
+  return (
+    <main className='h-4/5 flex justify-center items-center p-5 md:p-0'>
+      <div
+        className={`bg-amber-200 p-5 lg:p-10 rounded flex justify-center items-center ${animation} outline-2 outline outline-amber-800 gap-2`}
+      >
+        <section className='flex flex-col gap-3'>
+          <article className='flex gap-2 items-baseline'>
+            <span className=' text-amber-800 dark:text-amber-900 text-2xl lg:text-5xl font-semibold'>
+              You must to be logged in
+            </span>
+            <i className='fa-solid fa-lock text-5xl text-amber-800'></i>
+          </article>
+          <article className=' md:text-2xl flex gap-2 items-center justify-center'>
+            <span className='text-amber-800'>
+              Redirecting to login in {seconds} seconds
+            </span>
+            <i className='fa-solid fa-circle-notch animate-spin text-amber-800 text-3xl'></i>
+          </article>
+        </section>
+      </div>
+    </main>
+  )
+}
+
+export default RedirectMsg
