@@ -27,7 +27,7 @@ const ProductsScreen = () => {
   //map de prouct con filter
 
   return (
-    <main>
+    <main className='animate__animated animate__fadeIn'>
       <Link
         to='/categories'
         className='flex gap-1 items-center mt-5 mb-5 hover:translate-x-1 duration-150'
