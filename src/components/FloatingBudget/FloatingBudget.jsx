@@ -117,6 +117,14 @@ const FloatingBudget = () => {
                 </span>
               </>
             )}
+            {!player && (
+              <div className='flex flex-col items-center animate-pulse text-amber-500'>
+                <i className='text-4xl fa-solid fa-triangle-exclamation'></i>
+                <span className='text-amber-500  font-semibold'>
+                  Select Player
+                </span>
+              </div>
+            )}
           </div>
           <div className='flex flex-col items-center gap-x-2'>
             {player && (
@@ -126,6 +134,14 @@ const FloatingBudget = () => {
                   {formatter.format(player.estWorthPrev)}M
                 </p>
               </>
+            )}
+            {!player && (
+              <div className='flex flex-col items-center animate-pulse text-amber-500'>
+                <i className='text-4xl fa-solid fa-triangle-exclamation'></i>
+                <span className='text-amber-500  font-semibold'>
+                  Select Player
+                </span>
+              </div>
             )}
           </div>
           <Link to='/cart' className='flex flex-col items-center gap-x-2'>
