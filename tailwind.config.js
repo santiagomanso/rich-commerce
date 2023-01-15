@@ -11,6 +11,12 @@ module.exports = {
         blobLeft: 'blobLeft 16s infinite',
         blobRight: 'blobRight 12s infinite',
         blobBottom: 'blobBottom 24s infinite',
+        laptopCart: 'laptopCart 1.5s ease-in-out forwards',
+        laptopBox: 'laptopBox 1.5s ease-in-out forwards',
+        phoneCart: 'phoneCart 1.5s ease-in-out forwards',
+        phoneBox: 'phoneBox 1.5s ease-in-out forwards',
+        txtAddToCart: 'txtAddToCart 1s forwards',
+        txtAdded: 'txtAdded 1.5s forwards',
       },
       keyframes: {
         blobLeft: {
@@ -62,6 +68,108 @@ module.exports = {
           },
           '100%': {
             transform: 'translate(0%, 0%) ',
+          },
+        },
+        laptopCart: {
+          '0%': {
+            transform: 'translate(-20%, 0%)',
+          },
+          '40%': {
+            transform: 'translate(510%, 0%)',
+          },
+          '60%': {
+            transform: 'translate(510%, 0%)',
+          },
+          '90%': {
+            transform: 'translate(1030%, 0%)',
+          },
+          '100%': {
+            transform: 'translate(1030%, 0%)',
+          },
+        },
+        laptopBox: {
+          '0%': {
+            transform: 'translate(0%, 0%)',
+          },
+          '40%': {
+            transform: 'translate(0%, 0%)',
+          },
+          '60%': {
+            transform: 'translate(0%, 200%)',
+            opacity: 1,
+          },
+          '65%': {
+            opacity: 0,
+          },
+          '90%': {
+            transform: 'translate(1030%, 200%)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translate(1030%, 200%)',
+            opacity: 0,
+          },
+        },
+        phoneCart: {
+          '0%': {
+            transform: 'translate(0%, 0%)',
+          },
+          '40%': {
+            transform: 'translate(840%, 0%)',
+          },
+          '60%': {
+            transform: 'translate(840%, 0%)',
+          },
+          '90%': {
+            transform: 'translate(1730%, 0%)',
+          },
+          '100%': {
+            transform: 'translate(1730%, 0%)',
+          },
+        },
+        phoneBox: {
+          '0%': {
+            transform: 'translate(0%, 0%)',
+          },
+          '40%': {
+            transform: 'translate(0%, 0%)',
+          },
+          '60%': {
+            transform: 'translate(0%, 200%)',
+            opacity: 1,
+          },
+          '65%': {
+            opacity: 0,
+          },
+          '90%': {
+            transform: 'translate(1030%, 200%)',
+            opacity: 0,
+          },
+          '100%': {
+            transform: 'translate(1030%, 200%)',
+            opacity: 0,
+          },
+        },
+        txtAddToCart: {
+          '0%': {
+            opacity: 1,
+          },
+          '10%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 0,
+          },
+        },
+        txtAdded: {
+          '0%': {
+            opacity: 0,
+          },
+          '95%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 1,
           },
         },
       },
