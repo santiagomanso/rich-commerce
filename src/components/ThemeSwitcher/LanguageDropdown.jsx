@@ -4,9 +4,9 @@ import { countryList } from '../../data/countriesData'
 const LanguageDropdown = ({ setAnnualIncome }) => {
   const [active, setActive] = useState(false)
   const menuRef = useRef()
-  const [country, setCountry] = useState('Germany')
+  const [country, setCountry] = useState('United States')
   const [flag, setFlag] = useState(
-    'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png'
+    'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png'
   )
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const LanguageDropdown = ({ setAnnualIncome }) => {
     <div
       ref={menuRef}
       onClick={() => setActive(!active)}
-      className={`dropdownWrapper`}
+      className={`dropdownWrapper  hover:-translate-y-1 duration-200`}
     >
       <img src={flag} alt={country} className='h-7 w-7' />
       <ul
