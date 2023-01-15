@@ -123,8 +123,12 @@ module.exports = {
           '90%': {
             transform: 'translate(1730%, 0%)',
           },
+          '95%': {
+            opacity: 1,
+          },
           '100%': {
             transform: 'translate(1730%, 0%)',
+            opacity: 0,
           },
         },
         phoneBox: {
