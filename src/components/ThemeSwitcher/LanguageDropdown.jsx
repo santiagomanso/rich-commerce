@@ -30,7 +30,7 @@ const LanguageDropdown = ({ setAnnualIncome }) => {
     <div
       ref={menuRef}
       onClick={() => setActive(!active)}
-      className={`dropdownWrapper  hover:-translate-y-1 duration-200`}
+      className={`dropdownWrapper `}
     >
       <img src={flag} alt={country} className='h-7 w-7' />
       <ul
