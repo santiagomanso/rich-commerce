@@ -36,11 +36,7 @@ const Dropdown = ({ name, logout, ulOptions }) => {
     <div
       ref={menuRef}
       onClick={() => setActive(!active)}
-      className={`dropdownWrapper  ${
-        active === 'profile'
-          ? 'border-b-4 border-slate-600'
-          : 'border-b-4 border-transparent'
-      }`}
+      className={`dropdownWrapper`}
     >
       <span>{name}</span>
       <i
