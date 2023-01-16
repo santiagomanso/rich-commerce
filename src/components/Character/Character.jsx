@@ -1,9 +1,12 @@
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PlayerContext } from '../../context/PlayerContext'
+import { RedirectContext } from '../../context/RedirectContext'
 import './character.css'
 
 const Character = ({ character }) => {
+  const { path } = useContext(RedirectContext)
+
   // Create our number formatter.
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -26,7 +29,7 @@ const Character = ({ character }) => {
 
   const handleClick = () => {
     setPlayer(character)
-    navigate('/')
+    path ? navigate(path) : navigate('/') //16.01.2023 only path available from cart
   }
 
   return (
