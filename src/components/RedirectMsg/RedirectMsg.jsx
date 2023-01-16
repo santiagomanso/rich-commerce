@@ -29,7 +29,7 @@ const RedirectMsg = () => {
   }, [seconds])
 
   return (
-    <main className='h-4/5 lg:h-[83%] flex justify-center items-center p-5 md:p-0'>
+    <main className='h-3/4 lg:h-[83%] flex justify-center items-center p-5 md:p-0'>
       <div
         className={`bg-amber-200 dark:bg-stone-800/60 p-5 lg:p-10 rounded flex justify-center items-center ${animation} outline-2 outline outline-amber-500 gap-2`}
       >
