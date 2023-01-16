@@ -13,11 +13,19 @@ const Product = ({ item }) => {
     return (Math.log(item.price) * Math.LOG10E + 1) | 0
   }
 
-  const addToCart = () => {
+  const addToCart = (item) => {
     setActive(!active)
     setStock(stock - 1)
 
-    if (active) setCart([...cart, { item }])
+    if (active) {
+      setCart([...cart, { item }])
+    } else {
+      const newCart = cart.filter(
+        (cartItem) => cartItem.item.product_id !== item.product_id
+      )
+
+      setCart(newCart)
+    }
   }
 
   return (
@@ -51,7 +59,7 @@ const Product = ({ item }) => {
               : 'Thousands'}
           </span>
           <button
-            onClick={addToCart}
+            onClick={() => addToCart(item)}
             className={`w-full md:w-[200px] py-2 lg:py-3  rounded-md  relative flex justify-center items-center
              bg-gradient-to-br ${
                active
