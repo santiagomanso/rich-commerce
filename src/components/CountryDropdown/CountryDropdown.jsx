@@ -34,9 +34,9 @@ const CountryDropdown = ({ setAnnualIncome }) => {
       onClick={() => setActive(!active)}
       className={`dropdownWrapper`}
     >
-      <span className='flex gap-1 items-center'>
+      <span className='flex gap-2 items-center'>
         <span>{country}</span>
-        <img src={flag} alt={country} className='h-5 w-5' />
+        <img src={flag} alt={country} className='h-7 w-7' />
       </span>
       <i
         className={`fa-solid fa-chevron-down ${
@@ -47,12 +47,12 @@ const CountryDropdown = ({ setAnnualIncome }) => {
       <ul
         className={`${
           active ? 'scale-100' : 'scale-0'
-        } h-[300px] overflow-auto w-48`}
+        } h-[300px] overflow-auto w-56 p-3`}
       >
         {countryList.map((country) => {
           return (
             <li
-              className='flex items-center justify-between px-3'
+              className='flex items-center justify-between p-2'
               key={country.id}
               onClick={() => handleChange(country)}
             >
