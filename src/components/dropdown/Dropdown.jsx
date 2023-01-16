@@ -27,8 +27,6 @@ const Dropdown = ({ name, logout, ulOptions }) => {
 
   const handleLogout = () => {
     setPath('')
-    setPlayer('')
-    setCart([])
     logout()
   }
 

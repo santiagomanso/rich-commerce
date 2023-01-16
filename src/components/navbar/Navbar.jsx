@@ -34,8 +34,6 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     setPath('')
-    setPlayer('')
-    setCart([])
     setOpenNav(false)
     try {
       await logout()
