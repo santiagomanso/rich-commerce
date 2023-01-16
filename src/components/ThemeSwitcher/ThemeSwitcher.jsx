@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import LanguageDropdown from './LanguageDropdown'
+import LanguageDropdown from '../dropdown/LanguageDropdown'
 
 const ThemeSwitcher = ({ setOpenNav }) => {
   const [active, setActive] = useState('sun')
