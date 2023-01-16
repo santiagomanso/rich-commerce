@@ -47,12 +47,12 @@ const CountryDropdown = ({ setAnnualIncome }) => {
       <ul
         className={`${
           active ? 'scale-100' : 'scale-0'
-        } h-[300px] overflow-auto p-2 w-52`}
+        } h-[300px] overflow-auto w-48`}
       >
         {countryList.map((country) => {
           return (
             <li
-              className='flex items-center justify-between gap-1 p-2'
+              className='flex items-center justify-between px-3'
               key={country.id}
               onClick={() => handleChange(country)}
             >
