@@ -63,8 +63,8 @@ const LoginScreen = () => {
   }
 
   return (
-    <section
-      className={`${animation} h-4/5 flex items-start lg:items-center justify-center`}
+    <main
+      className={`${animation} h-4/5 lg:h-[81%] flex items-start lg:items-center justify-center`}
     >
       <div
         className='bg-gradient-to-br
@@ -201,7 +201,7 @@ const LoginScreen = () => {
           />
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 
