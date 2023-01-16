@@ -6,10 +6,12 @@ import OrderSummary from '../../components/CheckoutStats/OrderSummary'
 import CountryDropdown from '../../components/CountryDropdown/CountryDropdown'
 import { CartContext } from '../../context/CartContext'
 import { PlayerContext } from '../../context/PlayerContext'
+import { RedirectContext } from '../../context/RedirectContext'
 
 const CartScreen = () => {
-  const { cart, cartCount } = useContext(CartContext)
+  const { cart, setCart, cartCount } = useContext(CartContext)
   const { player } = useContext(PlayerContext)
+  const { setPath } = useContext(RedirectContext)
 
   const [summaryTotal, setSummaryTotal] = useState(0)
   const [discount, setDiscount] = useState(0)
@@ -61,6 +63,7 @@ const CartScreen = () => {
   }
 
   const getPlayerNetworth = () => {
+    if (!player) return
     const initialMoney = player.estWorthPrev
     console.log('initialMoney', initialMoney)
     const moneyParts = initialMoney.toString()
@@ -78,6 +81,14 @@ const CartScreen = () => {
     return Math.floor(getTotals() / income)
   }
 
+  const handleRemove = (item) => {
+    const newCart = cart.filter(
+      (cartItem) => cartItem.item.product_id !== item.product_id
+    )
+
+    setCart(newCart)
+  }
+
   return (
     <main
       className={`animate__animated animate__fadeIn ${
@@ -86,7 +97,7 @@ const CartScreen = () => {
           : 'h-full lg:h-5/6 flex justify-center items-center'
       } `}
     >
-      {cart.length > 0 ? (
+      {cart.length > 0 && player ? (
         <div className='flex h-full'>
           <div className='bg-gray-300/20 dark:bg-black/70 w-2/3 h-full overflow-auto px-2 rounded'>
             <div className='col-span-2 flex flex-col gap-5'>
@@ -106,9 +117,15 @@ const CartScreen = () => {
                       className='h-full w-full rounded'
                     />
                   </div>
-                  <div className='flex flex-col p-3'>
+                  <div className='flex flex-col p-3 relative w-full'>
                     <h3 className='font-semibold uppercase'>{item.name}</h3>
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
+                    <button
+                      onClick={() => handleRemove(item)}
+                      className=' absolute right-1 top-1 duration-300 hover:-translate-y-2 hover:rotate-6'
+                    >
+                      <i className='fa-solid fa-trash text-red-600 text-2xl '></i>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -224,6 +241,20 @@ const CartScreen = () => {
             </div>
           </div>
         </div>
+      ) : cart.length > 0 && !player ? (
+        <div className='pt-[50%] md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
+          <div className='flex items-center gap-2'>
+            <span>You must choose a player!</span>
+            <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
+          </div>
+          <Link
+            onClick={() => setPath('/cart')}
+            to='/characters'
+            className='bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md'
+          >
+            Choose Player now!
+          </Link>
+        </div>
       ) : (
         <div className='animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
@@ -231,6 +262,7 @@ const CartScreen = () => {
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
           </div>
           <Link
+            onClick={() => setPath('/cart')}
             to='/categories'
             className='bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md'
           >
