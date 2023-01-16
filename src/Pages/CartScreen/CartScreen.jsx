@@ -99,7 +99,7 @@ const CartScreen = () => {
       {cart.length > 0 && player ? (
         <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full'>
           <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3 h-full overflow-auto p-2 lg:p-4 rounded'>
-            <div className='h-[300px] lg:h-full overflow-auto  col-span-2 flex flex-col gap-5'>
+            <div className='h-[250px] lg:h-full overflow-auto  col-span-2 flex flex-col gap-5'>
               {cart.map(({ item }, i) => (
                 <div
                   key={i}
@@ -132,7 +132,7 @@ const CartScreen = () => {
               ))}
             </div>
           </div>
-          <div className='w-full lg:w-1/3 overflow-auto h-[400px] lg:h-full'>
+          <div className='w-full lg:w-1/3 overflow-auto h-[500px] lg:h-full'>
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
               <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
                 <h2 className='text-gray-200'>CHECKOUT</h2>
