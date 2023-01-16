@@ -1,4 +1,3 @@
-import React from 'react'
 import CategoriesGrid from '../../components/grids/CategoriesGrid'
 import useCategories from '../../hooks/useCategories'
 
