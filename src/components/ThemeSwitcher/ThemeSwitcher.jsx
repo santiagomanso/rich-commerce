@@ -13,7 +13,7 @@ const ThemeSwitcher = ({ setOpenNav }) => {
           setActive('sun')
           document.documentElement.classList.remove('dark')
         }}
-        className={`fa-solid fa-sun cursor-pointer hover:-translate-y-1 duration-200 ${
+        className={`fa-solid fa-sun cursor-pointer ${
           active === 'sun' ? 'text-yellow-600' : 'text-gray-300/80'
         }`}
       ></i>
@@ -25,7 +25,7 @@ const ThemeSwitcher = ({ setOpenNav }) => {
           setActive('moon')
           document.documentElement.classList.add('dark')
         }}
-        className={`fa-solid fa-moon cursor-pointer hover:-translate-y-1 duration-200 ${
+        className={`fa-solid fa-moon cursor-pointer ${
           active === 'moon' ? 'text-violet-500' : 'text-gray-500'
         }`}
       ></i>
