@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import AverageAnnualIncome from '../../components/CheckoutStats/AverageAnnualIncome'
 import NetworthImpacts from '../../components/CheckoutStats/NetworthImpacts'
 import OrderSummary from '../../components/CheckoutStats/OrderSummary'
-import CountryDropdown from '../../components/CountryDropdown/CountryDropdown'
 import { CartContext } from '../../context/CartContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
@@ -91,16 +90,16 @@ const CartScreen = () => {
 
   return (
     <main
-      className={`animate__animated animate__fadeIn ${
+      className={` grid grid-cols-1 lg:block animate__animated animate__fadeIn ${
         cart.length > 0
           ? 'h-full lg:h-[81%]'
           : 'h-full lg:h-[80.9%] flex justify-center items-center'
       } `}
     >
       {cart.length > 0 && player ? (
-        <div className='flex h-full'>
-          <div className='bg-gray-300/20 dark:bg-black/70 w-2/3 h-full overflow-auto px-2 rounded'>
-            <div className='col-span-2 flex flex-col gap-5'>
+        <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full'>
+          <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3 h-full overflow-auto p-2 lg:p-4 rounded'>
+            <div className='h-[300px] lg:h-full overflow-auto  col-span-2 flex flex-col gap-5'>
               {cart.map(({ item }, i) => (
                 <div
                   key={i}
@@ -110,19 +109,21 @@ const CartScreen = () => {
                       : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-violet-400/40'
                   } rounded`}
                 >
-                  <div className='max-w-[250px] p-2'>
+                  <div className='lg:max-w-[250px] p-2'>
                     <img
                       src={item.img}
                       alt={item.name}
-                      className='h-full w-full rounded'
+                      className='w-[200px] object-cover lg:h-full lg:w-full rounded'
                     />
                   </div>
-                  <div className='flex flex-col p-3 relative w-full'>
-                    <h3 className='font-semibold uppercase'>{item.name}</h3>
+                  <div className='flex flex-col py-1 relative w-full'>
+                    <h3 className='font-semibold uppercase text-sm md:text-lg'>
+                      {item.name}
+                    </h3>
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
                     <button
                       onClick={() => handleRemove(item)}
-                      className=' absolute right-3 top-2 duration-200 hover:scale-125 p-0'
+                      className=' absolute right-3 bottom-0 lg:bottom-[75%] duration-200 hover:scale-125 p-0'
                     >
                       <i className='fa-solid fa-delete-left text-red-600 dark:text-gray-200 text-2xl '></i>
                     </button>
@@ -131,7 +132,7 @@ const CartScreen = () => {
               ))}
             </div>
           </div>
-          <div className='w-1/3 overflow-y-auto'>
+          <div className='w-full lg:w-1/3 overflow-auto h-[400px] lg:h-full'>
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
               <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
                 <h2 className='text-gray-200'>CHECKOUT</h2>
