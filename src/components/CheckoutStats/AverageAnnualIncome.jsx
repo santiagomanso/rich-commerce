@@ -1,4 +1,4 @@
-import CountryDropdown from '../CountryDropdown/CountryDropdown'
+import CountryDropdown from '../dropdown/CountryDropdown'
 
 const AverageAnnualIncome = ({
   setAnnualIncome,
