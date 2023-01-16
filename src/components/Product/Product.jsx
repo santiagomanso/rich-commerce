@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 
 const Product = ({ item }) => {
@@ -15,7 +15,7 @@ const Product = ({ item }) => {
 
   const addToCart = (item) => {
     setActive(!active)
-    setStock(stock - 1)
+    // setStock(stock - 1)
 
     if (active) {
       setCart([...cart, { item }])
@@ -27,6 +27,17 @@ const Product = ({ item }) => {
       setCart(newCart)
     }
   }
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      cart.map((cartItem) => {
+        if (cartItem.item.product_id === item.product_id) {
+          setActive(false)
+          // console.log('found it:', cartItem.item)
+        }
+      })
+    }
+  }, [cart])
 
   return (
     <div className=' flex flex-col justify-between shadow-md   border-2 border-gray-300/80  rounded-md relative h-[80vh]'>
