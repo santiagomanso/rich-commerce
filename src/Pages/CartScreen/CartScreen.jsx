@@ -34,7 +34,7 @@ const CartScreen = () => {
   }
 
   const getDiscounts = () => {
-    console.log('cartCount', cartCount)
+    // console.log('cartCount', cartCount)
     switch (true) {
       case cartCount === 1: {
         setDiscount(0.1)
@@ -65,11 +65,11 @@ const CartScreen = () => {
   const getPlayerNetworth = () => {
     if (!player) return
     const initialMoney = player.estWorthPrev
-    console.log('initialMoney', initialMoney)
+    // console.log('initialMoney', initialMoney)
     const moneyParts = initialMoney.toString()
-    console.log('moneyParts', moneyParts)
+    // console.log('moneyParts', moneyParts)
     const networth = moneyParts.replace('.', '')
-    console.log('networth', +networth)
+    // console.log('networth', +networth)
     return +networth
   }
 
@@ -93,8 +93,8 @@ const CartScreen = () => {
     <main
       className={`animate__animated animate__fadeIn ${
         cart.length > 0
-          ? 'h-full lg:h-5/6'
-          : 'h-full lg:h-5/6 flex justify-center items-center'
+          ? 'h-full lg:h-[81%]'
+          : 'h-full lg:h-[80.9%] flex justify-center items-center'
       } `}
     >
       {cart.length > 0 && player ? (
@@ -106,8 +106,8 @@ const CartScreen = () => {
                   key={i}
                   className={`flex  ${
                     i % 2 === 0
-                      ? 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50'
-                      : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50'
+                      ? 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-slate-500/50'
+                      : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-violet-400/40'
                   } rounded`}
                 >
                   <div className='max-w-[250px] p-2'>
@@ -122,9 +122,9 @@ const CartScreen = () => {
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
                     <button
                       onClick={() => handleRemove(item)}
-                      className=' absolute right-1 top-1 duration-300 hover:-translate-y-2 hover:rotate-6'
+                      className=' absolute right-3 top-2 duration-200 hover:scale-125 p-0'
                     >
-                      <i className='fa-solid fa-trash text-red-600 text-2xl '></i>
+                      <i className='fa-solid fa-delete-left text-red-600 dark:text-gray-200 text-2xl '></i>
                     </button>
                   </div>
                 </div>
@@ -133,14 +133,15 @@ const CartScreen = () => {
           </div>
           <div className='w-1/3 overflow-y-auto'>
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
-              <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded'>
+              <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
                 <h2 className='text-gray-200'>CHECKOUT</h2>
+                <i className='fa-solid fa-wallet text-gray-200 text-2xl'></i>
               </div>
               <span className='text-end'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                voluptatem, quas, culpa quod perferendis veniam modi quia eaque
-                est, ea adipisci ex eos natus voluptas sit reprehenderit
-                deleniti molestias. Blanditiis.
+                Get ready to break the bank, because your cart is loaded with
+                items that will cost you a pretty penny ({getSemitotals()}$ to
+                be exact). But don't worry, you'll be saving a small fortune by
+                purchasing another item and we will give you a tasty discount!.
               </span>
               <OrderSummary
                 cartCount={cartCount}
