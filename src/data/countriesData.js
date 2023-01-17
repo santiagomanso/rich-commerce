@@ -5,6 +5,7 @@ export const countryList = [
     flag: 'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png',
     annualIncome: 38426,
     gdp: 3693204332230,
+    language: 'de',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const countryList = [
     flag: 'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png',
     annualIncome: 53329,
     gdp: 19485394000000,
+    language: 'en',
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const countryList = [
     flag: 'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-argentina2x.png',
     annualIncome: 7212,
     gdp: 637430331479,
+    language: 'es',
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const countryList = [
     flag: 'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-spain2x.png',
     annualIncome: 22545,
     gdp: 1314314164402,
+    language: 'es',
   },
   {
     id: 5,

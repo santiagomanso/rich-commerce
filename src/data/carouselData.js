@@ -7,13 +7,24 @@ export const carouselData = [
     id: 1,
     slideOptions:
       'select-none rounded flex bg-gradient-to-tl from-slate-500/60 dark:from-indigo-900/60 via-gray-400/95 dark:via-gray-900/95 to-gray-300/90   dark:to-slate-800/90 ',
-    title: 'Billionaire E-Commerce',
-    subtitle:
-      'Simulate the wealth of the top Forbes human beings and buy the most expensive items that you can think of.',
+    title: {
+      en: 'Rich Simulator',
+      es: 'Simulador de millonarios',
+      de: 'Reicher Simulator',
+    },
+    subtitle: {
+      en: 'Simulate the wealth of the top Forbes human beings and buy the most expensive items that you can think of.',
+      es: 'Simule la riqueza de los seres humanos mas ricos del planeta segun Forbes y compre los products mas exclusivos que pueda pensar',
+      de: 'Simulieren Sie den Reichtum der Top-Forbes-Menschen und kaufen Sie die teuersten Gegenstände, die Sie sich vorstellen können.',
+    },
     actionLeft: { type: 'redirect', path: '/howtoplay' },
     actionRight: { type: 'redirect', path: '/characters' },
-    buttonLeft: 'More',
-    buttonRight: 'Choose player',
+    buttonLeft: { en: 'More', es: 'Mas', de: 'Mehr' },
+    buttonRight: {
+      en: 'Choose player',
+      es: 'Seleccione Personaje',
+      de: 'Spieler auswählen',
+    },
     img1: money1,
     imgOptions1: 'absolute left-0 opacity-10',
     img2: money2,
@@ -23,12 +34,19 @@ export const carouselData = [
     id: 2,
     slideOptions:
       'select-none rounded flex bg-gradient-to-br dark:bg-gradient-to-tl from-slate-500/60 dark:from-indigo-900/60 via-gray-400/95 dark:via-gray-900/80 to-gray-300/90   dark:to-slate-800/90 ',
-    title: 'Bugatti La Voiture Noire',
-    subtitle:
-      'With a price tag of $13.4 million, the one-off Bugatti La Voiture Noire is officially the most expensive new Bugatti ever made.',
+    title: {
+      en: 'Bugatti La Voiture Noire',
+      es: 'Bugatti La Voiture Noire',
+      de: 'Bugatti La Voiture Noire',
+    },
+    subtitle: {
+      en: 'With a price tag of $13.4 million, the one-off Bugatti La Voiture Noire is officially the most expensive new Bugatti ever made.',
+      es: 'Con un precio de $13.4 millones, la estrepitosa Bugatti La Voiture Noire es oficialmente la nueva Bugatti mas cara alguna vez hecha.',
+      de: 'Mit einem Preis von 13,4 Millionen Dollar ist der einmalige Bugatti La Voiture Noire offiziell der teuerste neue Bugatti aller Zeiten.',
+    },
     actionLeft: { type: 'redirect', path: '/category/3' },
     actionRight: { type: 'redirect', path: '/characters' },
-    buttonLeft: 'More cars',
+    buttonLeft: { en: 'More cars', es: 'Mas autos', de: 'Mehr autos' },
     img2: bugatti,
     imgOptions2:
       'absolute bottom-5 right-0 lg:right-[5%] lg:scale-125 opacity-30 lg:opacity-80',
@@ -37,26 +55,44 @@ export const carouselData = [
     id: 3,
     slideOptions:
       'select-none rounded flex bg-gradient-to-br dark:bg-gradient-to-tl from-slate-500/60 dark:from-indigo-900/60 via-gray-400/95 dark:via-gray-900/80 to-gray-300/90   dark:to-slate-800/90 ',
-    title: 'Elon Musk',
-    subtitle: 'Introducing new playable character.',
+    title: { en: 'Elon Musk', es: 'Elon Musk', de: 'Elon Musk' },
+    subtitle: {
+      en: 'Introducing new playable character. You can either way select him below, or see more available players on the player screen ',
+      es: 'Nuevo personaje para jugar. Puede seleccionarlo aqui directamente, o bien elegir otros personajes disponibles en la pantalla de seleeccion de personaje',
+      de: 'Einführung einer neuen spielbaren Figur. Du kannst ihn entweder unten auswählen oder weitere verfügbare Spieler auf dem Spielerbildschirm sehen',
+    },
     actionLeft: { type: 'redirect', path: '/characters' },
     actionRight: { type: 'character', character: 'elon' },
-    buttonLeft: 'More charaters',
-    buttonRight: 'Play as Elon NOW!',
+    buttonLeft: {
+      en: 'More charaters',
+      es: 'Mas Personajes',
+      de: 'Mehr Charaktere',
+    },
+    buttonRight: {
+      en: 'Play as Elon NOW!',
+      es: 'Jugar como Elon YA!',
+      de: 'JETZT als Elon spielen!',
+    },
     img2: 'https://microcapdaily.com/wp-content/uploads/2022/04/Elon-Musk-PNG-Pic-Background-1068x828.png',
     imgOptions2:
       'absolute bottom-16 scale-[1.1] lg:bottom-0 translate-y-[29%] -right-10 lg:right-0  lg:scale-[0.45] opacity-30 lg:opacity-80',
   },
-
   {
     id: 4,
     slideOptions:
       'select-none rounded flex bg-gradient-to-br dark:bg-gradient-to-tl from-slate-500/60 dark:from-indigo-900/60 via-gray-400/95 dark:via-gray-900/80 to-gray-300/90   dark:to-slate-800/90 ',
-    title: 'F-22 Raptor',
-    subtitle:
-      'Introducing a fifth-generation stealth aircraft used by the USAF. Price point would range between $206 and $216 million for only one jet.',
+    title: { en: 'F-22 Raptor', es: 'F-22 Raptor', de: 'F-22 Raptor' },
+    subtitle: {
+      en: 'Introducing a fifth-generation stealth aircraft used by the USAF. Price point would range between $206 and $216 million for only one jet.',
+      es: 'Introducimos un caza de quinta generacion y furtivo, usado por la fuerza aerea de estados unidos. El precio estara rondando los $216 millones por unidad',
+      de: 'Einführung eines Stealth-Flugzeugs der fünften Generation, das von der USAF eingesetzt wird. Der Preis liegt zwischen 206 und 216 Mio. USD für ein einziges Flugzeug.',
+    },
     actionLeft: { type: 'redirect', path: '/category/9' },
-    buttonLeft: 'Military planes',
+    buttonLeft: {
+      en: 'Military planes',
+      es: 'Aviones Militares',
+      de: 'Militärflugzeuge',
+    },
     img2: 'https://images.fineartamerica.com/images/artworkimages/medium/3/a-us-air-force-f-22-raptor-fifth-generation-stealth-air-superiority-fighter-tom-hill-transparent.png',
     imgOptions2:
       'absolute -bottom-20 lg:bottom-2 lg:right-20 md:-bottom-10 md:translate-y-[10%] right-5   opacity-30 lg:opacity-100',
