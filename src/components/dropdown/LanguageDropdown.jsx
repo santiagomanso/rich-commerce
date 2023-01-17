@@ -1,7 +1,9 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 import { countryList } from '../../data/countriesData'
 
 const LanguageDropdown = ({ setAnnualIncome }) => {
+  const { handleChangeLanguage } = useContext(LanguageContext)
   const [active, setActive] = useState(false)
   const menuRef = useRef()
   const [country, setCountry] = useState('United States')
@@ -22,8 +24,9 @@ const LanguageDropdown = ({ setAnnualIncome }) => {
     }
   })
 
-  const handleChange = ({ flag }) => {
+  const handleChange = ({ flag, language }) => {
     setFlag(flag)
+    handleChangeLanguage(language)
   }
 
   return (
