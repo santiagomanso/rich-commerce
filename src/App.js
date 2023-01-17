@@ -17,6 +17,7 @@ import HowToPlayScreen from './Pages/HowToPlayScreen/HowToPlayScreen'
 import ProductsScreen from './Pages/ProductsScreen/ProductsScreen'
 import { RedirectProvider } from './context/RedirectContext'
 import CategoriesScreen from './Pages/CategoriesScreen/CategoriesScreen'
+import { LanguageProvider } from './context/LanguageContext'
 
 function App() {
   return (
@@ -24,59 +25,61 @@ function App() {
       <PlayerProvider>
         <CartProvider>
           <RedirectProvider>
-            <BrowserRouter>
-              <MainContainer>
-                <Navbar />
-                <FloatingBudget />
-                <Routes>
-                  <Route exact path='/' element={<HomeScreen />} />
-                  <Route
-                    exact
-                    path='/characters'
-                    element={
-                      <ProtectedRoute>
-                        <CharactersScreen />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route exact path='/profile' element={<ProfileScreen />} />
-                  <Route exact path='/login' element={<LoginScreen />} />
-                  <Route
-                    exact
-                    path='/howtoplay'
-                    element={<HowToPlayScreen />}
-                  />
-                  <Route
-                    exact
-                    path='/cart'
-                    element={
-                      <ProtectedRoute>
-                        <CartScreen />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    exact
-                    path='/categories'
-                    element={
-                      <ProtectedRoute>
-                        <CategoriesScreen />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    exact
-                    path='/category/:categoryId'
-                    element={
-                      <ProtectedRoute>
-                        <ProductsScreen />
-                      </ProtectedRoute>
-                    }
-                  />
-                </Routes>
-                <Footer />
-              </MainContainer>
-            </BrowserRouter>
+            <LanguageProvider>
+              <BrowserRouter>
+                <MainContainer>
+                  <Navbar />
+                  <FloatingBudget />
+                  <Routes>
+                    <Route exact path='/' element={<HomeScreen />} />
+                    <Route
+                      exact
+                      path='/characters'
+                      element={
+                        <ProtectedRoute>
+                          <CharactersScreen />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route exact path='/profile' element={<ProfileScreen />} />
+                    <Route exact path='/login' element={<LoginScreen />} />
+                    <Route
+                      exact
+                      path='/howtoplay'
+                      element={<HowToPlayScreen />}
+                    />
+                    <Route
+                      exact
+                      path='/cart'
+                      element={
+                        <ProtectedRoute>
+                          <CartScreen />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      exact
+                      path='/categories'
+                      element={
+                        <ProtectedRoute>
+                          <CategoriesScreen />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      exact
+                      path='/category/:categoryId'
+                      element={
+                        <ProtectedRoute>
+                          <ProductsScreen />
+                        </ProtectedRoute>
+                      }
+                    />
+                  </Routes>
+                  <Footer />
+                </MainContainer>
+              </BrowserRouter>
+            </LanguageProvider>
           </RedirectProvider>
         </CartProvider>
       </PlayerProvider>
