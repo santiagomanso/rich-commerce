@@ -13,9 +13,11 @@ import { carouselData, Elon } from '../../data/carouselData'
 import { UserAuth } from '../../context/AuthContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const Carousel = () => {
   const { user } = UserAuth()
+  const { language } = useContext(LanguageContext)
   const { setPlayer, setAttemptedPlayer } = useContext(PlayerContext)
   const { setPath } = useContext(RedirectContext)
   const navigate = useNavigate()
@@ -66,21 +68,21 @@ const Carousel = () => {
             <SwiperSlide key={data.id} className={data.slideOptions}>
               <div className='relative w-full flex flex-col items-start justify-center gap-5'>
                 <div className='pl-10 md:px-12 flex flex-col gap-5 z-10 '>
-                  <h2 className='font-bold'>{data.title}</h2>
-                  <p className='w-2/3'>{data.subtitle}</p>
-                  <div className='w-5/6 md:w-full lg:mt-5 lg:w-1/3 gap-x-2 md:gap-x-10 flex justify-start'>
+                  <h2 className='font-bold'>{data.title[language]}</h2>
+                  <p className='w-2/3'>{data.subtitle[language]}</p>
+                  <div className='w-5/6 lg:w-[600px]  lg:mt-5  gap-x-2 md:gap-x-5 flex justify-start'>
                     <button
                       onClick={() => handleClick(data.actionLeft)}
-                      className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-slate-500 to-neutral-800 rounded-md  text-white'
+                      className='w-full lg:w-[250px]   bg-gradient-to-br from-slate-500 to-neutral-800 rounded-md  text-white'
                     >
-                      {data.buttonLeft}
+                      {data.buttonLeft[language]}
                     </button>
                     {data.buttonRight ? (
                       <button
                         onClick={() => handleClick(data.actionRight)}
-                        className='w-full md:w-[200px] lg:w-[600px] bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md  text-white'
+                        className='w-full lg:w-[250px]   bg-gradient-to-br from-indigo-500 to-purple-500 rounded-md  text-white'
                       >
-                        {data.buttonRight}
+                        {data.buttonRight[language]}
                       </button>
                     ) : (
                       ''
