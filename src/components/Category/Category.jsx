@@ -1,11 +1,14 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
+import { LanguageContext } from '../../context/LanguageContext'
 import { RedirectContext } from '../../context/RedirectContext'
 import Rating from '../Rating/Rating'
 import './category.css'
 
 const Category = ({ category }) => {
+  const { language } = useContext(LanguageContext)
+  console.log('language', language)
   const { path, setPath } = useContext(RedirectContext)
   const { user } = UserAuth()
   return (
@@ -48,8 +51,10 @@ const Category = ({ category }) => {
         )}
       </div>
       <div className='categoryDesc'>
-        <h3 className='text-gray-700  font-semibold'>{category.name}</h3>
-        <p className='text-gray-500 font-medium'>{category.desc}</p>
+        <h3 className='text-gray-700  font-semibold'>
+          {category.name[language]}
+        </h3>
+        <p className='text-gray-500 font-medium'>{category.desc[language]}</p>
       </div>
     </Link>
   )
