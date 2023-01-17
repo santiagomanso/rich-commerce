@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
 import { CartContext } from '../../context/CartContext'
+import { LanguageContext } from '../../context/LanguageContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
 import Badge from '../Badge/Badge'
@@ -12,6 +13,7 @@ import './navbar.css'
 const Navbar = () => {
   const { user, logout } = UserAuth()
 
+  const { text } = useContext(LanguageContext)
   const navigate = useNavigate()
 
   const [openNav, setOpenNav] = useState(false) //navbar logic
@@ -181,7 +183,7 @@ const Navbar = () => {
           } flex items-center gap-2`}
         >
           <i className={` fa-solid fa-house text-xl text-slate-600`}></i>
-          <span>Home</span>
+          <span>{text.home}</span>
         </Link>
 
         <div className='flex space-x-14 items-center'>
@@ -193,7 +195,7 @@ const Navbar = () => {
               active === 'howtoplay' ? '' : ''
             } flex items-center gap-2`}
           >
-            <span>How to play</span>
+            <span>{text.howToPlay}</span>
           </Link>
           <Link
             to='/categories'
@@ -210,7 +212,7 @@ const Navbar = () => {
             } flex items-center gap-2`}
           >
             <span className='shadow-md bg-gradient-to-br from-indigo-500/90 to-purple-500/80 text-gray-200 rounded-lg px-3 py-1'>
-              Shop now!
+              {text.shopNow}
             </span>
           </Link>
           <Link
@@ -227,7 +229,7 @@ const Navbar = () => {
               active === 'characters' ? '' : ''
             } flex items-center gap-2`}
           >
-            <span>Players</span>
+            <span>{text.players}</span>
           </Link>
           {user ? (
             ''
@@ -239,7 +241,7 @@ const Navbar = () => {
                 active === 'login' ? '' : ''
               } flex items-center gap-2`}
             >
-              <span>Log in</span>
+              <span>{text.logIn}</span>
             </Link>
           )}
           <Link
@@ -254,7 +256,7 @@ const Navbar = () => {
               active === 'cart' ? '' : ''
             } flex items-center gap-2`}
           >
-            <span> Cart </span>
+            <span> {text.cart} </span>
             <i className='fa-solid fa-cart-shopping text-xl text-slate-600'></i>
             {cart.length > 0 ? (
               <Badge position='absolute -top-3 -right-6' />
