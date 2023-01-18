@@ -7,6 +7,7 @@ import Badge from '../Badge/Badge'
 const FloatingBudget = () => {
   const [activeName, setActiveName] = useState(false)
   const [activeBudget, setActiveBudget] = useState(false)
+  const [show, setShow] = useState(false)
 
   const navigate = useNavigate()
 
@@ -111,7 +112,18 @@ const FloatingBudget = () => {
         >
           <div className='flex flex-col items-center'>
             {player && (
-              <>
+              <div
+                onClick={() => setShow(!show)}
+                className='flex flex-col items-center relative'
+              >
+                <button
+                  onClick={resetPlayer}
+                  className={` duration-150 ${
+                    show ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+                  } absolute -top-6 right-0 text-white text-xl bg-red-500 px-2 py-0 rounded-full`}
+                >
+                  X
+                </button>
                 <div className='h-10 w-10'>
                   <img
                     className='rounded-full h-full w-full'
@@ -122,7 +134,7 @@ const FloatingBudget = () => {
                 <span className='text-gray-300 max-w-[150px] max-h-[23px] text-ellipsis overflow-hidden font-medium'>
                   {player.uri}
                 </span>
-              </>
+              </div>
             )}
             {!player && (
               <Link
