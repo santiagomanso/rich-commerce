@@ -21,7 +21,7 @@ const FloatingBudget = () => {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   })
 
-  const { player, setPlayer } = useContext(PlayerContext)
+  const { player, resetPlayer } = useContext(PlayerContext)
   const { cart, cartCount } = useContext(CartContext)
   return (
     <>
@@ -44,7 +44,7 @@ const FloatingBudget = () => {
               bg-slate-400 border-2 border-gray-500 text-slate-700 rounded-r-full absolute top-[50%] -translate-y-[60%] left-0 
               px-4 py-3 flex gap-3 font-medium items-center  duration-1000 z-50 cursor-pointer`}
             >
-              <div className='flex gap-2 items-center justify-end'>
+              <div className='flex gap-2 items-center justify-end relative'>
                 <p className=' text-slate-700 dark:text-slate-800 w-[180px]'>
                   {player.uri}
                 </p>
@@ -55,6 +55,12 @@ const FloatingBudget = () => {
                     alt={player.uri}
                   />
                 </div>
+                <button
+                  onClick={resetPlayer}
+                  className='absolute -top-5 -right-3 text-white rounded-full bg-red-500 px-2 py-0 dark:text-gray-200'
+                >
+                  X
+                </button>
               </div>
             </div>
 
