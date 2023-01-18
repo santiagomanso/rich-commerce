@@ -20,7 +20,7 @@ const Category = ({ category }) => {
           setPath('') // user = no redirect
         }
       }}
-      to={`/category/${category.category_id}`}
+      to={`/products/${category.category_id}`}
       className={`categoryCard group ${category.row} ${category.col} 
       bg-white dark:bg-slate-800/60`}
       key={category.category_id}
