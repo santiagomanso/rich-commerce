@@ -46,7 +46,7 @@ export const carouselData = [
     },
     actionLeft: { type: 'redirect', path: '/category/3' },
     actionRight: { type: 'redirect', path: '/characters' },
-    buttonLeft: { en: 'More cars', es: 'Mas autos', de: 'Mehr autos' },
+    buttonLeft: { en: 'More cars', es: 'Mas autos', de: 'Mehr Autos' },
     img2: bugatti,
     imgOptions2:
       'absolute bottom-5 right-0 lg:right-[5%] lg:scale-125 opacity-30 lg:opacity-80',
