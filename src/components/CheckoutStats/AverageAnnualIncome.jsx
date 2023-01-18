@@ -1,4 +1,6 @@
 import CountryDropdown from '../dropdown/CountryDropdown'
+import { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const AverageAnnualIncome = ({
   setAnnualIncome,
@@ -7,16 +9,17 @@ const AverageAnnualIncome = ({
   getBudgetTotal,
   getYearsToCart,
 }) => {
+  const { text, language } = useContext(LanguageContext)
   return (
     <>
       <div className='flex gap-1 items-baseline'>
-        <h2 className='mt-8 font-semibold text-gray-800'>
-          AVERAGE ANNUAL INCOME
+        <h2 className='mt-8 font-semibold text-gray-800 uppercase'>
+          {text.averageAnnualIncome}
         </h2>
       </div>
       <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700/50 p-4 rounded'>
         <span className='flex justify-between'>
-          <span>Country</span>
+          <span>{text.country}</span>
           {/* check themeSwitcher component props false */}
           <CountryDropdown
             setAnnualIncome={setAnnualIncome}
@@ -29,23 +32,25 @@ const AverageAnnualIncome = ({
         </span>
 
         <span className='flex justify-between'>
-          <span>Annual Income per capita</span>
+          <span>{text.annualIncomePerCapita}</span>
           <span>${annualIncome}</span>
         </span>
         <span className='flex justify-between'>
-          <span>Cart cost</span>
+          <span>{text.cartCost}</span>
           <span>{getTotals()} $</span>
         </span>
         <span className='flex justify-between'>
-          <span>Cart is % of annual income</span>
+          <span>{text.cartIsAnnualIncome}</span>
           <span>{getBudgetTotal(annualIncome)}%</span>
         </span>
         <span className='flex items-center justify-between text-xl font-semibold'>
-          <span className='flex flex-col'>
-            <span>Years avg. worker</span>
-            <span>needs to afford cart</span>
+          <span className='flex flex-col text-base md:text-xl'>
+            <span>{text.yearsAvg1}</span>
+            <span>{text.yearsAvg2}</span>
           </span>
-          <span>{getYearsToCart(annualIncome)} years</span>
+          <span className='text-base md:text-xl'>
+            {getYearsToCart(annualIncome)} {text.years}
+          </span>
         </span>
       </div>
     </>
