@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { PlayerContext } from '../../context/PlayerContext'
@@ -10,6 +10,10 @@ const FloatingBudget = () => {
   const [show, setShow] = useState(false)
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    setShow(false)
+  }, [])
 
   // Create our number formatter.
   const formatter = new Intl.NumberFormat('en-US', {
@@ -105,22 +109,22 @@ const FloatingBudget = () => {
         </>
       )}
       {/* phones tablets */}
-      {player.length > 0 || cart.length > 0 ? (
+      {player || cart.length > 0 ? (
         <div
           className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 grid grid-cols-3 place-items-center px-5
         '
         >
           <div className='flex flex-col items-center'>
-            {player.length > 0 ? (
+            {player ? (
               <div
                 onClick={() => setShow(!show)}
                 className='flex flex-col items-center relative'
               >
                 <button
-                  onClick={resetPlayer}
                   className={` duration-150 ${
                     show ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
                   } absolute -top-6 right-0 text-white text-xl bg-red-500 px-2 py-0 rounded-full`}
+                  onClick={resetPlayer}
                 >
                   X
                 </button>
@@ -148,7 +152,7 @@ const FloatingBudget = () => {
             )}
           </div>
           <div className='flex flex-col items-center gap-x-2'>
-            {player.length > 0 ? (
+            {player ? (
               <>
                 <i className='fa-solid fa-sack-dollar text-4xl text-gray-300'></i>
                 <p className='text-gray-300 dark:text-gray-300 font-medium tracking-wide'>
