@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import ProductsGrid from '../../components/grids/ProductsGrid'
 import SkeletonGrid from '../../components/grids/SkeletonGrid'
 import Product from '../../components/Product/Product'
+import { LanguageContext } from '../../context/LanguageContext'
 import { categories_list } from '../../data/categories'
 import { products } from '../../data/products'
 
 //tener otro state, pasar el filter a una fn useEffect
 
 const ProductsScreen = () => {
+  const { text, language } = useContext(LanguageContext)
+
   //get id from params
   const { categoryId } = useParams()
 
@@ -35,12 +38,12 @@ const ProductsScreen = () => {
       >
         <i className='fa-solid fa-chevron-left text-gray-600 text-xl'></i>
         <span className='text-gray-600 text-xl font-medium'>
-          Back to categories
+          {text.backToCategories}
         </span>
       </Link>
 
       <h1 className='mt-4 mb-2 font-semibold text-gray-600'>
-        {categoryName.name}
+        {categoryName.name[language]}
       </h1>
       {/* from a category, a collection of products get rendered */}
       {!filteredItems ? (
