@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className='w-full bg-slate-100 dark:bg-gradient-to-tl flex justify-center items-center py-10 h-[10vh]'>
+    <div className=' w-full rounded-md bg-gradient-to-br from-gray-300/50 dark:bg-gradient-to-br dark:from-purple-800/50 flex justify-center items-center py-10 h-[10vh]'>
       <div className='flex items-center gap-2'>
         <a
           target='_blank'
