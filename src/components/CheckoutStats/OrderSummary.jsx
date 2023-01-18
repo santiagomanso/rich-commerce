@@ -1,30 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const OrderSummary = ({ cartCount, getSemitotals, discount, getTotals }) => {
+  const { text } = useContext(LanguageContext)
   return (
     <>
-      <h2 className='mt-2 font-semibold text-gray-800'>ORDER SUMMARY</h2>
+      <h2 className='mt-2 font-semibold text-gray-800 uppercase'>
+        {text.orderSummary}
+      </h2>
       <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700/50 p-4 rounded'>
         <span className='flex justify-between'>
-          <span>
-            Product{cartCount > 1 ? 's' : ''} Quantit
-            {cartCount > 1 ? 'ies' : 'y'}
-          </span>
+          <span>{text.productQuantity}</span>
           <span>{cartCount}</span>
         </span>
         <span className='flex justify-between'>
           <span>
-            Semitotal
+            {text.semiTotal}
             {cartCount > 1 ? 's' : ''}
           </span>
           <span>{getSemitotals()} $</span>
         </span>
         <span className='flex justify-between'>
-          <span>Discount</span>
+          <span>{text.discount}</span>
           <span>{discount * 100}%</span>
         </span>
         <span className='font-semibold text-xl flex justify-between'>
-          <span>Total</span>
+          <span>{text.total}</span>
           <span>{getTotals()} $</span>
         </span>
       </div>
