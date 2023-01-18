@@ -68,7 +68,7 @@ function App() {
                     />
                     <Route
                       exact
-                      path='/category/:categoryId'
+                      path='/products/:categoryId'
                       element={
                         <ProtectedRoute>
                           <ProductsScreen />
