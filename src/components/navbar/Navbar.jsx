@@ -81,7 +81,7 @@ const Navbar = () => {
             }}
             className={`${active === 'home' ? ' border-indigo-400' : ''} `}
           >
-            Home
+            {text.home}
           </Link>
           <Link
             to='/categories'
@@ -99,7 +99,7 @@ const Navbar = () => {
             } `}
           >
             <span className='bg-gradient-to-br from-indigo-500/90 to-purple-500/80 px-3 py-2 rounded-md'>
-              Shop now!
+              {text.shopNow}
             </span>
           </Link>
           <Link
@@ -117,17 +117,7 @@ const Navbar = () => {
               active === 'characters' ? ' border-indigo-400' : ''
             } `}
           >
-            Players
-          </Link>
-          <Link
-            to='/profile'
-            onClick={() => {
-              setActive('profile')
-              setOpenNav(false)
-            }}
-            className={`${active === 'profile' ? ' border-indigo-400' : ''} `}
-          >
-            Profile
+            {text.players}
           </Link>
           {user ? (
             ''
@@ -140,7 +130,7 @@ const Navbar = () => {
               }}
               className={`${active === 'login' ? ' border-indigo-400' : ''} `}
             >
-              Login
+              {text.logIn}
             </Link>
           )}
           <Link
@@ -158,14 +148,14 @@ const Navbar = () => {
               active === 'cart' ? ' border-indigo-400' : ''
             } `}
           >
-            Cart
+            {text.cart}
           </Link>
           {user ? (
             <span
               className='text-red-400 py-2 rounded-md'
               onClick={handleLogout}
             >
-              Logout
+              {text.logout}
             </span>
           ) : (
             ''
