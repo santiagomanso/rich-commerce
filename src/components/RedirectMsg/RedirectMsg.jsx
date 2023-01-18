@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const RedirectMsg = () => {
+  const { text } = useContext(LanguageContext)
   const navigate = useNavigate()
   const timerId = useRef
 
@@ -36,13 +38,13 @@ const RedirectMsg = () => {
         <section className='flex flex-col gap-3'>
           <article className='flex gap-2 items-end lg:items-baseline'>
             <span className=' text-amber-800 dark:text-amber-500 text-2xl lg:text-5xl font-semibold'>
-              You must log in first
+              {text.youMustLogInFirst}
             </span>
             <i className='fa-solid fa-lock text-3xl lg:text-5xl text-amber-800 dark:text-amber-500'></i>
           </article>
           <article className=' md:text-2xl flex gap-2 items-center justify-center'>
             <span className='text-amber-800 dark:text-amber-500'>
-              Redirecting to login in {seconds} seconds
+              {text.redirectingToLogin} {seconds} {text.seconds}
             </span>
             <i className='fa-solid fa-circle-notch animate-spin text-amber-800 dark:text-amber-500 text-3xl'></i>
           </article>
