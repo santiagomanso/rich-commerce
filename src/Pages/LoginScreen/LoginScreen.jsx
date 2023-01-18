@@ -5,10 +5,12 @@ import { UserAuth } from '../../context/AuthContext'
 import { useContext } from 'react'
 import { RedirectContext } from '../../context/RedirectContext'
 import { PlayerContext } from '../../context/PlayerContext'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const LoginScreen = () => {
   const { path, setPath } = useContext(RedirectContext)
   const { attemptedPlayer, setPlayer } = useContext(PlayerContext)
+  const { text } = useContext(LanguageContext)
 
   const [animation, setAnimation] = useState(
     'animate__animated animate__fadeIn'
@@ -76,16 +78,18 @@ const LoginScreen = () => {
       >
         {/* form container */}
         <div className='w-full md:w-[45%] px-5 md:px-10 flex flex-col justify-center'>
-          <h2 className='font-bold text-indigo-900/80 select-none'>Login</h2>
+          <h2 className='font-bold text-indigo-900/80 select-none'>
+            {text.screenLogin}
+          </h2>
 
           <form className='flex flex-col gap-2 mt-4'>
             <label className='flex flex-col'>
-              <span>Email Adress</span>
+              <span>{text.email}</span>
               <input
                 value={email}
                 className='p-2 rounded-lg border-2 border-opacity-50 outline-none focus:border-blue-500  transition duration-200'
                 type='email'
-                placeholder='Email'
+                placeholder={text.email}
                 name='email'
                 onChange={(e) => setEmail(e.target.value)}
                 onClick={() => setError(null)}
@@ -93,7 +97,7 @@ const LoginScreen = () => {
             </label>
 
             <label>
-              <span>Password</span>
+              <span>{text.password}</span>
               <div className='relative'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -112,7 +116,7 @@ const LoginScreen = () => {
                   type='password'
                   name='password'
                   id=''
-                  placeholder='password'
+                  placeholder={text.password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
@@ -136,20 +140,24 @@ const LoginScreen = () => {
                   <path d='M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
                   <path d='M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z' />
                 </svg>
-                <span className='text-gray-100 lg:hidden'>Guest Account</span>
-                <span className='hidden lg:block'>Use guest account</span>
+                <span className='text-gray-100 lg:hidden'>
+                  {text.buttonUseGuestAccount}
+                </span>
+                <span className='hidden lg:block'>
+                  {text.buttonUseGuestAccount}
+                </span>
               </button>
               <button
                 onClick={handleSubmit}
                 className='w-[45%] shadow-md bg-gradient-to-br from-gray-300/90 to-slate-600/70 text-gray-200 tracking-wider py-2 rounded-md font-bold hover:scale-105 duration-300'
               >
-                Login
+                {text.buttonLogin}
               </button>
             </div>
           </form>
           <div className='mt-8 grid grid-cols-3 items-center'>
             <hr className='border-gray-400' />
-            <p className='text-center text-gray-500'>OR</p>
+            <p className='text-center text-gray-500'>{text.or}</p>
             <hr className='border-gray-400' />
           </div>
 
@@ -176,18 +184,16 @@ const LoginScreen = () => {
                 d='M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z'
               />
             </svg>
-            Login with Google
+            {text.buttonLoginWithGoogle}
           </button>
           <div className='flex justify-between items-center mt-4 font-semibold '>
-            <p className='text-gray-600 md:hidden'>No account?</p>
-            <p className='text-gray-600 hidden md:block'>
-              You don't have an account?
-            </p>
+            <p className='text-gray-600 md:hidden'>{text.noAccount}</p>
+            <p className='text-gray-600 hidden md:block'>{text.noAccount}</p>
             <Link
               to='/register'
               className='select-none cursor-pointer hover:scale-110 duration-500'
             >
-              <span className='text-gray-600'>Register</span>
+              <span className='text-gray-600'>{text.register}</span>
             </Link>
           </div>
         </div>
