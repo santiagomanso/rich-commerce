@@ -4,6 +4,7 @@ import AverageAnnualIncome from '../../components/CheckoutStats/AverageAnnualInc
 import NetworthImpacts from '../../components/CheckoutStats/NetworthImpacts'
 import OrderSummary from '../../components/CheckoutStats/OrderSummary'
 import { CartContext } from '../../context/CartContext'
+import { LanguageContext } from '../../context/LanguageContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
 
@@ -11,7 +12,7 @@ const CartScreen = () => {
   const { cart, setCart, cartCount } = useContext(CartContext)
   const { player } = useContext(PlayerContext)
   const { setPath } = useContext(RedirectContext)
-
+  const { text, language } = useContext(LanguageContext)
   const [summaryTotal, setSummaryTotal] = useState(0)
   const [discount, setDiscount] = useState(0)
 
@@ -118,7 +119,7 @@ const CartScreen = () => {
                   </div>
                   <div className='flex flex-col py-1 relative w-full'>
                     <h3 className='font-semibold uppercase text-sm md:text-lg'>
-                      {item.name}
+                      {item.name[language]}
                     </h3>
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
                     <button
@@ -132,17 +133,15 @@ const CartScreen = () => {
               ))}
             </div>
           </div>
-          <div className='w-full lg:w-1/3 overflow-auto h-[500px] lg:h-full'>
+          <div className='w-full lg:w-2/4 overflow-auto h-[500px] lg:h-full'>
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
               <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
-                <h2 className='text-gray-200'>CHECKOUT</h2>
+                <h2 className='text-gray-200'>{text.checkout}</h2>
                 <i className='fa-solid fa-wallet text-gray-200 text-2xl'></i>
               </div>
               <span className='text-end'>
-                Get ready to break the bank, because your cart is loaded with
-                items that will cost you a pretty penny ({getSemitotals()}$ to
-                be exact). But don't worry, you'll be saving a small fortune by
-                purchasing another item and we will give you a tasty discount!.
+                <span>{text.checkoutDesc1} </span>
+                {getSemitotals()}$ <span>{text.checkoutDesc2}</span>
               </span>
               <OrderSummary
                 cartCount={cartCount}
@@ -246,7 +245,7 @@ const CartScreen = () => {
       ) : cart.length > 0 && !player ? (
         <div className='pt-[50%] md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
-            <span>You must choose a player!</span>
+            <span>{text.choosePlayer}</span>
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
           </div>
           <Link
@@ -254,13 +253,13 @@ const CartScreen = () => {
             to='/characters'
             className='bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md'
           >
-            Choose Player now!
+            {text.buttonChoosePlayer}
           </Link>
         </div>
       ) : (
         <div className='pt-[50%] md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
-            <span>Your Cart is Empty</span>
+            <span>{text.yourCartIsEmpty}</span>
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
           </div>
           <Link
@@ -268,7 +267,7 @@ const CartScreen = () => {
             to='/categories'
             className='bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md'
           >
-            Shop now!
+            {text.shopNow}
           </Link>
         </div>
       )}
