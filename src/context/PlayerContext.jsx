@@ -22,9 +22,19 @@ export const PlayerProvider = (props) => {
     window.localStorage.setItem('player', JSON.stringify(player))
   }, [player])
 
+  const resetPlayer = () => {
+    setPlayer('')
+  }
+
   return (
     <PlayerContext.Provider
-      value={{ player, setPlayer, attemptedPlayer, setAttemptedPlayer }}
+      value={{
+        player,
+        setPlayer,
+        attemptedPlayer,
+        setAttemptedPlayer,
+        resetPlayer,
+      }}
     >
       {props.children}
     </PlayerContext.Provider>
