@@ -105,13 +105,13 @@ const FloatingBudget = () => {
         </>
       )}
       {/* phones tablets */}
-      {player || cart.length > 0 ? (
+      {player.length > 0 || cart.length > 0 ? (
         <div
           className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 grid grid-cols-3 place-items-center px-5
         '
         >
           <div className='flex flex-col items-center'>
-            {player && (
+            {player.length > 0 ? (
               <div
                 onClick={() => setShow(!show)}
                 className='flex flex-col items-center relative'
@@ -135,8 +135,7 @@ const FloatingBudget = () => {
                   {player.uri}
                 </span>
               </div>
-            )}
-            {!player && (
+            ) : (
               <Link
                 to='/characters'
                 className='flex flex-col items-center animate-pulse text-amber-500'
@@ -149,15 +148,14 @@ const FloatingBudget = () => {
             )}
           </div>
           <div className='flex flex-col items-center gap-x-2'>
-            {player && (
+            {player.length > 0 ? (
               <>
                 <i className='fa-solid fa-sack-dollar text-4xl text-gray-300'></i>
                 <p className='text-gray-300 dark:text-gray-300 font-medium tracking-wide'>
                   {formatter.format(player.estWorthPrev)}M
                 </p>
               </>
-            )}
-            {!player && (
+            ) : (
               <Link
                 to='/characters'
                 className='flex flex-col items-center animate-pulse text-amber-500'
