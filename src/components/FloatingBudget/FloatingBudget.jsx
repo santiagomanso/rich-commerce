@@ -103,6 +103,7 @@ const FloatingBudget = () => {
           </div>
         </>
       )}
+      {/* phones tablets */}
       {player || cart.length > 0 ? (
         <div
           className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 grid grid-cols-3 place-items-center px-5
