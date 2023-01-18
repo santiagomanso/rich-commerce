@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LanguageContext } from '../../context/LanguageContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
 import './character.css'
 
 const Character = ({ character }) => {
   const { path } = useContext(RedirectContext)
+  const { text, language } = useContext(LanguageContext)
 
   // Create our number formatter.
   const formatter = new Intl.NumberFormat('en-US', {
@@ -29,7 +31,7 @@ const Character = ({ character }) => {
 
   const handleClick = () => {
     setPlayer(character)
-    path ? navigate(path) : navigate('/') //16.01.2023 only path available from cart
+    path && path !== '/characters' ? navigate(path) : navigate('/') //16.01.2023 only path available from cart
   }
 
   return (
@@ -43,7 +45,7 @@ const Character = ({ character }) => {
         {btnPlay && (
           <button onClick={() => handleClick()} className='btnPlay'>
             <i className='fa-solid fa-play text-xl'></i>
-            <span>Play</span>
+            <span>{text.playerPlayButton}</span>
           </button>
         )}
         <img className='' alt='imagen' src={character.squareImage} />
