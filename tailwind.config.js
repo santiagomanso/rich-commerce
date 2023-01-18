@@ -75,16 +75,16 @@ module.exports = {
             transform: 'translate(-20%, 0%)',
           },
           '40%': {
-            transform: 'translate(510%, 0%)',
+            transform: 'translate(680%, 0%)',
           },
           '60%': {
-            transform: 'translate(510%, 0%)',
+            transform: 'translate(680%, 0%)',
           },
           '90%': {
-            transform: 'translate(1030%, 0%)',
+            transform: 'translate(1430%, 0%)',
           },
           '100%': {
-            transform: 'translate(1030%, 0%)',
+            transform: 'translate(1430%, 0%)',
           },
         },
         laptopBox: {
@@ -115,10 +115,10 @@ module.exports = {
             transform: 'translate(0%, 0%)',
           },
           '40%': {
-            transform: 'translate(840%, 0%)',
+            transform: 'translate(850%, 0%)',
           },
           '60%': {
-            transform: 'translate(840%, 0%)',
+            transform: 'translate(850%, 0%)',
           },
           '90%': {
             transform: 'translate(1730%, 0%)',
