@@ -13,11 +13,11 @@
 }
 
 .characterCard div img {
-  @apply group-hover:scale-[1.07] duration-[1s] bg-black/60 object-fill w-full h-full;
+  @apply group-hover:scale-[1.07] duration-[.5s] bg-black/60 object-fill w-full h-full filter grayscale hover:grayscale-0;
 }
 
 .characterRank {
-  @apply blur-0 text-center rotate-[30deg] absolute top-2 -right-7 text-amber-600 bg-yellow-200
+  @apply blur-0 text-center rotate-[30deg] absolute top-2 -right-7 text-amber-600 dark:text-yellow-600 bg-yellow-200
   px-16 py-[0.10rem]  font-semibold shadow-lg;
 }
 
