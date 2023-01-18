@@ -48,7 +48,7 @@ export const categories_list = [
     desc: {
       en: 'Style of a top 1% of the population',
       es: 'Estilo del top %1 de la poblacion',
-      de: 'Stil der oberen 1% der Bevölkerung',
+      de: 'Ganz im Stil der obersten 1%',
     },
     adult: false,
     new: false,
@@ -102,7 +102,7 @@ export const categories_list = [
     desc: {
       en: 'Exclusive and casted away from everyone else',
       es: 'Privadas y apartadas de todo el mundo.',
-      de: 'Exklusiv und losgelöst von allen anderen',
+      de: 'Exklusiv und losgelöst vom Rest der Welt',
     },
     adult: false,
     new: true,
@@ -156,7 +156,7 @@ export const categories_list = [
     desc: {
       en: 'Air-air / air-land we got em all',
       es: 'Aire-aire / aire-tierra, tenemos todo',
-      de: 'Luft-Luft/Luft-Land wir haben sie alle',
+      de: 'Luft-Luft/Luft-Land - Wir haben sie Alle',
     },
     adult: true,
     new: false,
