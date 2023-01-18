@@ -44,7 +44,7 @@ export const carouselData = [
       es: 'Con un precio de $13.4 millones, la estrepitosa Bugatti La Voiture Noire es oficialmente la nueva Bugatti mas cara alguna vez hecha.',
       de: 'Mit einem Preis von 13,4 Millionen Dollar ist der einmalige Bugatti La Voiture Noire offiziell der teuerste neue Bugatti aller Zeiten.',
     },
-    actionLeft: { type: 'redirect', path: '/category/3' },
+    actionLeft: { type: 'redirect', path: '/products/3' },
     actionRight: { type: 'redirect', path: '/characters' },
     buttonLeft: { en: 'More cars', es: 'Mas autos', de: 'Mehr Autos' },
     img2: bugatti,
@@ -87,7 +87,7 @@ export const carouselData = [
       es: 'Introducimos un caza de quinta generacion y furtivo, usado por la fuerza aerea de estados unidos. El precio estara rondando los $216 millones por unidad',
       de: 'Einführung eines Stealth-Flugzeugs der fünften Generation, das von der USAF eingesetzt wird. Der Preis liegt zwischen 206 und 216 Mio. USD für ein einziges Flugzeug.',
     },
-    actionLeft: { type: 'redirect', path: '/category/9' },
+    actionLeft: { type: 'redirect', path: '/products/9' },
     buttonLeft: {
       en: 'Military planes',
       es: 'Aviones Militares',

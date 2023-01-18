@@ -15,7 +15,7 @@ const Category = ({ category }) => {
     <Link
       onClick={() => {
         if (!user) {
-          setPath(`/category/${category.category_id}`) // no user = setPath for further redirect
+          setPath(`/products/${category.category_id}`) // no user = setPath for further redirect
         } else {
           setPath('') // user = no redirect
         }
