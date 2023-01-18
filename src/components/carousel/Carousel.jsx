@@ -48,7 +48,7 @@ const Carousel = () => {
   }
 
   return (
-    <div className='relative  lg:mt-0'>
+    <div className='relative shadow-lg lg:mt-0'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
