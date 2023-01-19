@@ -20,9 +20,14 @@ const CartScreen = () => {
   const [yearsToAffordCart, setYearsToAffordCart] = useState(0)
   const [annualIncome, setAnnualIncome] = useState(38426) //germany to initialize
 
+  const [heightProducts, setHeightProducts] = useState('')
+  const [heightCheckout, setHeightCheckout] = useState('')
+
   useEffect(() => {
     getSemitotals()
     getDiscounts()
+    calculateHeightProducts()
+    calculateHeightCheckout()
   }, [cartCount])
 
   const getSemitotals = () => {
@@ -86,8 +91,45 @@ const CartScreen = () => {
     const newCart = cart.filter(
       (cartItem) => cartItem.item.product_id !== item.product_id
     )
-
     setCart(newCart)
+  }
+
+  //function to animate the height of the grid with the cart items
+  const calculateHeightProducts = () => {
+    switch (cart.length) {
+      case 1: {
+        setHeightProducts('h-[90px]')
+        break
+      }
+      case 2: {
+        setHeightProducts('h-[200px]')
+        break
+      }
+      case 3: {
+        setHeightProducts('h-[300px]')
+        break
+      }
+      default:
+        setHeightProducts('h-[300px]')
+        break
+    }
+  }
+
+  //function to animate the height of the checkout container
+  const calculateHeightCheckout = () => {
+    switch (cart.length) {
+      case 1: {
+        setHeightCheckout('h-[730px]')
+        break
+      }
+      case 2: {
+        setHeightCheckout('h-[600px]')
+        break
+      }
+      default:
+        setHeightCheckout('h-[500px]')
+        break
+    }
   }
 
   return (
@@ -102,9 +144,7 @@ const CartScreen = () => {
         <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full '>
           <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3 h-full overflow-auto p-2 lg:p-4 rounded'>
             <div
-              className={`${
-                cart.length > 1 ? 'h-[250px]' : 'h-[90px]'
-              } lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
+              className={`${heightProducts} duration-300 lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
             >
               {cart.map(({ item }, i) => (
                 <div
@@ -139,9 +179,7 @@ const CartScreen = () => {
             </div>
           </div>
           <div
-            className={`w-full lg:w-2/4 overflow-auto ${
-              cart.length > 1 ? 'h-[500px]' : 'h-[730px]'
-            }  lg:h-full outline-2 outline outline-slate-400 lg:outline-none`}
+            className={`w-full lg:w-2/4 overflow-auto ${heightCheckout}  lg:h-full outline-2 outline outline-slate-400 lg:outline-none duration-300`}
           >
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
               <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
