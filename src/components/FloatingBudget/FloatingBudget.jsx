@@ -28,7 +28,6 @@ const FloatingBudget = () => {
 
   const { player, resetPlayer } = useContext(PlayerContext)
   const { cart, cartCount } = useContext(CartContext)
-  console.log('player.rank', player.rank)
   return (
     <>
       {player.rank ? (

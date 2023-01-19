@@ -8,7 +8,6 @@ import './category.css'
 
 const Category = ({ category }) => {
   const { language } = useContext(LanguageContext)
-  console.log('language', language)
   const { path, setPath } = useContext(RedirectContext)
   const { user } = UserAuth()
   return (
