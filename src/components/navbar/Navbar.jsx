@@ -50,7 +50,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <Link to='/' className='homeDiv'>
         <i className='fa-solid fa-house'></i>
-        <span>Home</span>
+        <span>{text.home}</span>
       </Link>
       <button className='btnNavOpen' onClick={() => setOpenNav(true)}>
         <i className='fa-solid fa-bars'></i>
