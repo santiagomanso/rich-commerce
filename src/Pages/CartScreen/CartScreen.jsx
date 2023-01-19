@@ -63,14 +63,15 @@ const CartScreen = () => {
   }
 
   const getPlayerNetworth = () => {
-    if (!player) return
-    const initialMoney = player.estWorthPrev
-    // console.log('initialMoney', initialMoney)
-    const moneyParts = initialMoney.toString()
-    // console.log('moneyParts', moneyParts)
-    const networth = moneyParts.replace('.', '')
-    // console.log('networth', +networth)
-    return +networth
+    if (player.rank) {
+      const initialMoney = player.estWorthPrev
+      // console.log('initialMoney', initialMoney)
+      const moneyParts = initialMoney.toString()
+      // console.log('moneyParts', moneyParts)
+      const networth = moneyParts.replace('.', '')
+      // console.log('networth', +networth)
+      return +networth
+    } else return
   }
 
   const getBudgetTotal = (fn) => {
@@ -97,10 +98,14 @@ const CartScreen = () => {
           : 'h-full lg:h-[80.9%] flex justify-center items-center'
       } `}
     >
-      {cart.length > 0 && player ? (
-        <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full'>
+      {cart.length > 0 && player.rank ? (
+        <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full '>
           <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3 h-full overflow-auto p-2 lg:p-4 rounded'>
-            <div className='h-[250px] lg:h-full overflow-auto  col-span-2 flex flex-col gap-5'>
+            <div
+              className={`${
+                cart.length > 1 ? 'h-[250px]' : 'h-[90px]'
+              } lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
+            >
               {cart.map(({ item }, i) => (
                 <div
                   key={i}
@@ -133,7 +138,11 @@ const CartScreen = () => {
               ))}
             </div>
           </div>
-          <div className='w-full lg:w-2/4 overflow-auto h-[500px] lg:h-full'>
+          <div
+            className={`w-full lg:w-2/4 overflow-auto ${
+              cart.length > 1 ? 'h-[500px]' : 'h-[730px]'
+            }  lg:h-full outline-2 outline outline-slate-400 lg:outline-none`}
+          >
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
               <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
                 <h2 className='text-gray-200'>{text.checkout}</h2>
@@ -242,8 +251,8 @@ const CartScreen = () => {
             </div>
           </div>
         </div>
-      ) : cart.length > 0 && !player ? (
-        <div className='pt-[50%] md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
+      ) : !player.rank ? (
+        <div className='-mt-[50%] lg:mt-0 md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
             <span>{text.choosePlayer}</span>
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
@@ -257,7 +266,7 @@ const CartScreen = () => {
           </Link>
         </div>
       ) : (
-        <div className='-mt-40 md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
+        <div className='-mt-[50%] lg:mt-0 md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
             <span>{text.yourCartIsEmpty}</span>
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
