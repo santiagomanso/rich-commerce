@@ -1,9 +1,20 @@
-//adult(+16) and NEW cannot co-exist at the moment.
+import img01 from '../assets/categories/resized/01.png'
+import img02 from '../assets/categories/resized/02.png'
+import img03 from '../assets/categories/resized/03.png'
+import img04 from '../assets/categories/resized/04.png'
+import img05 from '../assets/categories/resized/05.png'
+import img06 from '../assets/categories/resized/06.png'
+import img07 from '../assets/categories/resized/07.png'
+import img08 from '../assets/categories/resized/08.png'
+import img09 from '../assets/categories/resized/09.png'
+import img10 from '../assets/categories/resized/10.png'
+import img11 from '../assets/categories/resized/11.png'
+import img12 from '../assets/categories/resized/12.png'
 
 export const categories_list = [
   {
     category_id: 1,
-    img: 'https://cdn.discordapp.com/attachments/997261989292282007/1060290724987420672/Abyss_hyper_realistic_aircraft_carrier_neon_lights_ultra_detail_c71f6d28-dd45-410c-92ec-26e80af606c6.png',
+    img: img01,
     name: {
       en: 'Aircraft Carriers',
       es: 'Portaaviones',
@@ -21,7 +32,7 @@ export const categories_list = [
   },
   {
     category_id: 2,
-    img: 'https://cdn.discordapp.com/attachments/997261989292282007/1060297640866234408/Abyss_hyper_realistic_neon_lights_8k_full_color_sharp_focus_pri_48045fc8-a6ba-42b1-be08-280eed822279.png',
+    img: img02,
     name: {
       en: 'Exclusive Private Jets',
       de: 'Exklusive Privatjets',
@@ -39,7 +50,7 @@ export const categories_list = [
   },
   {
     category_id: 3,
-    img: 'https://cdn.discordapp.com/attachments/997261989292282007/1060299094255485069/Abyss_hyper_realistic_full_colors_8k_sharp_focus_blurred_reflec_4193e456-db9a-4231-8bd0-6050e8599803.png',
+    img: img03,
     name: {
       en: 'Superb Cars',
       es: 'Autos de alta gama',
@@ -57,7 +68,7 @@ export const categories_list = [
   },
   {
     category_id: 4,
-    img: 'https://cdn.discordapp.com/attachments/997261989292282007/1060303156979961906/Abyss_hyper_realistic_full_colors_8k_sharp_focus_blurred_reflec_0c74d10d-966d-46fc-93e7-b093e94beac5.png',
+    img: img04,
     name: {
       en: 'Mansions',
       es: 'Mansiones',
@@ -75,7 +86,7 @@ export const categories_list = [
   },
   {
     category_id: 5,
-    img: 'https://cdn.discordapp.com/attachments/989268365870776411/1060306737900568606/Abyss_8k_neon_lights_sharp_focus_rihanna_and_elon_musk_talking__eb3faff4-e4b1-4cec-8a6b-4fb104428e1d.png',
+    img: img05,
     name: {
       en: 'Concerts - Talks',
       es: 'Conciertos - Charlas',
@@ -93,7 +104,7 @@ export const categories_list = [
   },
   {
     category_id: 6,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060313480210681886/kkero_hyper_realistic_neon_lights_sharp_focus_8k_full_colors_pr_2ed3de0f-addb-46be-bffd-661f8969a942.png',
+    img: img06,
     name: {
       en: 'Private Islands',
       es: 'Islas privadas',
@@ -111,7 +122,7 @@ export const categories_list = [
   },
   {
     category_id: 7,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060315578054758410/kkero_hyper_realistic_neon_lights_sharp_focus_8k_full_colors_la_6a2f82ef-7b78-495c-aa74-b8eadd57f540.png',
+    img: img07,
     name: {
       en: 'Yatchs',
       es: 'Yates',
@@ -129,7 +140,7 @@ export const categories_list = [
   },
   {
     category_id: 8,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060317493727608972/kkero_hyper_realistic_8k_sharp_focus_neon_lights_space_shuttle__90ddeb55-9128-4fd9-b1d8-7d0f8a89c394.png',
+    img: img08,
     name: {
       en: 'Space Rockets',
       es: 'Cohetes espaciales',
@@ -147,7 +158,7 @@ export const categories_list = [
   },
   {
     category_id: 9,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060319916709916672/kkero_hyper_realistic_8k_neon_lights_f-22_raptor_military_aircr_6a685627-8b13-42ed-9ddd-337c8ce231c1.png',
+    img: img09,
     name: {
       en: 'Military Jets',
       es: 'Aviones Militares',
@@ -165,7 +176,7 @@ export const categories_list = [
   },
   {
     category_id: 10,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060321259805745292/kkero_hyper_realistic_8k_full_colors_sharp_focus_neon_lights_te_add5062f-bcad-4b9e-8362-4c6cf5c4d997.png',
+    img: img10,
     name: { en: 'Sports Clubs', es: 'Clubes importantes', de: 'Sportvereine' },
     desc: {
       en: 'Wimbledon? Chicago bulls? we got them.',
@@ -179,7 +190,7 @@ export const categories_list = [
   },
   {
     category_id: 11,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060322978119819305/kkero_neon_lights_8k_sharp_focus_ICBM_rounded_opening_on_the_gr_5e6b82d4-dd14-41d8-bead-07858e58ea9f.png',
+    img: img11,
     name: {
       en: 'Intercontinental ballistic missiles',
       es: 'Mililes Balisticos Intercontinentales',
@@ -197,7 +208,7 @@ export const categories_list = [
   },
   {
     category_id: 12,
-    img: 'https://cdn.discordapp.com/attachments/1008571114227777557/1060325092036448307/kkero_neon_lights_full_colors_8k_sharp_focus_hyper_realistic_bi_cedc5646-e9c6-43be-a7be-c70f2e32f972.png',
+    img: img12,
     name: {
       en: 'Cruise Ships',
       es: 'Cruceros',
