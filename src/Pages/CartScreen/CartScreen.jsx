@@ -252,7 +252,7 @@ const CartScreen = () => {
           </div>
         </div>
       ) : !player.rank ? (
-        <div className='-mt-[50%] lg:mt-0 md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
+        <div className=' self-start lg:mt-0 md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
             <span>{text.choosePlayer}</span>
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
@@ -266,7 +266,7 @@ const CartScreen = () => {
           </Link>
         </div>
       ) : (
-        <div className='-mt-[50%] lg:mt-0 md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
+        <div className=' self-start lg:mt-0 md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
           <div className='flex items-center gap-2'>
             <span>{text.yourCartIsEmpty}</span>
             <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
