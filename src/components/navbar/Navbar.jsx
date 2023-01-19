@@ -130,7 +130,7 @@ const Navbar = () => {
               }}
               className={`${active === 'login' ? ' border-indigo-400' : ''} `}
             >
-              {text.logIn}
+              {text.login}
             </Link>
           )}
           <Link

@@ -5,11 +5,11 @@ export const translations = {
     howToPlay: 'How to play',
     shopNow: 'Show now!',
     players: 'Players',
-    logIn: 'Log in',
+    login: 'Log in',
     cart: 'Cart',
     //dropDown
     myProfile: 'My profile',
-    logOut: 'Logout',
+    logout: 'logout',
     //categories - component
     categoriesH1: 'Our Categories of luxury assets',
     //Player
@@ -74,11 +74,11 @@ export const translations = {
     howToPlay: 'Como jugar',
     shopNow: 'Comprar ya!',
     players: 'Jugadores',
-    logIn: 'Iniciar sesion',
+    login: 'Iniciar sesion',
     cart: 'Carrito',
     //dropDown
     myProfile: 'Mi Perfil',
-    logOut: 'Cerrar sesion',
+    logout: 'Cerrar sesion',
     //categories - component
     categoriesH1: 'Nuestras categorias de lujosos productos',
     //Player
@@ -144,11 +144,11 @@ export const translations = {
     howToPlay: 'Spielregeln',
     shopNow: 'Jetzt einkaufen',
     players: 'Spieler',
-    logIn: 'Einloggen',
+    login: 'Einloggen',
     cart: 'Einkaufswagen',
     //dropDown
     myProfile: 'Mein Profil',
-    logOut: 'Abmelden',
+    logout: 'Abmelden',
     //categories - component
     categoriesH1: 'Unsere Kategorien von Luxusgütern',
     //Player
