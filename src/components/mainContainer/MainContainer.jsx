@@ -3,6 +3,7 @@ import FloatingSpheres from '../FloatingSpheres/FloatingSpheres'
 const MainContainer = ({ children }) => {
   return (
     <div
+      id='outterDiv'
       className='outterDiv 
      from-gray-200 dark:from-black/95
      via-gray-200  dark:via-slate-900
