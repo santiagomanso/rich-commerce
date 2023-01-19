@@ -8,7 +8,6 @@ export const LanguageProvider = ({ children }) => {
   const [text, setText] = useState(translations[language]) //in order to initialize to a given language, the translations object must exist before, otherwise error
 
   const handleChangeLanguage = (language) => {
-    console.log('language', language)
     switch (language) {
       case 'en': {
         setLanguage('en')
