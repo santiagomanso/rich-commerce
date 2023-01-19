@@ -18,6 +18,7 @@ import ProductsScreen from './Pages/ProductsScreen/ProductsScreen'
 import { RedirectProvider } from './context/RedirectContext'
 import CategoriesScreen from './Pages/CategoriesScreen/CategoriesScreen'
 import { LanguageProvider } from './context/LanguageContext'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <BrowserRouter>
                 <MainContainer>
                   <Navbar />
+                  <ScrollToTop />
                   <FloatingBudget />
                   <Routes>
                     <Route exact path='/' element={<HomeScreen />} />
