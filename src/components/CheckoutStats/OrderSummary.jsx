@@ -18,7 +18,7 @@ const OrderSummary = ({ cartCount, getSemitotals, discount, getTotals }) => {
             {text.semiTotal}
             {cartCount > 1 ? 's' : ''}
           </span>
-          <span>{getSemitotals()} $</span>
+          <span>$ {getSemitotals().toLocaleString()}</span>
         </span>
         <span className='flex justify-between'>
           <span>{text.discount}</span>
@@ -26,7 +26,7 @@ const OrderSummary = ({ cartCount, getSemitotals, discount, getTotals }) => {
         </span>
         <span className='font-semibold text-xl flex justify-between'>
           <span>{text.total}</span>
-          <span>{getTotals()} $</span>
+          <span>$ {getTotals().toLocaleString()}</span>
         </span>
       </div>
     </>
