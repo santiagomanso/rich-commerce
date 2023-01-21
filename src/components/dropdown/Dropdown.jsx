@@ -46,10 +46,10 @@ const Dropdown = ({ name, logout, ulOptions }) => {
       ></i>
 
       <ul className={` ${ulOptions} w-48 ${active ? 'scale-100' : 'scale-0'}`}>
-        <li className='group p-2'>
+        {/* <li className='group p-2'>
           <i className='fa-solid fa-circle-user text-slate-600 group-hover:text-red-600 rotate-180 group-hover:rotate-0 scale-0 group-hover:scale-150 duration-500'></i>
           <span>{text.myProfile}</span>
-        </li>
+        </li> */}
         {/* <li className='group p-2'>
           <i className='fa-solid fa-heart text-slate-600 group-hover:text-red-600 rotate-180 group-hover:rotate-0 scale-0 group-hover:scale-150 duration-500'></i>
           <span>Favourites</span>
