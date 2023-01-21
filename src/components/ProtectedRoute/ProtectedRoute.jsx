@@ -1,5 +1,5 @@
 import { UserAuth } from '../../context/AuthContext'
-import RedirectMsg from '../RedirectMsg/RedirectMsg'
+import RedirectMsg from '../../Pages/RedirectMsg/RedirectMsg'
 
 const ProtectedRoute = ({ children }) => {
   const { user } = UserAuth()
