@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import AmountOfPeople from '../../components/CheckoutStats/AmountOfPeople'
 import AverageAnnualIncome from '../../components/CheckoutStats/AverageAnnualIncome'
 import NetworthImpacts from '../../components/CheckoutStats/NetworthImpacts'
 import OrderSummary from '../../components/CheckoutStats/OrderSummary'
@@ -74,13 +75,18 @@ const CartScreen = () => {
       const moneyParts = initialMoney.toString()
       // console.log('moneyParts', moneyParts)
       const networth = moneyParts.replace('.', '')
-      // console.log('networth', +networth)
+      // console.log('player', player)
       return +networth
     } else return
   }
 
+  //function to calculate percentage cart of networth
   const getBudgetTotal = (fn) => {
-    return Math.floor((getTotals() * 100) / fn)
+    if (player.lastName === 'Bezos') {
+      return Math.floor((getTotals() / fn) * 10)
+    } else {
+      return Math.floor((getTotals() / fn) * 100)
+    }
   }
 
   const getYearsToCart = (income) => {
@@ -142,7 +148,7 @@ const CartScreen = () => {
     >
       {cart.length > 0 && player.rank ? (
         <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full '>
-          <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3 h-full overflow-auto p-2 lg:p-4 rounded'>
+          <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3  h-full overflow-auto p-2 lg:p-4 rounded'>
             <div
               className={`${heightProducts} duration-300 lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
             >
@@ -169,7 +175,7 @@ const CartScreen = () => {
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
                     <button
                       onClick={() => handleRemove(item)}
-                      className=' absolute right-3 bottom-0 lg:bottom-[75%] duration-200 hover:scale-125 p-0'
+                      className=' absolute right-3 bottom-0 md:bottom-5 lg:bottom-[75%] duration-200 hover:scale-125 p-0'
                     >
                       <i className='fa-solid fa-delete-left text-red-600 dark:text-gray-200 text-2xl '></i>
                     </button>
@@ -188,7 +194,8 @@ const CartScreen = () => {
               </div>
               <span className='text-end'>
                 <span>{text.checkoutDesc1} </span>
-                {getSemitotals()}$ <span>{text.checkoutDesc2}</span>
+                {getSemitotals().toLocaleString()}${' '}
+                <span>{text.checkoutDesc2}</span>
               </span>
               <OrderSummary
                 cartCount={cartCount}
@@ -209,83 +216,15 @@ const CartScreen = () => {
                 getYearsToCart={getYearsToCart}
                 setAnnualIncome={setAnnualIncome}
               />
-              <h2 className='mt-8 font-semibold text-gray-800'>
-                GDP to {player.personName} Budget in %
-              </h2>
-              <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700/50 p-4 rounded'>
-                <span className='flex justify-between'>
-                  <span>Annual income per capita</span>
-                  <span>{annualIncome}</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>Germany</span>
-                  <span>0.13</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>United States</span>
-                  <span>0.09</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>Spain</span>
-                  <span>0.40</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>Argentina</span>
-                  <span>0.65</span>
-                </span>
-                <span className='flex justify-between items-center'>
-                  <span>Laos</span>
-                  <span>gdp under budget</span>
-                </span>
-                <span className='flex justify-between items-center'>
-                  <span className='font-semibold'>
-                    All of the above combined
-                  </span>
-                  <span className='text-red-600 bg-red-100 px-3 py-1 rounded font-medium'>
-                    0.8
-                  </span>
-                </span>
-              </div>
-              <h2 className='mt-8 font-semibold text-gray-800'>
-                How many people are needed to match 1 {player.personName}{' '}
-                networth?
-              </h2>
-              <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700/50 p-4 rounded'>
-                <span className='flex justify-between'>
-                  <span>Germany</span>
-                  <span>670.000 persons</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>United States</span>
-                  <span>430.000 persons</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>Spain</span>
-                  <span>4.230.504 persons</span>
-                </span>
-                <span className='flex justify-between'>
-                  <span>Argentina</span>
-                  <span>22.004.324 persons</span>
-                </span>
-                <span className='flex justify-between items-center'>
-                  <span>Laos</span>
-                  <span>Persons needed over population</span>
-                </span>
-                <span className='flex justify-between items-center'>
-                  <span className='font-semibold'>
-                    All of the above combined
-                  </span>
-                  <span className='text-red-600 bg-red-100 px-3 py-1 rounded font-medium'>
-                    543.004.324 persons
-                  </span>
-                </span>
-              </div>
-              <div className='bg-white p-4 mt-8 cursor-pointer rounded'>
+
+              <AmountOfPeople player={player} />
+
+              {/* <div className='bg-white p-4 mt-8 cursor-pointer rounded'>
                 <div className='flex justify-start gap-3 items-center'>
                   <h3>PROMO CODE</h3>
                   <i className='fa-solid fa-money-bill-wave text-xl text-green-700'></i>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
