@@ -1,10 +1,12 @@
-import { useEffect, useState, useRef } from 'react'
+import { useContext, useEffect, useState, useRef } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 import { countryList } from '../../data/countriesData'
 
 const CountryDropdown = ({ setAnnualIncome }) => {
+  const { language, text } = useContext(LanguageContext)
   const [active, setActive] = useState(false)
   const menuRef = useRef()
-  const [country, setCountry] = useState('Germany')
+  const [country, setCountry] = useState(text.germany)
   const [flag, setFlag] = useState(
     'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png'
   )
@@ -23,7 +25,7 @@ const CountryDropdown = ({ setAnnualIncome }) => {
   })
 
   const handleChange = ({ name, flag, annualIncome }) => {
-    setCountry(name)
+    setCountry(name[language])
     setFlag(flag)
     setAnnualIncome(annualIncome)
   }
@@ -56,8 +58,8 @@ const CountryDropdown = ({ setAnnualIncome }) => {
               key={country.id}
               onClick={() => handleChange(country)}
             >
-              <span>{country.name}</span>
-              <img src={country.flag} alt={country.name} />
+              <span>{country.name[language]}</span>
+              <img src={country.flag} alt={country.name[language]} />
             </li>
           )
         })}
