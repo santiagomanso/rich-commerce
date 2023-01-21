@@ -10,6 +10,8 @@ export const translations = {
     //dropDown
     myProfile: 'My profile',
     logout: 'logout',
+    //How to play Screen
+    howToPlayInstructions: 'Slide the instructions to the right',
     //categories - component
     categoriesH1: 'Our Categories of luxury assets',
     //Player
@@ -67,6 +69,15 @@ export const translations = {
     spain: 'Spain',
     laos: 'Laos',
     allCombined: 'All of the above combined',
+    howManyPeople1: 'People needed to get one ',
+    howManyPeople2: ' networth',
+    persons: 'Persons',
+    //register screen
+    createAccount: 'Create your account',
+    alreadyRegistered: 'Already registered? sign in ',
+    here: 'here',
+    emailLabel: 'Email adress',
+    signUp: 'Sign Up',
   },
   es: {
     //navbar
@@ -79,6 +90,8 @@ export const translations = {
     //dropDown
     myProfile: 'Mi Perfil',
     logout: 'Cerrar sesion',
+    //How to play Screen
+    howToPlayInstructions: 'Deslice las instrucciones hacia la derecha',
     //categories - component
     categoriesH1: 'Nuestras categorias de lujosos productos',
     //Player
@@ -136,6 +149,15 @@ export const translations = {
     spain: 'España',
     laos: 'Laos',
     allCombined: 'Todos los de arriba combinados',
+    howManyPeople1: 'Personas necesarias para obtener un ',
+    howManyPeople2: ' de patrimonio ',
+    persons: 'Personas',
+    //register screen
+    createAccount: 'Crear una cuenta',
+    alreadyRegistered: 'Ya esta registrado? inicie sesion ',
+    here: 'aqui',
+    emailLabel: 'Correo electronico',
+    signUp: 'Crear mi cuenta',
   },
 
   de: {
@@ -149,6 +171,8 @@ export const translations = {
     //dropDown
     myProfile: 'Mein Profil',
     logout: 'Abmelden',
+    //How to play Screen
+    howToPlayInstructions: 'Schieben Sie die Anweisungen nach rechts',
     //categories - component
     categoriesH1: 'Unsere Kategorien von Luxusgütern',
     //Player
@@ -206,5 +230,14 @@ export const translations = {
     spain: 'Spanien',
     laos: 'Laos',
     allCombined: 'Wie lange alle aufgezählten Länder dafür arbeiten müssten',
+    howManyPeople1: 'Menschen benötigt, um ',
+    howManyPeople2: ' zu finden',
+    persons: 'Menschen',
+    //register screen
+    createAccount: 'Erstellen Sie Ihr Konto',
+    alreadyRegistered: 'Schon registriert? Anmelden ',
+    here: 'hier',
+    emailLabel: 'E-Mail Adresse',
+    signUp: 'Registrieren',
   },
 }
