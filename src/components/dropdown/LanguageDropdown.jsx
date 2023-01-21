@@ -3,7 +3,7 @@ import { LanguageContext } from '../../context/LanguageContext'
 import { countryList } from '../../data/countriesData'
 
 const LanguageDropdown = ({ setAnnualIncome }) => {
-  const { handleChangeLanguage } = useContext(LanguageContext)
+  const { handleChangeLanguage, language, text } = useContext(LanguageContext)
   const [active, setActive] = useState(false)
   const menuRef = useRef()
   const [country, setCountry] = useState('United States')
@@ -42,15 +42,15 @@ const LanguageDropdown = ({ setAnnualIncome }) => {
         }    w-20 overflow-auto p-2`}
       >
         {countryList.map((country) => {
-          return country.name === 'Germany' ||
-            country.name === 'United States' ||
-            country.name === 'Spain' ? (
+          return country.name[language] === text.germany ||
+            country.name[language] === text.usa ||
+            country.name[language] === text.spain ? (
             <li
               className='flex items-center justify-center p-2'
               key={country.id}
               onClick={() => handleChange(country)}
             >
-              <img src={country.flag} alt={country.name} />
+              <img src={country.flag} alt={country.name[language]} />
             </li>
           ) : (
             ''
