@@ -19,6 +19,7 @@ import { RedirectProvider } from './context/RedirectContext'
 import CategoriesScreen from './Pages/CategoriesScreen/CategoriesScreen'
 import { LanguageProvider } from './context/LanguageContext'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import RegisterScreen from './Pages/RegisterScreen/RegisterScreen'
 
 function App() {
   return (
@@ -76,6 +77,11 @@ function App() {
                           <ProductsScreen />
                         </ProtectedRoute>
                       }
+                    />
+                    <Route
+                      exact
+                      path='/register'
+                      element={<RegisterScreen />}
                     />
                   </Routes>
                   <Footer />
