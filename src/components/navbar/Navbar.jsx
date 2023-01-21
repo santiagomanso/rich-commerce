@@ -231,7 +231,7 @@ const Navbar = () => {
                 active === 'login' ? '' : ''
               } flex items-center gap-2`}
             >
-              <span>{text.logIn}</span>
+              <span>{text.login}</span>
             </Link>
           )}
           <Link
