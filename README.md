@@ -7,7 +7,7 @@
   - [Dependencies](#dependencies)
   - [Features](#features)
     - [Language Switcher](#language-switcher)
-    - [**Functionallity**](#functionallity)
+  - [**Functionallity**](#functionallity)
     - [**User Experience**](#user-experience)
     - [Select Player](#select-player)
     - [**Functionality**](#functionality)
@@ -56,7 +56,7 @@ Axios               // Fetch data from API forbes400
 
 ### Language Switcher
 
-### **Functionallity**
+## **Functionallity**
 
 **LanguageContext**: This component creates a LanguageContext using the createContext method from the React library. It also exports a LanguageProvider component which, when rendered, wraps its children with the LanguageContext.Provider component and provides the context data. The data object passed as the value to the Provider contains the current language, the corresponding text translations, and a function to handle changing the language. The language and text state variables are initialized to 'en' and the translations.en object respectively. The handleChangeLanguage function sets the language and text state variables based on the language argument passed to it, by using the switch statement to match the passed language with the available languages in the translations object. This allows for dynamic language switching throughout the app by consuming the LanguageContext in the components that need it.
 
