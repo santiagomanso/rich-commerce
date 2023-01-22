@@ -1,78 +1,76 @@
+- [Rich Commerce app](#rich-commerce-app)
+  - [Description](#description)
+  - [Live site](#live-site)
+  - [Installation](#installation)
+  - [Dependencies](#dependencies)
+  - [Features](#features)
+    - [Language switcher](#language-switcher)
+    - [Player Context](#player-context)
+
 # Rich Commerce app
 
-A simple E-Commerce application with a special Twist: you have to choose a billionaire and
-you will have his networth to spend at your will
+## Description
 
-## Available Scripts
+The app is an e-commerce platform with a unique twist. Users can **choose a billionaire as a playable character and then use their net worth as a budget to purchase expensive assets such as real estate, luxury cars,** . The app allows users to live out their fantasies of being a billionaire and making high-end purchases, while also **providing a fun and engaging way to learn about the lifestyles and assets of some of the world's wealthiest individuals**. The app is designed to be user-friendly and easy to navigate, making it accessible to users of all levels of experience. **It's a great way for users to learn about the assets and net worth of different billionaires**, and make some fun purchases along the way.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Live site
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Rich Simulator](https://rich-simulator.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<a href="https://rich-simulator.netlify.app/"><img src="https://i.ibb.co/CstP2wK/Purple-and-Pink-Gradient-Modern-Birthday-Card-1.png" alt="Purple-and-Pink-Gradient-Modern-Birthday-Card-1" border="0" style="border-radius: 20px"></a>
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+```
+npx install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+React-router-dom    // routing
+Firebase            // auth
+Swiper              // carousels
+Tailwind CSS        // CSS framework
+Postcss             // Vendor prefixes
+Autoprexier         // Vendor prefixes
+Axios               // Fetch data from API forbes400
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Language switcher
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This component creates a LanguageContext using the createContext method from the React library. It also exports a LanguageProvider component which, when rendered, wraps its children with the LanguageContext.Provider component and provides the context data. The data object passed as the value to the Provider contains the current language, the corresponding text translations, and a function to handle changing the language. The language and text state variables are initialized to 'en' and the translations.en object respectively. The handleChangeLanguage function sets the language and text state variables based on the language argument passed to it, by using the switch statement to match the passed language with the available languages in the translations object. This allows for dynamic language switching throughout the app by consuming the LanguageContext in the components that need it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Involved files
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/context/LanguageContext.jsx
+src/components/dropdown/LanguageDropdown.jsx
+```
 
-## Learn More
+### Player Context
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This component creates a context object named PlayerContext and a provider component named PlayerProvider. The provider component sets up a state variable player which holds the current player object, and another state variable attemptedPlayer which holds an attempted player object. The initial value of player is retrieved from localStorage using the getPLayerFromStorage function, which checks if a 'player' item exists in localStorage and returns the parsed JSON object if it does, or an empty array if it doesn't.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The useEffect hook updates the 'player' item in localStorage with the current player state variable, every time the player state variable changes.
 
-### Code Splitting
+The provider component also has a resetPlayer function which sets the player state variable to an empty string.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The provider component passes down the player, setPlayer, attemptedPlayer, setAttemptedPlayer and resetPlayer functions to its children via the context object.
 
-### Analyzing the Bundle Size
+**On the Character component the following is happening:** The handleClick function is a callback function that is invoked when the button with the class of btnPlay is clicked. Inside the function, the setPlayer function from the PlayerContext is being invoked with the character object passed as an argument. This is updating the global player state with the selected character object.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Involved files:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-input salario al logear
-https://datosmacro.expansion.com/mercado-laboral/salario-medio
-
-cuantos españoles para hacer 1 player DIRECTA
-salario medio anual por paises, cuantos años para llegar al costo carrito INDIRECTO
-MONEY FACTS
+```
+src/context/PlayerContext.jsx
+src/components/character/Character.jsx
+```
