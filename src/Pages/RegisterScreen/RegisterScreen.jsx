@@ -41,16 +41,13 @@ const RegisterScreen = () => {
             {text.createAccount}
           </h2>
 
-          <p className='mt-2 text-gray-500 select-none'>
-            {text.alreadyRegistered}{' '}
-            <Link to='/login' className='font-bold'>
-              Sign in here
-            </Link>
-          </p>
+          <Link className='mt-2 text-gray-500  select-none'>
+            {text.alreadyRegistered} {text.here}
+          </Link>
           <form className='flex flex-col gap-4 mt-5' onSubmit={handleSubmit}>
             <label className='flex flex-col relative'>
-              <span>
-                Email address
+              <span className=' capitalize'>
+                {text.email}
                 <span className='hidden md:inline text-red-500 font-bold'>
                   {error ? error : ''}
                 </span>
@@ -65,13 +62,13 @@ const RegisterScreen = () => {
                   error && error.length > 1 ? '' : ''
                 } p-2 mb-2 rounded-lg  focus:border-blue-500  transition duration-200`}
                 type='email'
-                placeholder='Email'
+                placeholder={text.email}
                 name='email'
               />
             </label>
 
             <label className='flex flex-col'>
-              <span>Password</span>
+              <span>{text.password}</span>
               <div className='relative'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -90,7 +87,7 @@ const RegisterScreen = () => {
                   type='password'
                   name='password'
                   id=''
-                  placeholder='password'
+                  placeholder={text.password}
                 />
               </div>
             </label>
@@ -110,7 +107,7 @@ const RegisterScreen = () => {
                 />
                 <path d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z' />
               </svg>
-              <span className=''>Sign up</span>
+              <span className=''>{text.signUp}</span>
             </button>
           </form>
         </div>
