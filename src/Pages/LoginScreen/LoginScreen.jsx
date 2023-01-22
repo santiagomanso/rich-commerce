@@ -22,7 +22,7 @@ const LoginScreen = () => {
   const [error, setError] = useState(null)
 
   //extract signIn from context
-  const { signIn, user } = UserAuth()
+  const { signIn, user, signInGoogle } = UserAuth()
 
   const navigate = useNavigate()
 
@@ -71,6 +71,14 @@ const LoginScreen = () => {
     setTimeout(() => {
       navigate('/register')
     }, 650)
+  }
+
+  const handleGoogle = async () => {
+    try {
+      await signInGoogle()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -170,7 +178,10 @@ const LoginScreen = () => {
             <hr className='border-gray-400' />
           </div>
 
-          <button className='shadow-md bg-white w-full rounded-lg py-2 mt-5 flex justify-center items-center gap-2 border border-gray-400 text-gray-500 font-semibold hover:scale-105 duration-300'>
+          <button
+            onClick={handleGoogle}
+            className='shadow-md bg-white w-full rounded-lg py-2 mt-5 flex justify-center items-center gap-2 border border-gray-400 text-gray-500 font-semibold hover:scale-105 duration-300'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 48 48'
