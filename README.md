@@ -1,3 +1,5 @@
+## Table of Contents
+
 - [Rich Commerce app](#rich-commerce-app)
   - [Description](#description)
   - [Live site](#live-site)
