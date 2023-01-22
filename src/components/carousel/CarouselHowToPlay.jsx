@@ -69,7 +69,7 @@ const CarouselHowToPlay = () => {
                     <img
                       src={data.img[language]}
                       alt='Login'
-                      className='rounded opacity-90 lg:h-[550px] outline outline-4 outline-slate-100'
+                      className='rounded opacity-90 max-h-[570px] outline outline-4 outline-slate-100'
                     />
                   </div>
                 </div>
