@@ -27,14 +27,16 @@ const LoginScreen = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    //redirects when successfull login to home page
-    if (user) {
-      if (path) {
-        navigate(path) // reditection to attempted navigation after successful login
-      } else {
-        navigate('/') // redirection to home screen
+    setTimeout(() => {
+      //redirects when successfull login to home page
+      if (user) {
+        if (path) {
+          navigate(path) // reditection to attempted navigation after successful login
+        } else {
+          navigate('/') // redirection to home screen
+        }
       }
-    }
+    }, 650)
 
     if (attemptedPlayer && user) {
       setPlayer(attemptedPlayer) //set attempted player after successful login
@@ -45,7 +47,7 @@ const LoginScreen = () => {
     e.preventDefault()
     try {
       await signIn(email, password)
-      navigate('/')
+      if (error !== '') setAnimation('animate__fadeOut')
     } catch (e) {
       setError(e.message)
       console.log(e.message)
@@ -55,7 +57,7 @@ const LoginScreen = () => {
   //handle guest mandar como argumento signIn(guest@guest.com, superguest)
   const handleGuest = (e) => {
     e.preventDefault()
-    setAnimation('animate__animated animate__bounceOut')
+    setAnimation('animate__fadeOut')
     setTimeout(() => {
       signIn(
         process.env.REACT_APP_GUEST_USERNAME,
@@ -64,9 +66,16 @@ const LoginScreen = () => {
     }, 650)
   }
 
+  const handleClick = () => {
+    setAnimation('animate__fadeOut')
+    setTimeout(() => {
+      navigate('/register')
+    }, 650)
+  }
+
   return (
     <main
-      className={`${animation} h-3/4 lg:h-[81%] flex items-start lg:items-center justify-center`}
+      className={` animate__animated ${animation} h-3/4 lg:h-[81%] flex items-start lg:items-center justify-center`}
     >
       <div
         className='bg-gradient-to-br
@@ -189,12 +198,12 @@ const LoginScreen = () => {
           <div className='flex justify-between items-center mt-4 '>
             <p className='text-gray-500 md:hidden'>{text.noAccount}</p>
             <p className='text-gray-500 hidden md:block'>{text.noAccount}</p>
-            <Link
-              to='/register'
+            <span
+              onClick={handleClick}
               className='select-none cursor-pointer hover:scale-110 duration-500'
             >
               <span className='text-gray-500 font-medium'>{text.register}</span>
-            </Link>
+            </span>
           </div>
         </div>
 

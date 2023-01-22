@@ -12,6 +12,9 @@ const RegisterScreen = () => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
+  //animation state
+  const [animation, setAnimation] = useState('animate__fadeIn')
+
   const navigate = useNavigate()
 
   //extract create user fn from context
@@ -22,7 +25,12 @@ const RegisterScreen = () => {
 
     try {
       await createUser(email, password)
-      path && path !== '/register' ? navigate(path) : navigate('/')
+      if (error !== '') setAnimation('animate__fadeOut')
+      if (path && path !== '/register') {
+        redirectTo(path)
+      } else {
+        redirectTo('/')
+      }
     } catch (e) {
       console.log(e)
       setError(e.message)
@@ -32,18 +40,35 @@ const RegisterScreen = () => {
     }
   }
 
+  const redirectTo = (link) => {
+    setAnimation('animate__fadeOut')
+    setTimeout(() => {
+      navigate(link)
+    }, 700)
+  }
+
   return (
-    <section className='h-4/5 flex items-center justify-center md:px-10'>
-      <div className='h-screen w-full max-w-xl md:h-auto  md:min-w-auto bg-gradient-to-br from-indigo-100 via-slate-200/50 to-slate-400/80 md:to-sky-900/40 flex rounded-2xl  md:p-5 shadow-lg items-stretch '>
+    <section
+      className={` animate__animated ${animation} h-4/5 flex items-center justify-center md:px-10`}
+    >
+      <div
+        className='h-screen w-full max-w-xl md:h-auto  md:min-w-auto bg-gradient-to-br     
+      from-indigo-500/20   dark:from-black/50
+         via-gray-100/90   dark:via-slate-800/80
+          to-gray-300/80   dark:to-black/50 flex rounded-2xl  md:p-5 shadow-lg items-stretch '
+      >
         {/* form container */}
         <div className='w-full px-5 md:px-10 flex flex-col justify-center -translate-y-32 md:-translate-y-0'>
           <h2 className='font-bold text-2xl text-indigo-900/80 select-none'>
             {text.createAccount}
           </h2>
 
-          <Link className='mt-2 text-gray-500  select-none'>
+          <span
+            onClick={() => redirectTo('/login')}
+            className='mt-2 text-gray-500  select-none cursor-pointer'
+          >
             {text.alreadyRegistered} {text.here}
-          </Link>
+          </span>
           <form className='flex flex-col gap-4 mt-5' onSubmit={handleSubmit}>
             <label className='flex flex-col relative'>
               <span className=' capitalize'>
