@@ -235,7 +235,7 @@ export const translations = {
     persons: 'Menschen',
     //register screen
     createAccount: 'Erstellen Sie Ihr Konto',
-    alreadyRegistered: 'Schon registriert? Anmelden ',
+    alreadyRegistered: 'Schon registriert? Anmelden Sie ',
     here: 'hier',
     emailLabel: 'E-Mail Adresse',
     signUp: 'Registrieren',
