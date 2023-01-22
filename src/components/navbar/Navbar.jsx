@@ -61,8 +61,8 @@ const Navbar = () => {
           openNav ? 'translate-x-0' : '-translate-x-full'
         }   `}
       >
-        <div className='absolute top-5 left-4 text-white flex justify-start gap-x-6 w-full'>
-          {user ? <span className='text-white'>{email}</span> : ''}
+        <div className='absolute top-5 left-4 text-white flex flex-col gap-y-1 w-full'>
+          {user ? <span className='text-gray-300 rounded'>{email}</span> : ''}
           <ThemeSwitcher setOpenNav={setOpenNav} />
         </div>
         <button
