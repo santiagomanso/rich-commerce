@@ -5,9 +5,9 @@ import { LanguageContext } from '../../context/LanguageContext'
 const HowToPlayScreen = () => {
   const { text } = useContext(LanguageContext)
   return (
-    <main className='lg:h-[78.8%] shadow-2xl bg-gradient-to-br from-slate-200/95 via-gray-200/40 to-blue-200/50 rounded-md flex animate__animated animate__fadeIn'>
-      <section className='hidden lg:block w-2/5 h-full p-0 m-0 group'>
-        <article className='flex justify-center items-center h-4/5'>
+    <main className='lg:h-[78.8%] shadow-2xl bg-gradient-to-br from-slate-300/50 via-slate-600/10 to-gray-800/5 rounded-md flex animate__animated animate__fadeIn dark:from-slate-800/50 dark:to-purple-800/10'>
+      <section className='hidden lg:block w-2/5 h-full p-0 m-0 group '>
+        <article className='flex justify-center items-center h-4/5 '>
           <div className='flex flex-col items-center gap-y-7'>
             <h1 className='font-medium text-5xl text-gray-600'>
               {text.howToPlay}

@@ -70,11 +70,11 @@ const LoginScreen = () => {
     >
       <div
         className='bg-gradient-to-br
-       from-indigo-200   dark:from-black/50
-       via-slate-200/50  dark:via-slate-800/80
-       to-slate-400/80   dark:to-black/50
-       md:to-sky-900/40 
-       flex rounded-2xl  md:p-5 shadow-lg items-stretch  md:h-auto w-full'
+       from-indigo-200/50   dark:from-black/50
+       via-gray-300/80  dark:via-slate-800/80
+       to-gray-900/20   dark:to-black/50
+        
+       flex rounded-md  md:p-5 shadow-lg items-stretch  md:h-auto w-full'
       >
         {/* form container */}
         <div className='w-full md:w-[45%] px-5 md:px-10 flex flex-col justify-center'>
@@ -149,7 +149,7 @@ const LoginScreen = () => {
               </button>
               <button
                 onClick={handleSubmit}
-                className='w-[45%] shadow-md bg-gradient-to-br from-gray-300/90 to-slate-600/70 text-gray-200 tracking-wider py-2 rounded-md font-bold hover:scale-105 duration-300'
+                className='w-[45%] shadow-md bg-gradient-to-br from-gray-400/20 to-slate-700/70 text-gray-200 tracking-wider py-2 rounded-md font-bold hover:scale-105 duration-300 border'
               >
                 {text.buttonLogin}
               </button>
@@ -161,7 +161,7 @@ const LoginScreen = () => {
             <hr className='border-gray-400' />
           </div>
 
-          <button className='shadow-md bg-white w-full rounded-lg py-2 mt-5 flex justify-center items-center gap-2 border text-gray-500 font-semibold hover:scale-105 duration-300'>
+          <button className='shadow-md bg-white w-full rounded-lg py-2 mt-5 flex justify-center items-center gap-2 border border-gray-400 text-gray-500 font-semibold hover:scale-105 duration-300'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 48 48'
@@ -186,14 +186,14 @@ const LoginScreen = () => {
             </svg>
             {text.buttonLoginWithGoogle}
           </button>
-          <div className='flex justify-between items-center mt-4 font-semibold '>
-            <p className='text-gray-600 md:hidden'>{text.noAccount}</p>
-            <p className='text-gray-600 hidden md:block'>{text.noAccount}</p>
+          <div className='flex justify-between items-center mt-4 '>
+            <p className='text-gray-500 md:hidden'>{text.noAccount}</p>
+            <p className='text-gray-500 hidden md:block'>{text.noAccount}</p>
             <Link
               to='/register'
               className='select-none cursor-pointer hover:scale-110 duration-500'
             >
-              <span className='text-gray-600'>{text.register}</span>
+              <span className='text-gray-500 font-medium'>{text.register}</span>
             </Link>
           </div>
         </div>

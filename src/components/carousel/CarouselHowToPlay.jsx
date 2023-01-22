@@ -14,7 +14,7 @@ const CarouselHowToPlay = () => {
 
   const recommended = () => {
     return (
-      <span className=' py-[0.10rem] px-2 text-center font-medium bg-slate-400 text-white rounded'>
+      <span className=' py-[0.10rem] px-2 text-center font-medium text-white rounded'>
         recommended
       </span>
     )
