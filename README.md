@@ -4,6 +4,7 @@
   - [Description](#description)
   - [Live site](#live-site)
   - [Installation](#installation)
+  - [Environment Variables](#environment-variables)
   - [Dependencies](#dependencies)
   - [Features](#features)
     - [Language Switcher](#language-switcher)
@@ -20,7 +21,7 @@
 
 ## Description
 
-The app is an e-commerce platform with a unique twist. Users can **choose a billionaire as a playable character and then use their net worth as a budget to purchase expensive assets such as real estate, luxury cars,** . The app allows users to live out their fantasies of being a billionaire and making high-end purchases, while also **providing a fun and engaging way to learn about the lifestyles and assets of some of the world's wealthiest individuals**. The app is designed to be user-friendly and easy to navigate, making it accessible to users of all levels of experience. **It's a great way for users to learn about the assets and net worth of different billionaires**, and make some fun purchases along the way.
+The app is an e-commerce platform with a unique twist. Users can **choose a billionaire as a playable character and then use their net worth as a budget to purchase expensive assets such as real estate, luxury cars,**, providing a fun and engaging way to learn about the lifestyles and assets of some of the world's wealthiest individuals. The app is designed to be user-friendly and easy to navigate, making it accessible to users of all levels of experience.
 
 ---
 
@@ -36,6 +37,25 @@ The app is an e-commerce platform with a unique twist. Users can **choose a bill
 
 ```
 npx install
+```
+
+## Environment Variables
+
+In order for the application to function properly, developers will need to create a .env file in the root directory of the project and add the following variables:
+
+.env
+
+```
+REACT_APP_FIREBASE_KEY: the key for your Firebase project
+REACT_APP_FIREBASE_AUTHDOMAIN: the auth domain for your Firebase project
+REACT_APP_FIREBASE_PROJECTID: the project ID for your Firebase project
+REACT_APP_FIREBASE_STORAGEBUCKET: the storage bucket for your Firebase project
+REACT_APP_FIREBASE_MESSAGINGSENDERID: the messaging sender ID for your Firebase project
+REACT_APP_FIREBASE_APPID: the app ID for your Firebase project
+
+// Guest Account (if you have a dedicated guest account on firebase)
+REACT_APP_GUEST_USERNAME: the username for the guest account
+REACT_APP_GUEST_PASSWORD: the password for the guest account
 ```
 
 ## Dependencies
