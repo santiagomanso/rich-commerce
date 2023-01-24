@@ -83,9 +83,9 @@ const CartScreen = () => {
   //function to calculate percentage cart of networth
   const getBudgetTotal = (fn) => {
     if (player.lastName === 'Bezos') {
-      return Math.floor((getTotals() / fn) * 10)
+      return Math.ceil((getTotals() / fn) * 10)
     } else {
-      return Math.floor((getTotals() / fn) * 100)
+      return Math.ceil((getTotals() / fn) * 100)
     }
   }
 
