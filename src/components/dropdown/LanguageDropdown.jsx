@@ -3,13 +3,10 @@ import { LanguageContext } from '../../context/LanguageContext'
 import { countryList } from '../../data/countriesData'
 
 const LanguageDropdown = ({ setAnnualIncome }) => {
-  const { handleChangeLanguage, language, text } = useContext(LanguageContext)
+  const { handleChangeLanguage, language, text, country, flag, setFlag } =
+    useContext(LanguageContext)
   const [active, setActive] = useState(false)
   const menuRef = useRef()
-  const [country, setCountry] = useState('United States')
-  const [flag, setFlag] = useState(
-    'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png'
-  )
 
   useEffect(() => {
     const handler = (e) => {
