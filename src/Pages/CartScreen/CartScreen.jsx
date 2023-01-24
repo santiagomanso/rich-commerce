@@ -1,154 +1,155 @@
-import { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import AmountOfPeople from '../../components/CheckoutStats/AmountOfPeople'
-import AverageAnnualIncome from '../../components/CheckoutStats/AverageAnnualIncome'
-import NetworthImpacts from '../../components/CheckoutStats/NetworthImpacts'
-import OrderSummary from '../../components/CheckoutStats/OrderSummary'
-import { CartContext } from '../../context/CartContext'
-import { LanguageContext } from '../../context/LanguageContext'
-import { PlayerContext } from '../../context/PlayerContext'
-import { RedirectContext } from '../../context/RedirectContext'
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AmountOfPeople from "../../components/CheckoutStats/AmountOfPeople";
+import AverageAnnualIncome from "../../components/CheckoutStats/AverageAnnualIncome";
+import NetworthImpacts from "../../components/CheckoutStats/NetworthImpacts";
+import OrderSummary from "../../components/CheckoutStats/OrderSummary";
+import { CartContext } from "../../context/CartContext";
+import { LanguageContext } from "../../context/LanguageContext";
+import { PlayerContext } from "../../context/PlayerContext";
+import { RedirectContext } from "../../context/RedirectContext";
 
 const CartScreen = () => {
-  const { cart, setCart, cartCount } = useContext(CartContext)
-  const { player } = useContext(PlayerContext)
-  const { setPath } = useContext(RedirectContext)
-  const { text, language } = useContext(LanguageContext)
-  const [summaryTotal, setSummaryTotal] = useState(0)
-  const [discount, setDiscount] = useState(0)
+  const { cart, setCart, cartCount } = useContext(CartContext);
+  const { player } = useContext(PlayerContext);
+  const { setPath } = useContext(RedirectContext);
+  const { text, language } = useContext(LanguageContext);
+  const [summaryTotal, setSummaryTotal] = useState(0); // REVIEW if you are not using them, better delete them
+  const [discount, setDiscount] = useState(0);
 
   //annual income section
-  const [yearsToAffordCart, setYearsToAffordCart] = useState(0)
-  const [annualIncome, setAnnualIncome] = useState(38426) //germany to initialize
+  const [yearsToAffordCart, setYearsToAffordCart] = useState(0);
+  const [annualIncome, setAnnualIncome] = useState(38426); //germany to initialize
 
-  const [heightProducts, setHeightProducts] = useState('')
-  const [heightCheckout, setHeightCheckout] = useState('')
+  const [heightProducts, setHeightProducts] = useState("");
+  const [heightCheckout, setHeightCheckout] = useState("");
 
   useEffect(() => {
-    getSemitotals()
-    getDiscounts()
-    calculateHeightProducts()
-    calculateHeightCheckout()
-  }, [cartCount])
+    getSemitotals();
+    getDiscounts();
+    calculateHeightProducts();
+    calculateHeightCheckout();
+  }, [cartCount]);
 
   const getSemitotals = () => {
-    let total = 0
+    let total = 0;
     cart.map(({ item }) => {
-      return (total = total + item.price)
-    })
-    return total
-  }
+      return (total = total + item.price);
+    });
+    return total;
+  };
 
   const getDiscounts = () => {
     // console.log('cartCount', cartCount)
     switch (true) {
       case cartCount === 1: {
-        setDiscount(0.1)
-        break
+        setDiscount(0.1);
+        break;
       }
       case cartCount > 1 && cartCount < 3: {
-        setDiscount(0.2)
-        break
+        setDiscount(0.2);
+        break;
       }
       case cartCount >= 3 && cartCount < 6: {
-        setDiscount(0.3)
-        break
+        setDiscount(0.3);
+        break;
       }
       case cartCount > 6: {
-        setDiscount(0.4)
-        break
+        setDiscount(0.4);
+        break;
       }
 
       default:
-        setDiscount(0)
+        setDiscount(0);
     }
-  }
+  };
 
   const getTotals = () => {
-    return getSemitotals() - getSemitotals() * discount
-  }
+    return getSemitotals() - getSemitotals() * discount;
+  };
 
   const getPlayerNetworth = () => {
     if (player.rank) {
-      const initialMoney = player.estWorthPrev
+      const initialMoney = player.estWorthPrev;
       // console.log('initialMoney', initialMoney)
-      const moneyParts = initialMoney.toString()
+      const moneyParts = initialMoney.toString();
       // console.log('moneyParts', moneyParts)
-      const networth = moneyParts.replace('.', '')
+      const networth = moneyParts.replace(".", "");
       // console.log('player', player)
-      return +networth
-    } else return
-  }
+      return +networth;
+    } else return;
+  };
 
   //function to calculate percentage cart of networth
   const getBudgetTotal = (fn) => {
-    if (player.lastName === 'Bezos') {
-      return Math.floor((getTotals() / fn) * 10)
+    // REVIEW I would explain in a comment why you had to "treat" Bezos differently, so it doesn't look strange
+    if (player.lastName === "Bezos") {
+      return Math.floor((getTotals() / fn) * 10);
     } else {
-      return Math.floor((getTotals() / fn) * 100)
+      return Math.floor((getTotals() / fn) * 100);
     }
-  }
+  };
 
   const getYearsToCart = (income) => {
-    return Math.floor(getTotals() / income)
-  }
+    return Math.floor(getTotals() / income);
+  };
 
   const handleRemove = (item) => {
     const newCart = cart.filter(
       (cartItem) => cartItem.item.product_id !== item.product_id
-    )
-    setCart(newCart)
-  }
+    );
+    setCart(newCart);
+  };
 
   //function to animate the height of the grid with the cart items
   const calculateHeightProducts = () => {
     switch (cart.length) {
       case 1: {
-        setHeightProducts('h-[90px]')
-        break
+        setHeightProducts("h-[90px]");
+        break;
       }
       case 2: {
-        setHeightProducts('h-[200px]')
-        break
+        setHeightProducts("h-[200px]");
+        break;
       }
       case 3: {
-        setHeightProducts('h-[300px]')
-        break
+        setHeightProducts("h-[300px]");
+        break;
       }
       default:
-        setHeightProducts('h-[300px]')
-        break
+        setHeightProducts("h-[300px]");
+        break;
     }
-  }
+  };
 
   //function to animate the height of the checkout container
   const calculateHeightCheckout = () => {
     switch (cart.length) {
       case 1: {
-        setHeightCheckout('h-[730px]')
-        break
+        setHeightCheckout("h-[730px]");
+        break;
       }
       case 2: {
-        setHeightCheckout('h-[600px]')
-        break
+        setHeightCheckout("h-[600px]");
+        break;
       }
       default:
-        setHeightCheckout('h-[500px]')
-        break
+        setHeightCheckout("h-[500px]");
+        break;
     }
-  }
+  };
 
   return (
     <main
       className={` grid grid-cols-1 lg:block animate__animated animate__fadeIn ${
         cart.length > 0
-          ? 'h-full lg:h-[81%]'
-          : 'h-full lg:h-[80.9%] flex justify-center items-center'
+          ? "h-full lg:h-[81%]"
+          : "h-full lg:h-[80.9%] flex justify-center items-center"
       } `}
     >
       {cart.length > 0 && player.rank ? (
-        <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full '>
-          <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3  h-full overflow-auto p-2 lg:p-4 rounded'>
+        <div className="grid grid-cols-1 lg:gap-0 lg:flex h-full ">
+          <div className="bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3  h-full overflow-auto p-2 lg:p-4 rounded">
             <div
               className={`${heightProducts} duration-300 lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
             >
@@ -157,27 +158,27 @@ const CartScreen = () => {
                   key={i}
                   className={`flex  ${
                     i % 2 === 0
-                      ? 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-slate-500/50'
-                      : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-violet-400/40'
+                      ? "bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-slate-500/50"
+                      : "bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-violet-400/40"
                   } rounded`}
                 >
-                  <div className='lg:max-w-[250px] p-2'>
+                  <div className="lg:max-w-[250px] p-2">
                     <img
                       src={item.img}
                       alt={item.name}
-                      className='w-[200px] object-cover lg:h-full lg:w-full rounded'
+                      className="w-[200px] object-cover lg:h-full lg:w-full rounded"
                     />
                   </div>
-                  <div className='flex flex-col py-1 relative w-full'>
-                    <h3 className='font-semibold uppercase text-sm md:text-lg'>
+                  <div className="flex flex-col py-1 relative w-full">
+                    <h3 className="font-semibold uppercase text-sm md:text-lg">
                       {item.name[language]}
                     </h3>
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
                     <button
                       onClick={() => handleRemove(item)}
-                      className=' absolute right-3 bottom-0 md:bottom-5 lg:bottom-[75%] duration-200 hover:scale-125 p-0'
+                      className=" absolute right-3 bottom-0 md:bottom-5 lg:bottom-[75%] duration-200 hover:scale-125 p-0"
                     >
-                      <i className='fa-solid fa-delete-left text-red-600 dark:text-gray-200 text-2xl '></i>
+                      <i className="fa-solid fa-delete-left text-red-600 dark:text-gray-200 text-2xl "></i>
                     </button>
                   </div>
                 </div>
@@ -187,14 +188,14 @@ const CartScreen = () => {
           <div
             className={`w-full lg:w-2/4 overflow-auto ${heightCheckout}  lg:h-full outline-2 outline outline-slate-400 lg:outline-none duration-300`}
           >
-            <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
-              <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
-                <h2 className='text-gray-200'>{text.checkout}</h2>
-                <i className='fa-solid fa-wallet text-gray-200 text-2xl'></i>
+            <div className="bg-gray-300 dark:bg-transparent p-4 rounded">
+              <div className="bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center">
+                <h2 className="text-gray-200">{text.checkout}</h2>
+                <i className="fa-solid fa-wallet text-gray-200 text-2xl"></i>
               </div>
-              <span className='text-end'>
+              <span className="text-end">
                 <span>{text.checkoutDesc1} </span>
-                {getSemitotals().toLocaleString()}${' '}
+                {getSemitotals().toLocaleString()}${" "}
                 <span>{text.checkoutDesc2}</span>
               </span>
               <OrderSummary
@@ -229,36 +230,36 @@ const CartScreen = () => {
           </div>
         </div>
       ) : !player.rank ? (
-        <div className='md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
-          <div className='flex items-center gap-2'>
+        <div className="md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg">
+          <div className="flex items-center gap-2">
             <span>{text.choosePlayer}</span>
-            <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
+            <i className="fa-regular fa-face-frown text-gray-700 dark:text-gray-300"></i>
           </div>
           <Link
-            onClick={() => setPath('/cart')}
-            to='/characters'
-            className='bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md'
+            onClick={() => setPath("/cart")}
+            to="/characters"
+            className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md"
           >
             {text.buttonChoosePlayer}
           </Link>
         </div>
       ) : (
-        <div className='md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>
-          <div className='flex items-center gap-2'>
+        <div className="md:pt-[17%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg">
+          <div className="flex items-center gap-2">
             <span>{text.yourCartIsEmpty}</span>
-            <i className='fa-regular fa-face-frown text-gray-700 dark:text-gray-300'></i>
+            <i className="fa-regular fa-face-frown text-gray-700 dark:text-gray-300"></i>
           </div>
           <Link
-            onClick={() => setPath('/cart')}
-            to='/categories'
-            className='bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md'
+            onClick={() => setPath("/cart")}
+            to="/categories"
+            className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white px-6 py-3 rounded-md"
           >
             {text.shopNow}
           </Link>
         </div>
       )}
     </main>
-  )
-}
+  );
+};
 
-export default CartScreen
+export default CartScreen;
