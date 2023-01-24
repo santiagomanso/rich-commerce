@@ -168,10 +168,16 @@ const CartScreen = () => {
                       className='w-[200px] object-cover lg:h-full lg:w-full rounded'
                     />
                   </div>
-                  <div className='flex flex-col py-1 relative w-full'>
-                    <h3 className='font-semibold uppercase text-sm md:text-lg'>
+                  <div className='flex flex-col justify-start gap-3 py-1 relative w-full'>
+                    <h3 className='font-semibold uppercase text-sm md:text-xl'>
                       {item.name[language]}
                     </h3>
+                    <div className='flex items-baseline gap-1'>
+                      <i className='fa-solid fa-sack-dollar text-green-600/90 dark:text-gray-300 text-2xl'></i>
+                      <span className='font-medium text-lg'>
+                        {item.price.toLocaleString()}
+                      </span>
+                    </div>
                     {/* <p className=' max-w-[300px] text-ellipsis'>{item.desc}</p> */}
                     <button
                       onClick={() => handleRemove(item)}
