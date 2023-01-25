@@ -24,7 +24,7 @@ const ProductsScreen = () => {
 
   //filter function to extract matching categories and products
   const filterItems = items.filter((item, i) => {
-    return item.category_id == categoryId
+    return item.category_id === categoryId
   })
 
   const [filteredItems, setfilteredItems] = useState(filterItems)
