@@ -5,7 +5,8 @@ import { LanguageContext } from '../../context/LanguageContext'
 const RedirectMsg = () => {
   const { text } = useContext(LanguageContext)
   const navigate = useNavigate()
-  const timerId = useRef
+  const timerId = useRef()
+  console.log('timerId', timerId)
 
   const [seconds, setSeconds] = useState(3)
   const [animation, setAnimation] = useState(

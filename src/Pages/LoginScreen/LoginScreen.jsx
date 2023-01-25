@@ -25,6 +25,7 @@ const LoginScreen = () => {
   const { signIn, user, signInGoogle } = UserAuth()
 
   const navigate = useNavigate()
+  console.log('navigate', navigate)
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,7 +42,7 @@ const LoginScreen = () => {
     if (attemptedPlayer && user) {
       setPlayer(attemptedPlayer) //set attempted player after successful login
     }
-  }, [user, navigate, error])
+  }, [user, error])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -66,10 +67,10 @@ const LoginScreen = () => {
     }, 650)
   }
 
-  const handleClick = (link) => {
+  const handleClick = () => {
     setAnimation('animate__fadeOut')
     setTimeout(() => {
-      navigate(link)
+      navigate('/register')
     }, 650)
   }
 
@@ -207,18 +208,13 @@ const LoginScreen = () => {
             {text.buttonLoginWithGoogle}
           </button>
           <div className='flex justify-between items-center mt-4 '>
+            <p className='text-gray-500 md:hidden'>{text.noAccount}</p>
             <p className='text-gray-500 hidden md:block'>{text.noAccount}</p>
-            <p
-              onClick={() => handleClick('/forgot')}
-              className='select-none cursor-pointer hover:scale-110 duration-500 text-gray-500 font-medium text-lg'
-            >
-              {text.resetPassword}
-            </p>
             <span
-              onClick={() => handleClick('/register')}
-              className='select-none cursor-pointer hover:scale-110 duration-500 text-gray-500 font-medium text-lg'
+              onClick={handleClick}
+              className='select-none cursor-pointer hover:scale-110 duration-500'
             >
-              {text.register}
+              <span className='text-gray-500 font-medium'>{text.register}</span>
             </span>
           </div>
         </div>
