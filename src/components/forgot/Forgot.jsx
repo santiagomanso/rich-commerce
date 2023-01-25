@@ -1,11 +1,9 @@
 import { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
 import { LanguageContext } from '../../context/LanguageContext'
-import { RedirectContext } from '../../context/RedirectContext'
 
-const RegisterScreen = () => {
-  const { path } = useContext(RedirectContext)
+const Reset = () => {
   const { text } = useContext(LanguageContext)
 
   //states to handle form
@@ -14,6 +12,7 @@ const RegisterScreen = () => {
 
   //animation state
   const [animation, setAnimation] = useState('animate__fadeIn')
+  const [active, setActive] = useState(false)
 
   const navigate = useNavigate()
 
@@ -22,12 +21,22 @@ const RegisterScreen = () => {
 
   const handleSubmit = async (e, email) => {
     e.preventDefault()
-    if (email) {
+    if (email.length > 1) {
       resetPassword(email)
-      console.log('success')
+      reset()
     } else {
       console.log('error no email')
     }
+  }
+
+  const reset = () => {
+    setEmail(' ')
+    setActive(true)
+
+    setTimeout(() => {
+      setActive(false) //reset animation
+      navigate('/login')
+    }, 5000)
   }
 
   const redirectTo = (link) => {
@@ -39,8 +48,15 @@ const RegisterScreen = () => {
 
   return (
     <section
-      className={` animate__animated ${animation} h-4/5 flex items-center justify-center md:px-10`}
+      className={` animate__animated ${animation} h-4/5  flex items-center justify-center md:px-10`}
     >
+      <span
+        className={`absolute  duration-700 top-4 lg:top-32 left-[25%] lg:left-[42%] ${
+          active ? ' opacity-100 animate-bounce' : 'opacity-0'
+        }   bg-green-300/60 text-green-900 outline outline-2 outline-emerald-500 p-4  rounded-md`}
+      >
+        {text.checkEmail}
+      </span>
       <div
         className='h-screen w-full max-w-xl md:h-auto  md:min-w-auto bg-gradient-to-br     
       from-indigo-500/20   dark:from-black/50
@@ -53,9 +69,7 @@ const RegisterScreen = () => {
             {text.resetPassword}
           </h2>
 
-          <span className='mt-2 text-gray-500  select-none cursor-pointer'>
-            {text.resetSubtitle}
-          </span>
+          <span className='mt-2 text-gray-500'>{text.resetSubtitle}</span>
           <form className='flex flex-col gap-4 mt-5'>
             <label className='flex flex-col relative'>
               <span className=' capitalize'>
@@ -74,6 +88,7 @@ const RegisterScreen = () => {
                   error && error.length > 1 ? '' : ''
                 } p-2 mb-2 rounded-lg  focus:border-blue-500  transition duration-200`}
                 type='email'
+                value={email}
                 placeholder={text.email}
                 name='email'
               />
@@ -95,4 +110,4 @@ const RegisterScreen = () => {
   )
 }
 
-export default RegisterScreen
+export default Reset

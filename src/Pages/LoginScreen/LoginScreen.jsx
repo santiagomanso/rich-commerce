@@ -83,18 +83,18 @@ const LoginScreen = () => {
 
   return (
     <main
-      className={` animate__animated ${animation} h-3/4 lg:h-[81%] flex items-start lg:items-center justify-center`}
+      className={` animate__animated ${animation} h-4/5 lg:h-[81%] flex items-start lg:items-center justify-center`}
     >
       <div
-        className='bg-gradient-to-br
+        className='bg-gradient-to-br h-full
        from-indigo-200/50   dark:from-black/50
        via-gray-300/80  dark:via-slate-800/80
        to-gray-900/20   dark:to-black/50
         
-       flex rounded-md  md:p-5 shadow-lg items-stretch  md:h-auto w-full'
+       flex rounded-md  md:p-5 shadow-lg items-stretch   md:h-auto w-full'
       >
         {/* form container */}
-        <div className='w-full md:w-[45%] px-5 md:px-10 flex flex-col justify-center'>
+        <div className='w-full md:w-[45%] p-5  md:px-10 flex flex-col justify-center'>
           <h2 className='font-bold text-indigo-900/80 select-none'>
             {text.screenLogin}
           </h2>
@@ -209,7 +209,7 @@ const LoginScreen = () => {
           <div className='flex justify-between items-center mt-4 '>
             <p className='text-gray-500 hidden md:block'>{text.noAccount}</p>
             <p
-              onClick={() => handleClick('/forgot')}
+              onClick={() => handleClick('/reset')}
               className='select-none cursor-pointer hover:scale-110 duration-500 text-gray-500 font-medium text-lg'
             >
               {text.resetPassword}
