@@ -32,7 +32,6 @@ const RegisterScreen = () => {
         redirectTo('/')
       }
     } catch (e) {
-      console.log(e)
       setError(e.message)
       //   setTimeout(() => {
       //     setError('')
