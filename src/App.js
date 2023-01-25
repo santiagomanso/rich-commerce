@@ -20,6 +20,7 @@ import CategoriesScreen from './Pages/CategoriesScreen/CategoriesScreen'
 import { LanguageProvider } from './context/LanguageContext'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import RegisterScreen from './Pages/RegisterScreen/RegisterScreen'
+import Forgot from './components/forgot/Forgot'
 
 function App() {
   return (
@@ -83,6 +84,7 @@ function App() {
                       path='/register'
                       element={<RegisterScreen />}
                     />
+                    <Route exact path='/forgot' element={<Forgot />} />
                   </Routes>
                   <Footer />
                 </MainContainer>
