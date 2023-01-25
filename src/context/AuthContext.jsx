@@ -6,8 +6,10 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  sendPasswordResetEmail,
 } from 'firebase/auth'
 import { auth } from '../firebase/firebase' //this is the a fn from firebase.js config file
+import { async } from '@firebase/util'
 
 const UserContext = createContext()
 
@@ -44,10 +46,19 @@ export const AuthContextProvider = ({ children }) => {
     return signOut(auth)
   }
 
+  //forgot password
+  const resetPassword = async (email) => {
+    try {
+      await sendPasswordResetEmail(auth, email)
+    } catch (error) {
+      return error
+    }
+  }
+
   return (
     //the provider is what distributes states and functions throughout the whole app IT MUST recieve destructuration of every state and fn
     <UserContext.Provider
-      value={{ createUser, user, logout, signIn, signInGoogle }}
+      value={{ createUser, user, logout, signIn, signInGoogle, resetPassword }}
     >
       {children}
     </UserContext.Provider>
