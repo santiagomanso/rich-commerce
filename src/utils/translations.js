@@ -78,6 +78,11 @@ export const translations = {
     here: 'here',
     emailLabel: 'Email adress',
     signUp: 'Sign Up',
+    //forgot
+    resetPassword: 'Reset Password',
+    resetSubtitle:
+      'Enter your email, a reset link will be sent with more information',
+    sendInstructions: 'Send instructions',
   },
   es: {
     //navbar
@@ -158,6 +163,11 @@ export const translations = {
     here: 'aqui',
     emailLabel: 'Correo electronico',
     signUp: 'Crear mi cuenta',
+    //forgot
+    resetPassword: 'Reestablecer contraseña',
+    resetSubtitle:
+      'Ingrese su correo electronico, y luego recibira allí más instrucciones para reestablecer.',
+    sendInstructions: 'Enviar instrucciones',
   },
 
   de: {
@@ -239,5 +249,10 @@ export const translations = {
     here: 'hier',
     emailLabel: 'E-Mail Adresse',
     signUp: 'Registrieren',
+    //forgot
+    resetPassword: 'Kennwort zurücksetzen',
+    resetSubtitle:
+      'Geben Sie Ihre E-Mail-Adresse ein, Sie erhalten dann einen Link mit weiteren Informationen',
+    sendInstructions: 'Anweisungen senden',
   },
 }
