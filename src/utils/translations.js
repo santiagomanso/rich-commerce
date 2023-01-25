@@ -83,6 +83,7 @@ export const translations = {
     resetSubtitle:
       'Enter your email, a reset link will be sent with more information',
     sendInstructions: 'Send instructions',
+    checkEmail: 'Check your email',
   },
   es: {
     //navbar
@@ -168,6 +169,7 @@ export const translations = {
     resetSubtitle:
       'Ingrese su correo electronico, y luego recibira allí más instrucciones para reestablecer.',
     sendInstructions: 'Enviar instrucciones',
+    checkEmail: 'Revise su correo electrónico',
   },
 
   de: {
@@ -254,5 +256,6 @@ export const translations = {
     resetSubtitle:
       'Geben Sie Ihre E-Mail-Adresse ein, Sie erhalten dann einen Link mit weiteren Informationen',
     sendInstructions: 'Anweisungen senden',
+    checkEmail: 'Prüfen Sie Ihre E-Mail',
   },
 }
