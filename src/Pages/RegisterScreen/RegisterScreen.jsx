@@ -25,7 +25,7 @@ const RegisterScreen = () => {
 
     try {
       await createUser(email, password)
-      if (error !== '') setAnimation('animate__fadeOut')
+      if (error !== '') setAnimation('animate__fadeOut') // REVIEW don't save on {} , they are free 😉 (and they will force prettier to format it and make it a bit more readable).
       if (path && path !== '/register') {
         redirectTo(path)
       } else {

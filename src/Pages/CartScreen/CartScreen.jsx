@@ -14,7 +14,6 @@ const CartScreen = () => {
   const { player } = useContext(PlayerContext)
   const { setPath } = useContext(RedirectContext)
   const { text, language } = useContext(LanguageContext)
-  const [summaryTotal, setSummaryTotal] = useState(0)
   const [discount, setDiscount] = useState(0)
 
   //annual income section
@@ -82,10 +81,11 @@ const CartScreen = () => {
 
   //function to calculate percentage cart of networth
   const getBudgetTotal = (fn) => {
+    // There is a problem when working with the networth of Bezos, that i dont fully comprehend, open to pull requests
     if (player.lastName === 'Bezos') {
-      return Math.ceil((getTotals() / fn) * 10)
+      return Math.floor((getTotals() / fn) * 10)
     } else {
-      return Math.ceil((getTotals() / fn) * 100)
+      return Math.floor((getTotals() / fn) * 100)
     }
   }
 
@@ -168,8 +168,8 @@ const CartScreen = () => {
                       className='w-[200px] object-cover lg:h-full lg:w-full rounded'
                     />
                   </div>
-                  <div className='flex flex-col justify-start gap-3 py-1 relative w-full'>
-                    <h3 className='font-semibold uppercase text-sm md:text-xl'>
+                  <div className='flex flex-col py-1 relative w-full'>
+                    <h3 className='font-semibold uppercase text-sm md:text-lg'>
                       {item.name[language]}
                     </h3>
                     <div className='flex items-baseline gap-1'>

@@ -1,16 +1,18 @@
 // 23.11.2022  this will be implemented after the design is operational.
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { categories_list } from '../data/categories'
 
 const useCategories = () => {
   const [categories, setCategories] = useState(categories_list)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  //for future development when there is an actual rest api
-  // const [loading, setLoading] = useState(false)
-  // const [error, setError] = useState('')
+  // useEffect(() => {
+  //   setCategories(categories_list)
+  // }, [])
 
-  return { categories, setCategories }
+  return { loading, error, categories, setCategories }
 }
 
 export default useCategories
