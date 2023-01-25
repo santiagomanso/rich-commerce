@@ -25,7 +25,6 @@ const LoginScreen = () => {
   const { signIn, user, signInGoogle } = UserAuth()
 
   const navigate = useNavigate()
-  console.log('navigate', navigate)
 
   useEffect(() => {
     setTimeout(() => {
