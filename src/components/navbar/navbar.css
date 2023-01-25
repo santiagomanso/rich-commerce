@@ -4,7 +4,7 @@ nav {
 }
 
 .homeDiv {
-  @apply flex items-center gap-1 pl-1 lg:hidden;
+  @apply flex items-center gap-1 pl-1 hidden;
 }
 
 .homeDiv i {
