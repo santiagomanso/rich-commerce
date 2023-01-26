@@ -66,10 +66,11 @@ const LoginScreen = () => {
     }, 650)
   }
 
-  const handleClick = () => {
+  //redirect to Register new user and to Reset pasword
+  const handleClick = (link) => {
     setAnimation('animate__fadeOut')
     setTimeout(() => {
-      navigate('/register')
+      navigate(link)
     }, 650)
   }
 
@@ -216,7 +217,7 @@ const LoginScreen = () => {
               {text.resetPassword}
             </p>
             <span
-              onClick={handleClick}
+              onClick={() => handleClick('/register')}
               className='select-none cursor-pointer hover:scale-110 duration-500'
             >
               <span className='text-gray-500 font-medium'>{text.register}</span>
