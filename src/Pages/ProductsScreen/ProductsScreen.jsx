@@ -22,8 +22,6 @@ const ProductsScreen = () => {
   //state to store RAW collection of products
   const [items, setItems] = useState(products)
 
-  console.log('categoryId', typeof categoryId)
-
   //filter function to extract matching categories and products
   const filterItems = items.filter((item, i) => {
     return item.category_id === +categoryId //needs + to transform to integer otherwise === not equal between number and string
