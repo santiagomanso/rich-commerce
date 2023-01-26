@@ -24,7 +24,7 @@ export const translations = {
     //redirectScreen
     youMustLogInFirst: 'You must login first',
     redirectingToLogin: 'Redirecting to login in',
-    seconds: 'segundos',
+    seconds: 'seconds',
     //loginScreen
     screenLogin: 'Login',
     email: 'email',
@@ -110,7 +110,7 @@ export const translations = {
     //redirectScreen
     youMustLogInFirst: 'Debe iniciar sesion antes',
     redirectingToLogin: 'Redireccionandolo a iniciar sesion en',
-    seconds: 'seconds',
+    seconds: 'segundos',
     //loginScreen
     screenLogin: 'Iniciar sesion',
     email: 'Correo electronico',
