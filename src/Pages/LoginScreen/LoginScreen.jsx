@@ -6,11 +6,12 @@ import { useContext } from 'react'
 import { RedirectContext } from '../../context/RedirectContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { LanguageContext } from '../../context/LanguageContext'
+import { translateFirebaseErrors } from '../../utils/translateFirebaseErrors'
 
 const LoginScreen = () => {
   const { path, setPath } = useContext(RedirectContext)
   const { attemptedPlayer, setPlayer } = useContext(PlayerContext)
-  const { text } = useContext(LanguageContext)
+  const { text, language } = useContext(LanguageContext)
 
   const [animation, setAnimation] = useState(
     'animate__animated animate__fadeIn'
@@ -45,12 +46,13 @@ const LoginScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     try {
       await signIn(email, password)
       if (error !== '') setAnimation('animate__fadeOut')
     } catch (e) {
-      setError(e.message)
-      console.log(e.message)
+      const msg = translateFirebaseErrors(e.message, language)
+      setError(msg)
     }
   }
 
@@ -77,8 +79,9 @@ const LoginScreen = () => {
   const handleGoogle = async () => {
     try {
       await signInGoogle()
-    } catch (error) {
-      console.log(error)
+    } catch (e) {
+      const msg = translateFirebaseErrors(e.message, language)
+      setError(msg)
     }
   }
 
@@ -100,7 +103,10 @@ const LoginScreen = () => {
             {text.screenLogin}
           </h2>
 
-          <form className='flex flex-col gap-2 mt-4'>
+          <form
+            className='flex flex-col gap-2 mt-4 relative'
+            onSubmit={(e) => handleSubmit(e)}
+          >
             <label className='flex flex-col'>
               <span>{text.email}</span>
               <input
@@ -112,6 +118,9 @@ const LoginScreen = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 onClick={() => setError(null)}
               />
+              <h3 className='absolute -top-3 right-0 text-red-500 px-3 py-1 font-semibold rounded-lg mt-1 animate-bounce'>
+                {error ? error : ''}
+              </h3>
             </label>
 
             <label>
@@ -139,12 +148,10 @@ const LoginScreen = () => {
                 />
               </div>
             </label>
-            <h2 className='text-red-600 font-bold rounded-lg mt-1 animate-bounce'>
-              {error ? error : ''}
-            </h2>
+
             <div className='flex items-stretch justify-between mt-4'>
               <button
-                onClick={handleGuest}
+                onClick={() => handleGuest}
                 className='w-[45%] shadow-md bg-gradient-to-br from-indigo-500/90 to-purple-500/80 text-gray-200 rounded-lg py-2 flex justify-center items-center gap-1 border font-semibold hover:scale-105 duration-300'
               >
                 <svg
@@ -166,7 +173,7 @@ const LoginScreen = () => {
                 </span>
               </button>
               <button
-                onClick={handleSubmit}
+                type='submit'
                 className='w-[45%] shadow-md bg-gradient-to-br from-gray-400/20 to-slate-700/70 text-gray-200 tracking-wider py-2 rounded-md font-bold hover:scale-105 duration-300 border'
               >
                 {text.buttonLogin}
@@ -208,20 +215,18 @@ const LoginScreen = () => {
             {text.buttonLoginWithGoogle}
           </button>
           <div className='flex justify-between items-center mt-4 '>
-            <p className='text-gray-500 md:hidden'>{text.noAccount}</p>
-            <p className='text-gray-500 hidden md:block'>{text.noAccount}</p>
             <p
               onClick={() => handleClick('/reset')}
-              className='select-none cursor-pointer hover:scale-110 duration-500 text-gray-500 font-medium text-lg'
+              className='select-none cursor-pointer hover:scale-110 duration-500 text-gray-500'
             >
               {text.resetPassword}
             </p>
-            <span
+            <p
               onClick={() => handleClick('/register')}
-              className='select-none cursor-pointer hover:scale-110 duration-500'
+              className='select-none cursor-pointer hover:scale-110 duration-500 text-gray-500'
             >
-              <span className='text-gray-500 font-medium'>{text.register}</span>
-            </span>
+              {text.register}
+            </p>
           </div>
         </div>
 
