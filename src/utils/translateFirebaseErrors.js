@@ -2,67 +2,67 @@ export const translateFirebaseErrors = (error, language) => {
   //   console.log('error', error)
   //isolated language object
   const langObj = {
-    en: {
+    de: {
       //firebase errors
-      userNotFound: 'Falsches Kennwort',
-      wrongPassword: 'Wrong Password',
-      invalidEmail: 'E-Mail nicht gefunden',
-      internalError: 'Interner Fehler',
+      userNotFound: "Benutzer nicht gefunden",
+      wrongPassword: "Wrong Password",
+      invalidEmail: "E-Mail nicht gefunden",
+      internalError: "Interner Fehler",
     },
     es: {
       //firebase errors
-      userNotFound: 'Usuario no encontrado',
-      wrongPassword: 'Contraseña equivocada',
-      invalidEmail: 'E-Mail no encontrado',
-      internalError: 'Error interno',
+      userNotFound: "Usuario no encontrado",
+      wrongPassword: "Contraseña equivocada",
+      invalidEmail: "E-Mail no encontrado",
+      internalError: "Error interno",
     },
-    de: {
+    en: {
       //firebase errors
-      userNotFound: 'User not found',
-      wrongPassword: 'Wrong Password',
-      invalidEmail: 'Email not found',
-      internalError: 'Internal error',
+      userNotFound: "User not found",
+      wrongPassword: "Wrong Password",
+      invalidEmail: "Email not found",
+      internalError: "Internal error",
     },
-  }
+  };
 
-  const newErrorArray = error.split(':').slice(1) //remove the string "Firebase:""
-  const newErrorString = newErrorArray.toString()
+  const newErrorArray = error.split(":").slice(1); //remove the string "Firebase:""
+  const newErrorString = newErrorArray.toString();
   const message = newErrorString
-    .split('/')
+    .split("/")
     .slice(1)
     .toString()
-    .split(')')
+    .split(")")
     .slice(0)
     .toString()
-    .split(',')
+    .split(",")
     .slice(0)
     .toString()
-    .replace(',', '')
-    .replace('.', '')
+    .replace(",", "")
+    .replace(".", "");
 
   switch (message) {
-    case 'invalid-email': {
-      return langObj[language].invalidEmail
+    case "invalid-email": {
+      return langObj[language].invalidEmail;
     }
 
-    case 'user-not-found': {
-      return langObj[language].userNotFound
+    case "user-not-found": {
+      return langObj[language].userNotFound;
     }
 
-    case 'internal-error': {
-      return langObj[language].internalError
+    case "internal-error": {
+      return langObj[language].internalError;
     }
 
-    case 'wrong-password': {
-      return langObj[language].wrongPassword
+    case "wrong-password": {
+      return langObj[language].wrongPassword;
     }
 
     default:
-      break
+      break;
   }
 
   //
-}
+};
 
 // Known Errors
 // user-not-found
