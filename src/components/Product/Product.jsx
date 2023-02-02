@@ -23,7 +23,7 @@ const Product = ({ item }) => {
       setCart([...cart, { item }])
     } else {
       const newCart = cart.filter(
-        (cartItem) => cartItem.item.product_id !== item.product_id
+        (cartItem) => cartItem.item.product_id !== item.product_id,
       )
 
       setCart(newCart)
