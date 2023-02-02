@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { UserAuth } from '../../context/AuthContext'
+import { UserContext } from '../../context/AuthContext'
 import { CartContext } from '../../context/CartContext'
 import { LanguageContext } from '../../context/LanguageContext'
 import { PlayerContext } from '../../context/PlayerContext'
@@ -11,7 +11,7 @@ import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher'
 import './navbar.css'
 
 const Navbar = () => {
-  const { user, logout } = UserAuth()
+  const { user, logout } = useContext(UserContext)
 
   const { text } = useContext(LanguageContext)
   const navigate = useNavigate()

@@ -9,7 +9,7 @@ const CharactersScreen = () => {
   const { text } = useContext(LanguageContext)
   return (
     <main className='animate__animated animate__fadeIn'>
-      <h1 className='mt-14 font-semibold text-gray-600'>
+      <h1 className='px-2 lg:px-0 mt-14 font-semibold text-gray-600'>
         {text.characterScreenH1}
       </h1>
       {loading ? <SkeletonGrid /> : <CharactersGrid characters={characters} />}

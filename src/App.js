@@ -20,7 +20,7 @@ import CategoriesScreen from './Pages/CategoriesScreen/CategoriesScreen'
 import { LanguageProvider } from './context/LanguageContext'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import RegisterScreen from './Pages/RegisterScreen/RegisterScreen'
-import Reset from './components/forgot/Forgot'
+import ResetScreen from './Pages/ResetScreen/ResetScreen'
 
 function App() {
   return (
@@ -84,7 +84,7 @@ function App() {
                       path='/register'
                       element={<RegisterScreen />}
                     />
-                    <Route exact path='/reset' element={<Reset />} />
+                    <Route exact path='/reset' element={<ResetScreen />} />
                   </Routes>
                   <Footer />
                 </MainContainer>

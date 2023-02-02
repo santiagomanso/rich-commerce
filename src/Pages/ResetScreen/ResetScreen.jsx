@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UserAuth } from '../../context/AuthContext'
+import { UserContext } from '../../context/AuthContext'
 import { LanguageContext } from '../../context/LanguageContext'
 
-const Reset = () => {
+const ResetScreen = () => {
   const { text } = useContext(LanguageContext)
 
   //states to handle form
@@ -17,7 +17,7 @@ const Reset = () => {
   const navigate = useNavigate()
 
   //extract create user fn from context
-  const { createUser, resetPassword } = UserAuth()
+  const { createUser, resetPassword } = useContext(UserContext)
 
   const handleSubmit = async (e, email) => {
     e.preventDefault()
@@ -48,7 +48,7 @@ const Reset = () => {
 
   return (
     <section
-      className={` animate__animated ${animation} h-4/5  flex items-center justify-center md:px-10`}
+      className={` animate__animated ${animation} h-[87%]  flex items-center justify-center md:px-10`}
     >
       <span
         className={`absolute  duration-700 top-4 lg:top-32 left-[25%] lg:left-[42%] ${
@@ -58,7 +58,7 @@ const Reset = () => {
         {text.checkEmail}
       </span>
       <div
-        className='h-screen w-full max-w-xl md:h-auto  md:min-w-auto bg-gradient-to-br     
+        className='h-full w-full max-w-xl md:h-auto  md:min-w-auto bg-gradient-to-br     
       from-indigo-500/20   dark:from-black/50
          via-gray-100/90   dark:via-slate-800/80
           to-gray-300/80   dark:to-black/50 flex rounded-2xl  md:p-5 shadow-lg items-stretch '
@@ -110,4 +110,4 @@ const Reset = () => {
   )
 }
 
-export default Reset
+export default ResetScreen
