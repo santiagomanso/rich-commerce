@@ -3,5 +3,5 @@
 }
 
 .innerDiv {
-  @apply h-screen mx-auto   lg:max-w-[1536px] lg:px-2 py-5 font-primary;
+  @apply h-screen mx-auto -mt-5 md:mt-0 lg:max-w-[1536px] lg:px-2  lg:py-5 font-primary;
 }

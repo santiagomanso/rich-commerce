@@ -10,13 +10,13 @@ import { Autoplay, Pagination, Navigation } from 'swiper'
 import { useNavigate } from 'react-router-dom'
 import { carouselData, Elon } from '../../data/carouselData'
 
-import { UserAuth } from '../../context/AuthContext'
+import { UserContext } from '../../context/AuthContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
 import { LanguageContext } from '../../context/LanguageContext'
 
 const Carousel = () => {
-  const { user } = UserAuth()
+  const { user } = useContext(UserContext)
   const { language } = useContext(LanguageContext)
   const { setPlayer, setAttemptedPlayer } = useContext(PlayerContext)
   const { setPath } = useContext(RedirectContext)

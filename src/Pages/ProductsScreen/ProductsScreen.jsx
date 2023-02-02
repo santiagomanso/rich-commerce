@@ -16,7 +16,7 @@ const ProductsScreen = () => {
   const { categoryId } = useParams()
 
   const [categoryName, setCategoryName] = useState(
-    categories_list[categoryId - 1] // array are 0based but categories list are not 0 based, so -1 fix
+    categories_list[categoryId - 1], // array are 0based but categories list are not 0 based, so -1 fix
   )
 
   //state to store RAW collection of products
@@ -34,15 +34,15 @@ const ProductsScreen = () => {
     <main className='animate__animated animate__fadeIn'>
       <Link
         to='/categories'
-        className='flex gap-1 items-center mt-5 mb-5 hover:translate-x-1 duration-150'
+        className='p-2 lg:p-0 flex gap-1 items-center  hover:translate-x-1 duration-150'
       >
         <i className='fa-solid fa-chevron-left text-gray-600 text-xl'></i>
-        <span className='text-gray-600 text-xl font-medium'>
+        <span className=' text-gray-600 text-xl font-medium'>
           {text.backToCategories}
         </span>
       </Link>
 
-      <h1 className='mt-4 mb-2 font-semibold text-gray-600'>
+      <h1 className='px-2 lg:px-0 mt-4 mb-2 font-semibold text-gray-600'>
         {categoryName.name[language]}
       </h1>
       {/* from a category, a collection of products get rendered */}

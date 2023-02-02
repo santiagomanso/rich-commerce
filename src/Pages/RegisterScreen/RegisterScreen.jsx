@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { UserAuth } from '../../context/AuthContext'
+import { UserContext } from '../../context/AuthContext'
 import { LanguageContext } from '../../context/LanguageContext'
 import { RedirectContext } from '../../context/RedirectContext'
 
@@ -18,7 +18,7 @@ const RegisterScreen = () => {
   const navigate = useNavigate()
 
   //extract create user fn from context
-  const { createUser } = UserAuth()
+  const { createUser } = useContext(UserContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault()

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import loginPNG from '../../assets/login.jpg'
-import { UserAuth } from '../../context/AuthContext'
+import { UserContext } from '../../context/AuthContext'
 import { useContext } from 'react'
 import { RedirectContext } from '../../context/RedirectContext'
 import { PlayerContext } from '../../context/PlayerContext'
@@ -12,18 +12,18 @@ const LoginScreen = () => {
   const { path, setPath } = useContext(RedirectContext)
   const { attemptedPlayer, setPlayer } = useContext(PlayerContext)
   const { text, language } = useContext(LanguageContext)
-
   const [animation, setAnimation] = useState(
-    'animate__animated animate__fadeIn'
+    'animate__animated animate__fadeIn',
   )
 
   //states to control form
   const [email, setEmail] = useState('') //initialized to guest account
   const [password, setPassword] = useState('') //initialized to guest account
   const [error, setError] = useState(null)
+  const [showPassword, setShowPassword] = useState(false) //state to show/hide password with eye icon
 
   //extract signIn from context
-  const { signIn, user, signInGoogle } = UserAuth()
+  const { signIn, user, signInGoogle } = useContext(UserContext)
 
   const navigate = useNavigate()
 
@@ -63,7 +63,7 @@ const LoginScreen = () => {
     setTimeout(() => {
       signIn(
         process.env.REACT_APP_GUEST_USERNAME,
-        process.env.REACT_APP_GUEST_PASSWORD
+        process.env.REACT_APP_GUEST_PASSWORD,
       )
     }, 650)
   }
@@ -85,9 +85,13 @@ const LoginScreen = () => {
     }
   }
 
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword)
+  }
+
   return (
-    <main
-      className={` animate__animated ${animation} h-4/5 lg:h-[81%] flex items-start lg:items-center justify-center`}
+    <section
+      className={` animate__animated ${animation} h-[87%] lg:h-[81%] flex items-start lg:items-center justify-center`}
     >
       <div
         className='bg-gradient-to-br h-full
@@ -124,11 +128,12 @@ const LoginScreen = () => {
               <span>{text.password}</span>
               <div className='relative'>
                 <svg
+                  onClick={handleShowPassword}
                   xmlns='http://www.w3.org/2000/svg'
-                  width='22'
-                  height='22'
+                  width='28'
+                  height='28'
                   fill='lightgray'
-                  className='bi bi-eye absolute top-1/2 right-3 -translate-y-1/2'
+                  className='bi bi-eye absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer hover:scale-125 duration-300'
                   viewBox='0 0 16 16'
                 >
                   <path d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z' />
@@ -137,9 +142,8 @@ const LoginScreen = () => {
                 <input
                   value={password}
                   className='w-full bg-white p-2 rounded-lg border-2 border-opacity-50 outline-none focus:border-blue-500  transition duration-200'
-                  type='password'
+                  type={`${showPassword ? 'text' : 'password'}`}
                   name='password'
-                  id=''
                   placeholder={text.password}
                   onClick={() => setError(null)}
                   onChange={(e) => setPassword(e.target.value)}
@@ -164,9 +168,7 @@ const LoginScreen = () => {
                   <path d='M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
                   <path d='M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z' />
                 </svg>
-                <span className='hidden lg:block'>
-                  {text.buttonUseGuestAccount}
-                </span>
+                <span>{text.buttonUseGuestAccount}</span>
               </button>
               <button
                 type='submit'
@@ -229,14 +231,10 @@ const LoginScreen = () => {
 
         {/* Image Container */}
         <div className='w-[55%] hidden md:block'>
-          <img
-            src={loginPNG}
-            alt='login'
-            className='rounded-lg min-h-full z-0'
-          />
+          <img src={loginPNG} alt='login' className='rounded min-h-full z-0' />
         </div>
       </div>
-    </main>
+    </section>
   )
 }
 

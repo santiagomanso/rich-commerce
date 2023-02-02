@@ -9,7 +9,7 @@ const RedirectMsg = () => {
 
   const [seconds, setSeconds] = useState(3)
   const [animation, setAnimation] = useState(
-    'animate__animated animate__bounceIn'
+    'animate__animated animate__bounceIn',
   )
 
   useEffect(() => {
@@ -17,9 +17,9 @@ const RedirectMsg = () => {
       setSeconds((prev) => prev - 1)
     }, 1000)
 
-    if (seconds < 0) {
+    if (seconds === 0) {
+      setAnimation('animate__animated animate__fadeOut')
       clearInterval(timerId.current)
-      setAnimation('animate__animated animate__hinge')
       setTimeout(() => {
         navigate('/login')
       }, 2100)
@@ -31,7 +31,7 @@ const RedirectMsg = () => {
   }, [seconds])
 
   return (
-    <main className='h-3/4 lg:h-[81%] flex justify-center items-center p-5 md:p-0'>
+    <section className='h-[86%] lg:h-[81%] flex justify-center items-center p-5 md:p-0'>
       <div
         className={`bg-amber-200 dark:bg-stone-800/60 p-5 lg:p-10 rounded flex justify-center items-center ${animation} outline-2 outline outline-amber-500 gap-2`}
       >
@@ -50,7 +50,7 @@ const RedirectMsg = () => {
           </article>
         </section>
       </div>
-    </main>
+    </section>
   )
 }
 

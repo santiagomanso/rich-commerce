@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { UserAuth } from '../../context/AuthContext'
+import { UserContext } from '../../context/AuthContext'
 import { LanguageContext } from '../../context/LanguageContext'
 import { RedirectContext } from '../../context/RedirectContext'
 import Rating from '../Rating/Rating'
@@ -9,7 +9,7 @@ import './category.css'
 const Category = ({ category }) => {
   const { language } = useContext(LanguageContext)
   const { path, setPath } = useContext(RedirectContext)
-  const { user } = UserAuth()
+  const { user } = useContext(UserContext)
   return (
     <Link
       onClick={() => {
