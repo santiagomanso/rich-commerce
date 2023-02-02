@@ -3,25 +3,22 @@ export const translateFirebaseErrors = (error, language) => {
   //isolated language object
   const langObj = {
     en: {
-      //firebase errors
-      userNotFound: 'Falsches Kennwort',
+      userNotFound: 'User not found',
       wrongPassword: 'Wrong Password',
-      invalidEmail: 'E-Mail nicht gefunden',
-      internalError: 'Interner Fehler',
+      invalidEmail: 'Email not found',
+      internalError: 'Internal error',
     },
     es: {
-      //firebase errors
       userNotFound: 'Usuario no encontrado',
       wrongPassword: 'Contraseña equivocada',
       invalidEmail: 'E-Mail no encontrado',
       internalError: 'Error interno',
     },
     de: {
-      //firebase errors
-      userNotFound: 'User not found',
+      userNotFound: 'Falsches Kennwort',
       wrongPassword: 'Wrong Password',
-      invalidEmail: 'Email not found',
-      internalError: 'Internal error',
+      invalidEmail: 'E-Mail nicht gefunden',
+      internalError: 'Interner Fehler',
     },
   }
 
