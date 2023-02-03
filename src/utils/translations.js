@@ -259,7 +259,7 @@ export const translations = {
     checkEmail: "Prüfen Sie Ihre E-Mail",
   },
   tr: {
-    //navbar - component
+    //navbar - componentk
     home: "Anasayfa",
     howToPlay: "Nasıl oynanır",
     shopNow: "Şimdi göster!",
