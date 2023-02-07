@@ -67,7 +67,7 @@ const Product = ({ item }) => {
           </p>
         </div>
         <div className='lg:py-3 grid grid-cols-1 lg:grid-cols-2 items-center place-items-center'>
-          <span className='lg:text-lg text-green-700 dark:text-green-900 font-semibold px-2 py-1 rounded-md'>
+          <span className='lg:text-lg text-green-700 dark:text-gray-300 font-semibold px-2 py-1 rounded-md'>
             $ {item.price.toLocaleString()}{' '}
             {priceLength() > 9
               ? 'Billions'
