@@ -16,7 +16,7 @@ export const LanguageProvider = ({ children }) => {
         setText(translations.en)
         setCountry('United States')
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png',
         )
         break
       }
@@ -25,7 +25,7 @@ export const LanguageProvider = ({ children }) => {
         setText(translations.es)
         setCountry('Spain')
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-spain2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-spain2x.png',
         )
         break
       }
@@ -34,7 +34,7 @@ export const LanguageProvider = ({ children }) => {
         setText(translations.de)
         setCountry('Germany')
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png',
         )
         break
 
@@ -50,7 +50,7 @@ export const LanguageProvider = ({ children }) => {
         setText(translations.es)
         setCountry('Spain')
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-spain2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-spain2x.png',
         )
         break
 
@@ -59,7 +59,7 @@ export const LanguageProvider = ({ children }) => {
         setText(translations.en)
         setCountry('United States')
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png',
         )
         break
 
@@ -68,7 +68,7 @@ export const LanguageProvider = ({ children }) => {
         setText(translations.de)
         setCountry('Germany')
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png',
         )
         break
 
@@ -76,7 +76,7 @@ export const LanguageProvider = ({ children }) => {
         setLanguage('en')
         setText(translations.en)
         setFlag(
-          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png'
+          'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-usa2x.png',
         )
         break
     }
