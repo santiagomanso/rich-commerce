@@ -32,9 +32,9 @@ const LoginScreen = () => {
       //redirects when successfull login to home page
       if (user) {
         if (path) {
-          navigate(path) // reditection to attempted navigation after successful login
+          navigate(path, { replace: true }) // reditection to attempted navigation after successful login
         } else {
-          navigate('/') // redirection to home screen
+          navigate('/', { replace: true }) // redirection to home screen
         }
       }
     }, 650)
