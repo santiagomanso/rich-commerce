@@ -8,7 +8,7 @@ const CountryDropdown = ({ setAnnualIncome }) => {
   const menuRef = useRef()
   const [country, setCountry] = useState(text.germany)
   const [flag, setFlag] = useState(
-    'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png'
+    'https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png',
   )
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const CountryDropdown = ({ setAnnualIncome }) => {
         <img src={flag} alt={country} className='h-7 w-7' />
       </span>
       <i
-        className={`fa-solid fa-chevron-down ${
+        className={`fa-solid fa-chevron-down text-purple-500 ${
           active ? 'rotate-[3deg]' : '-rotate-90'
         }`}
       ></i>

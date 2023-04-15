@@ -16,7 +16,7 @@ const AmountOfPeople = ({ player }) => {
       <h2 className='mt-8 font-semibold text-gray-800'>
         {text.howManyPeople1} {player.personName} {text.howManyPeople2}
       </h2>
-      <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700/50 p-4 rounded'>
+      <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700 lg:dark:bg-gray-700/50 p-4 rounded'>
         <span className='flex justify-between'>
           <span>{text.germany}</span>
           <span>

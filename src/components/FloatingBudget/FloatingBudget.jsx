@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import Badge from '../Badge/Badge'
 
 const FloatingBudget = () => {
+  const location = useLocation()
   const [activeName, setActiveName] = useState(false)
   const [activeBudget, setActiveBudget] = useState(false)
   const [show, setShow] = useState(false)
@@ -14,6 +15,14 @@ const FloatingBudget = () => {
   useEffect(() => {
     setShow(false)
   }, [])
+
+  useEffect(() => {
+    if (location.pathname === '/cart') {
+      setShow(false)
+    } else {
+      setShow(true)
+    }
+  }, [location])
 
   // Create our number formatter.
   const formatter = new Intl.NumberFormat('en-US', {
@@ -111,7 +120,7 @@ const FloatingBudget = () => {
         ''
       )}
       {/* phones tablets */}
-      {cart.length > 0 || player.rank ? (
+      {(cart.length > 0 || player.rank) && show ? (
         <div
           className='lg:hidden fixed top-[89%]  sm:translate-x-[25%] text-white z-40 bg-gray-600/95 py-4  w-full sm:w-2/3 grid grid-cols-3 place-items-center px-5
         '

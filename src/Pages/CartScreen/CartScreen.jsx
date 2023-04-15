@@ -8,6 +8,7 @@ import { CartContext } from '../../context/CartContext'
 import { LanguageContext } from '../../context/LanguageContext'
 import { PlayerContext } from '../../context/PlayerContext'
 import { RedirectContext } from '../../context/RedirectContext'
+import ModalCheckout from '../../components/modal/Modal'
 
 const CartScreen = () => {
   const { cart, setCart, cartCount } = useContext(CartContext)
@@ -15,6 +16,9 @@ const CartScreen = () => {
   const { setPath } = useContext(RedirectContext)
   const { text, language } = useContext(LanguageContext)
   const [discount, setDiscount] = useState(0)
+
+  //modal
+  const [active, setActive] = useState(false)
 
   //annual income section
   const [yearsToAffordCart, setYearsToAffordCart] = useState(0)
@@ -95,7 +99,7 @@ const CartScreen = () => {
 
   const handleRemove = (item) => {
     const newCart = cart.filter(
-      (cartItem) => cartItem.item.product_id !== item.product_id
+      (cartItem) => cartItem.item.product_id !== item.product_id,
     )
     setCart(newCart)
   }
@@ -150,16 +154,16 @@ const CartScreen = () => {
         <div className='grid grid-cols-1 lg:gap-0 lg:flex h-full '>
           <div className='bg-gray-300/20 dark:bg-black/70 w-full lg:w-2/3  h-full overflow-auto p-2 lg:p-4 rounded'>
             <div
-              className={`${heightProducts} duration-300 lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
+              className={`duration-300 h-3/4 lg:h-full overflow-auto  col-span-2 flex flex-col gap-5`}
             >
               {cart.map(({ item }, i) => (
-                <div
+                <article
                   key={i}
                   className={`flex  ${
                     i % 2 === 0
                       ? 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-slate-500/50'
                       : 'bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 dark:from-gray-700/50 dark:to-violet-400/40'
-                  } rounded`}
+                  } rounded min-h-[100px]`}
                 >
                   <div className='lg:max-w-[250px] p-2'>
                     <img
@@ -186,12 +190,22 @@ const CartScreen = () => {
                       <i className='fa-solid fa-delete-left text-red-600 dark:text-gray-200 text-2xl '></i>
                     </button>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
+            <div className='mt-2 lg:hidden w-full flex justify-center items-center'>
+              <button
+                onClick={() => setActive(true)}
+                className='bg-gradient-to-br from-indigo-500/90 to-purple-500/80
+               px-10 py-2 rounded-md text-gray-200'
+              >
+                {text.checkout}
+              </button>
+            </div>
           </div>
+          {/* checkout on laptops/large screen */}
           <div
-            className={`w-full lg:w-2/4 overflow-auto ${heightCheckout}  lg:h-full outline-2 outline outline-slate-400 lg:outline-none duration-300`}
+            className={`hidden lg:block w-full lg:w-2/4 overflow-auto ${heightCheckout}  lg:h-full outline-2 outline outline-slate-400 lg:outline-none duration-300`}
           >
             <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
               <div className='bg-gray-800 dark:bg-gray-700/50 py-3 px-4 rounded w-full flex justify-between items-center'>
@@ -224,15 +238,49 @@ const CartScreen = () => {
               />
 
               <AmountOfPeople player={player} />
-
-              {/* <div className='bg-white p-4 mt-8 cursor-pointer rounded'>
-                <div className='flex justify-start gap-3 items-center'>
-                  <h3>PROMO CODE</h3>
-                  <i className='fa-solid fa-money-bill-wave text-xl text-green-700'></i>
-                </div>
-              </div> */}
             </div>
           </div>
+          {/* checkout on phone/tablets */}
+          {active && (
+            <ModalCheckout active={active} setActive={setActive}>
+              <div
+                className={`block lg:hidden w-full overflow-auto h-full outline-2 outline outline-slate-400 lg:outline-none duration-300`}
+              >
+                <div className='bg-gray-300 dark:bg-transparent p-4 rounded'>
+                  <div className='bg-gray-800 dark:bg-gray-700 py-3 px-4 rounded w-full flex justify-between items-center'>
+                    <h2 className='text-gray-200'>{text.checkout}</h2>
+                    <i className='fa-solid fa-wallet text-gray-200 text-2xl'></i>
+                  </div>
+                  <span className='text-end'>
+                    <span>{text.checkoutDesc1} </span>
+                    {getSemitotals().toLocaleString()}${' '}
+                    <span>{text.checkoutDesc2}</span>
+                  </span>
+                  <OrderSummary
+                    cartCount={cartCount}
+                    getSemitotals={getSemitotals}
+                    discount={discount}
+                    getTotals={getTotals}
+                  />
+                  <NetworthImpacts
+                    name={player.personName}
+                    getBudgetTotal={getBudgetTotal}
+                    getPlayerNetworth={getPlayerNetworth}
+                    getTotals={getTotals}
+                  />
+                  <AverageAnnualIncome
+                    annualIncome={annualIncome}
+                    getBudgetTotal={getBudgetTotal}
+                    getTotals={getTotals}
+                    getYearsToCart={getYearsToCart}
+                    setAnnualIncome={setAnnualIncome}
+                  />
+
+                  <AmountOfPeople player={player} />
+                </div>
+              </div>
+            </ModalCheckout>
+          )}
         </div>
       ) : !player.rank ? (
         <div className='md:pt-[20%] animate__animated animate__tada flex flex-col gap-y-5 items-center lg:text-6xl  rounded-lg'>

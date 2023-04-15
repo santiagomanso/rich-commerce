@@ -13,7 +13,7 @@ const NetworthImpacts = ({
       <h2 className='mt-5 font-semibold text-gray-800 uppercase'>
         {text.networthImpacts}
       </h2>
-      <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700/50 p-4 rounded'>
+      <div className='flex flex-col gap-y-3 divide-y-2 divide-gray-400 bg-white dark:bg-gray-700 lg:dark:bg-gray-700/50 p-4 rounded'>
         <span className='flex justify-between'>
           <span>{text.player}</span>
           <span className='font-semibold'>{name}</span>

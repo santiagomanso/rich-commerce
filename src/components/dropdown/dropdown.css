@@ -3,7 +3,7 @@
 }
 
 .dropdownWrapper > i {
-  @apply text-xl text-slate-600 duration-500;
+  @apply text-xl  duration-500;
 }
 
 .dropdownWrapper ul {

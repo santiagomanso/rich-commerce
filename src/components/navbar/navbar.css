@@ -20,7 +20,7 @@ nav aside ul {
 }
 
 .btnNavOpen {
-  @apply w-10 text-white bg-slate-600/80 rounded lg:hidden fixed top-2 right-2 z-10;
+  @apply w-10 text-white bg-slate-600/80 rounded lg:hidden fixed top-2 right-2 z-20;
 }
 
 .btnNavClose {

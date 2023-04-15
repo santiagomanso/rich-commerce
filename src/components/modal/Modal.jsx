@@ -1,18 +1,38 @@
-// 25.11.2022 future feature display character / product full data on this modal
-
+import { useEffect, useRef } from 'react'
 import ReactDom from 'react-dom'
 
-export default function Modal({ character }) {
-  return ReactDom.createPortal(
-    <>
-      <div className='fixed top-0 left-0 bottom-0 right-0 bg-black/10' />
-      <div
-        className='bg-gradient-to-br from-gray-300 to-slate-600 fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[80%] lg:w-[80vw] select-none text-white rounded-md
-      p-5'
-      >
-        {character.personName}
-      </div>
-    </>,
-    document.getElementById('portal')
-  )
+const ModalCheckout = ({ active, setActive, children }) => {
+  const menuRef = useRef()
+  useEffect(() => {
+    const detectKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setActive(false)
+      }
+    }
+    document.documentElement.addEventListener('keydown', detectKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', detectKeyDown)
+    }
+    // console.log('dataType', dataType)
+    //eslint-disable-next-line
+  }, [])
+
+  if (!active) return ''
+  else {
+    return ReactDom.createPortal(
+      <>
+        <div
+          className='absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-br from-black/95 via-black/95 to-slate-900/95'
+          onClick={() => setActive(!active)}
+        />
+        <div className='z-10 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[80vh] lg:w-[50vw] overflow-auto rounded-md'>
+          <div ref={menuRef}>{children}</div>
+        </div>
+      </>,
+      document.getElementById('portal'),
+    )
+  }
 }
+
+export default ModalCheckout
