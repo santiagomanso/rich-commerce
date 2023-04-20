@@ -14,7 +14,7 @@ const useCharacters = () => {
         'https://forbes400.onrender.com/api/forbes400?limit=15',
       )
       const responseTimedOut = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Request timed out')), 2000),
+        setTimeout(() => reject(new Error('Request timed out')), 1000),
       )
       //promise.race takes an array of promises but returns the one that resolves the fastest
       const { data } = await Promise.race([responseOriginal, responseTimedOut])
