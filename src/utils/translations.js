@@ -3,7 +3,7 @@ export const translations = {
     //navbar - component
     home: 'Home',
     howToPlay: 'How to play',
-    shopNow: 'Show now!',
+    shopNow: 'Shop now!',
     players: 'Players',
     login: 'Log in',
     cart: 'Cart',
